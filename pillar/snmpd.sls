@@ -1,0 +1,41 @@
+snmpd:
+  contact: Freifunk Admin (noc@fulda.freifunk.net)
+  sha: |
+    -----BEGIN PGP MESSAGE-----
+
+    hQIMA9J7QslVEt/9ARAAg/P2R4f/yP3oTDzBMXz5BKiYNkqAVp7GFbeSqRf6gt8d
+    vAEkZ/MOVWWhFGz7lYpDWMATU4zqEdCuRUybcOiSFmu1q+9MVDmHeFUrs2CGkNya
+    YB22zWHufnlu6e7DmQPwpjwcl0MqI39WAxjanQGQrzA8+LmEVsKRDFTxLnwZATlL
+    SINbwCgXIi6H0QU2gCJhx2xqELOewRz++Tz58wH3GuhlygY39ym3sqtE7UkMA2Dv
+    WRu/MjrSzlvkVY8T/eU4HB49JmOYJdXsU8ZDPWkbRT+0FyVTScuowjCSYfSlkpDz
+    iPAMX2w245v+ImKCsKZm182UvdglJ73i2gM9r/u4RWWzVirQGKYjUb5MBYGJennE
+    Mp83Nh5qBES5XDfk4Sz59a3MA3ONI56fZsJpPRKX9MhyLDX83uTKDxcCo4DLEJ54
+    ph2WrWnB6NUdUI2Y9jEVdnY6NnT3MtfRAgSYApu7GxL9hx+oB30DE7turGL1GKto
+    eKBulqhV6g1FwdV80PH2OR+w1ILYJ9fGZsNbDxNlRWOBbUURmlto5r4FhNfwS5OM
+    oGVMUksuESsxMyXzZrX6JvumJISi48uEoh6Kq4tF9/AH9dWuY7gMS9R3ozs+TNg+
+    1GUwZrItIyASUWgaGAE4n8foyELOSUGHLBRsj7BlvLCQm18s63rfpkHpV53Iv/3S
+    RwH8MKqP63+hlTUiopxS3HlnH2PC2qdMZL7H6h5Scgj3PBX0DdrBsSKF950q75Ta
+    anucj12YjixmpEgrtZUi5EUtVUah7ZBZ
+    =GHEh
+    -----END PGP MESSAGE-----
+
+  aes: |
+    -----BEGIN PGP MESSAGE-----
+
+    hQIMA9J7QslVEt/9AQ//SFCsUMhexszwc8iIrp1XeFjWAcxlpihTcxf4w3gfYS1q
+    XMdJA7VkUM8hOjwpzFgNelOsTho19fQyyFFoLL6HtXhhyAZH1ubwkOLP0RmhpUGX
+    pTKCfIAX97qfC7M1ArDtklrC+frWvAm5+lr6y7zzn57Rb7pPMlDMs0yu/HuLR4ek
+    ck0NDZyAZ2cY6Awao17n6dhRTG3q54CCRBk49CE4SapLg6cQkLFy+lbPVitGSb10
+    UQInuvp/xTjgC57frRj4hcrftjMdvH3lbbgA6ibe7BwU6BlWR88mMTLRZP7xR1wY
+    yDrXKMsIct5zx0eHVUItuVmwj2/KYU2JzLHCxJLh5szYOP+Z/3iaknQWpBNv5frC
+    ruI3t+VLesi53PjnoEtxk1eZjjMjLJRHihSu/FpSjpXTh4UjlEsLWl4ZJdGsyyYy
+    SqnGUEoaoiJ1HgQqGv87BpXgO7BfbrqflUpDluAql69QleAqeOxSccVmHETxgGev
+    m5B6nN2qjW3ujPii8oU/fAv0EhxV6tnu9HwHFnlIa5qwv2VaHw85bj4Dv4QcogA3
+    LDUnI1smnump91ONDcTalB6KsWF/jky/m+ESG7z6bs3nstCLG5ePv127EZlK7Wje
+    X+amym4DirAXvwWRWCW8HS8rZaiZ2LzEQ4CjUmAzcpPGuLHmXPBPCHthjDzC+J/S
+    SQE4AGqacHXJOSHd34kYmktUTw9v24f1P4gOcS2D3jmlWuG1DiEVwcBLaIYGxQTl
+    r6w3Fn/HQxrgE+XMaZz0PzUWuxLy74ra0no=
+    =3b8U
+    -----END PGP MESSAGE-----
+
+  

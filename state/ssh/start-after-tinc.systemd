@@ -1,0 +1,3 @@
+[Unit]
+Wants=tinc.service
+After=tinc.service

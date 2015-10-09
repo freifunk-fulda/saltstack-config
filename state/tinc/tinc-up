@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# THIS FILE IS CONTROLLED BY SALTSTACK!
+#
+# start the IC-VPN interface
+
+ifup $INTERFACE
+

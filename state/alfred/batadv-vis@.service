@@ -1,0 +1,13 @@
+[Unit]
+Description=A.L.F.R.E.D. vis (connection %I)
+After=network.target
+Wants=alfred@%i.service
+BindsTo=alfred@%i.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/sbin/batadv-vis -s -i %i.bat
+
+[Install]
+WantedBy=multi-user.target
+
