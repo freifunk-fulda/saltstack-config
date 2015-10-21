@@ -17,6 +17,8 @@ apache2:
 
   apache_module.enable:
     - name: ssl
+    - require:
+      - pkg: apache2
 
 
 # default websites (http and https)
