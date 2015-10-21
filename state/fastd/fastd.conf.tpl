@@ -5,8 +5,12 @@
 
 # Listen on external IPv6 and IPv6 address
 #
+{%- if pillar['hosts'][grains['id']]['ipv4']['public'] != None %}
 bind {{ pillar['hosts'][grains['id']]['ipv4']['public'] }}:10000;
+{% endif -%}
+{%- if pillar['hosts'][grains['id']]['ipv6']['public'] != None %}
 bind [{{ pillar['hosts'][grains['id']]['ipv6']['public'] }}]:10000;
+{% endif %}
 
 
 # MTU to use (needs to be the same on all peers)
