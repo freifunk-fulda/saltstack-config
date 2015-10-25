@@ -34,3 +34,9 @@ zone "0.0.0.0.d.f.f.f.d.f.f.f.0.0.d.f.ip6.arpa" {
         file "/opt/fffd-dns/zones/0.0.0.0.d.f.f.f.d.f.f.f.0.0.d.f.ip6.arpa";
 };
 
+zone "0.0.0.0.4.a.3.9.8.a.5.6.0.0.d.f.ip6.arpa" {
+        type slave;
+        masters { {{ pillar['bind']['master']['ipv4'] }}; {{ pillar['bind']['master']['ipv6'] }}; };
+        file "/opt/fffd-dns/zones/0.0.0.0.4.a.3.9.8.a.5.6.0.0.d.f.ip6.arpa";
+};
+

@@ -8,3 +8,4 @@ base:
     - tinc
     - openvpn
     - apache2
+    - bind
