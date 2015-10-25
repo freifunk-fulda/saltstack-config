@@ -21,7 +21,6 @@ mtu {{ pillar['fastd'][grains['id']]['mtu'] }};
 # Authentication / Encryption method to use
 #
 method "salsa2012+umac";
-method "null+salsa2012+umac";
 
 
 # logging
