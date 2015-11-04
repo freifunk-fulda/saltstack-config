@@ -1,7 +1,7 @@
 bind:
   master:
     ipv4: 10.185.0.11
-    ipv6: fd00:fffd:fffd::11
+    ipv6: fd00:65a8:93a4::11
   axfr-tsig:
     name: fffd-axfr-tsig
     algo: HMAC-SHA512
