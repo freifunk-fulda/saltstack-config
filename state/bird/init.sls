@@ -87,12 +87,20 @@ bird6:
       - pkg: tinc
 
 
+/etc/bird/icvpn:
+  file.directory:
+    - user: root
+    - group: root
+    - mode: 755
+    - makedirs: True
+
 /etc/cron.hourly/update-icvpn:
   file.symlink:
     - target: /opt/fffd-utils/update-icvpn.sh
     - force: True
     - require:
       - git: fffd-utils.repo
+      - file: /etc/bird/icvpn
 
   cmd.script:
     - source: /opt/fffd-utils/update-icvpn.sh
