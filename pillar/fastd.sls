@@ -25,9 +25,10 @@ fastd:
       -----END PGP MESSAGE-----
 
   gw02:
-    mtu: 1426
+    mtu: 1280
     methods:
-      - salsa2012+gmac
+      - salsa2012+umac
+      - null+salsa2012+umac
     secret: |
       -----BEGIN PGP MESSAGE-----
   
