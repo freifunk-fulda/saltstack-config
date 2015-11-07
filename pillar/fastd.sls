@@ -1,50 +1,17 @@
 fastd:
-  gw02:
-    mtu: 1426
-    methods:
-      - salsa2012+gmac
-    secret: |
-      -----BEGIN PGP MESSAGE-----
-  
-      hQIMA9J7QslVEt/9ARAAt0kt+p7Y6GeqKuF1BQaCDR48quV6DaRswIAJs3GK9xPR
-      HID4Jz/d1KTYpnGUKxW4Gk+lnLGJxVrguaH9TiSQEI4MjVM/k5FYjSiNroiO1DXB
-      zMb2Cc2Eecpc4NBFFfpVlv5cbyW+V2hd2t5k9OEs83ZAoQf+IDcoaCZKEHvhVLu/
-      pgT5b14GqWi3j3i87DcbS2cia/NDu5heY7qV42ZSYI/dK0JGvY+bMpjHSJgfwl+d
-      ip6dw1Qhiki0xwhvGtGHkHeE94YYPwCtf4MROlWH7XgVvqq82yF+HRWAcflg9/ZG
-      6+S5OrYkLPh5L/0j/SA6/uYRsxw7PwFA5+O9osdbVKqnTsJub0N448EqWRWFzZBY
-      FakfC1ouDDB8KepWUgre29HRTTTp7MapK3QwxOd/vQqV87Ky1MmTCLCzL3RvBPNJ
-      FiKEiK0sU8XwRPXPYEkR4oDIuCWOhtXMh31ygh1pTf9x6ofboGDcBrkz8NBJg0jg
-      in4Wtc6p/wYl0BcML43bHJz38YQUpW7mg2n9oy+Twt+UHZrSVq3TqKLImbyHCIox
-      woeLTLEvnpRfU7XTUCFiLlK0i6i3e9p/RSkksccdLxrt80Gl6UI7HdoDM73amcFL
-      Chy8lNQubJnWcXCM4z080bpG3JqgBpX76n59zH94t1+gNaIwqMUgNCMYJSnvQXHS
-      cgFqKd6qHk0EkfHIKXT5gCokwzDUi1HRqv/E21BjvV4iPIR4+muHcojj2h7atF3C
-      aj0njr+0y/0LN9lZGfNtNC9lSLQtWURITs1xAXkTAW8oL71VOCxwWw81n/RSoxuR
-      tTUyW5Xu0pQyiefpsYkmIHfMCQ==
-      =Usbq
-      -----END PGP MESSAGE-----
-
-  gw03:
+  gw01:
     mtu: 1280
     methods:
       - salsa2012+umac
       - null+salsa2012+umac
-    secret: |
-      -----BEGIN PGP MESSAGE-----
-  
-      hQIMA9J7QslVEt/9AQ//bQBWRL4xgdIX/+ysZp+ZfUB/xzwW1c9VvsLpY/JR5irz
-      Ckh8pydfdNGYU9kSEVdUZrQlWzrhYLm7E3hbWSy78scpNr3BHfoDIsqh0FOXJ2IL
-      3vEiTV8s2FpVApXFbOqcEadKBKbYyRe0d5RFghztFwopyl3uy4xpfGZowOyNgCFs
-      ABfW53xJAX/GodazwHTCpHxld4TW+g/7S333emabf8x10P18+HJmktYybJZazAXI
-      db2xxZI32xxgCkODlHlrnPXYh7UcCwlsJfCzKXqFJe1/eCa77x2cxBvtjogmEFJh
-      TWHp9V4q+Zv9O0CxydUvlizTHWsqxX/8ssj+hsoktllGOEjK5t0vR1vY/oIjCEaz
-      Os/et140fi6/Iz+DmjFc6dzGqe8MWaMQ3vonHsmEXfVZLzoMWVTo40orr/hYph86
-      Gq3ijJDvIjKPrH5hjzMP6ZEjCr11LOio3W5MuzC638zQIM2tVYrrMM2Fefb0a6bD
-      ibYrRgndXpUYmcWOUjHDxc3T3485mKageHVHzXiAXQ+0+A06CNjwbqCiGBf/zWr6
-      ojs50DnjAhmgzndx5stVWnZ9gZnbR3BQUvjiUvTCW/wy8M7AXTDyIiBJKEOwM6xP
-      CiL+/HiVoXY8oymPupgqH/PmMOwlr6vV9D9Ff9Qh87WZQ+diPIMG9UbE6N0lQOrS
-      cgE67qlYWWH8DMObxjE39UHgc1Sruj6tgMLVZIB3QHhnfQafIopat/cinnwStCp7
-      b0AxcEKb8HZodEHNYexWJqauMSA7riPEe5PA896i8EtK6LAO0sGZ0du1gLhw1LiB
-      PmizfgS+DFtJ2swJImFtgZSb3A==
-      =gMVw
-      -----END PGP MESSAGE-----
+    secret: 90675cffe39b16bd0ab08b7f80886aa02e89be63394ddc8d3a6e3601c2cf2f46
+    public: ae38493adfe85d72e05a82352d493e7f3bddbc8b4cba61633d34fb92da5f05af
+
+  gw02:
+    mtu: 1280
+    methods:
+      - salsa2012+umac
+      - null+salsa2012+umac
+    secret: c01bb5048c7226d996d0860061a12e9d744d8b599c93dd1c724c24d41ae12d78
+    public: ac37241f867b4309f4e4c5a9a86934894dff57bbaa51154e5cb90666eb350cfb
 

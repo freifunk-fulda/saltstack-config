@@ -28,6 +28,8 @@ base:
     - bind
     - radvd
     - apache2
-    - openvpn
-    - tinc
-    - bird
+
+#    - openvpn
+#    - tinc
+#    - bird
+
