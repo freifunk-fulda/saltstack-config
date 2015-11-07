@@ -58,10 +58,10 @@ fastd.conf:
 # Get fastd keys of backend nodes
 #
 # Disabled for transition phase - backbone is handled by a different fastd instance
-#fastd.peers.backend:
-#  git.latest:
-#    - name: https://github.com/freifunk-fulda/fffd-peers-backbone.git
-#    - target: /etc/fastd/fffd/fffd-peers-backbone
+fastd.peers.backend:
+  git.latest:
+    - name: https://github.com/freifunk-fulda/fffd-peers-backbone.git
+    - target: /etc/fastd/fffd/fffd-peers-backbone
 
 # Create directory for fastd keys of nodes
 #
