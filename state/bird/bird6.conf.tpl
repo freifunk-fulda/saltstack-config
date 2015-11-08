@@ -42,7 +42,7 @@ table sink;                # sink for any source except local
 # advertisements from and to our peers.
 #
 function is_default() { return net ~ [ ::/0 ]; }
-function is_self_net() { return net ~ [ fd00:fffd:fffd::/48+ ]; }
+function is_self_net() { return net ~ [ fd00:65a8:93a4::/48+ ]; }
 function is_freifunk() { return net ~ [ 
 	2001:0bf7::/32+,	# Foerderverein freie Netzwerke e.V.
 	2001:67c:2d50::/48+,	# Freifunk Luebeck (via FF Rheinland)

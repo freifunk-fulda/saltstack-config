@@ -9,13 +9,13 @@ fffd-utils.repo:
 # Disabled until all gateways are managed by saltstack
 # We need to run a different script on gw03 at the moment
 #
-#check_gateway.cron:
-#  file.symlink:
-#    - name: /etc/cron.d/check_gateway
-#    - target: /opt/fffd-utils/check_gateway.cron
-#    - require:
-#      - git: fffd-utils.repo
-#      - pkg: openvpn
+check_gateway.cron:
+  file.symlink:
+    - name: /etc/cron.d/check_gateway
+    - target: /opt/fffd-utils/check_gateway.cron
+    - require:
+      - git: fffd-utils.repo
+      - pkg: openvpn
 
 /etc/gateway_enabled:
   file.managed:

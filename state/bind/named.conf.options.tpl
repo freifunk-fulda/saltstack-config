@@ -5,14 +5,38 @@
 options {
 	directory "/var/cache/bind";
 	
+	dnssec-enable no;
 	dnssec-validation no;
 	
-	recursion yes;
-	allow-recursion { localnets; localhost; };
-	
 	auth-nxdomain no;    # conform to RFC1035
-	listen-on-v6 { {{ pillar['hosts'][grains['id']]['ipv6']['freifunk'] }}; };    # ipv6 des gateway
-	listen-on { 127.0.0.1; {{ pillar['hosts'][grains['id']]['ipv4']['freifunk'] }}; };   # localhost und ipv4 des gateway
+
+	listen-on-v6 {
+		::1;
+		{{ pillar['hosts'][grains['id']]['ipv6']['freifunk'] }};
+
+		# this is needed to get replys from other dns servers.
+		# note: firewall only allows related answers
+		{{ pillar['hosts'][grains['id']]['ipv6']['public'] }};
+	};
+	listen-on {
+		127.0.0.1;
+		{{ pillar['hosts'][grains['id']]['ipv4']['freifunk'] }};
+
+		# this is needed to get replys from other dns servers.
+		# note: firewall only allows related answers
+		{{ pillar['hosts'][grains['id']]['ipv4']['public'] }};
+	};
+
+	allow-query { any; };
+
+	recursion yes;
+	allow-recursion {
+		127.0.0.1/32;
+		::1/128;
+
+		10.185.0.0/16;
+		fd00:65a8:93a4::/48;
+	};
 	
 	statistics-file "/var/cache/bind/named.stats";
 };

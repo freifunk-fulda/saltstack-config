@@ -1,5 +1,5 @@
 fastd:
-  gw01:
+  testgw01:
     mtu: 1280
     methods:
       - salsa2012+umac
@@ -7,7 +7,7 @@ fastd:
     secret: 90675cffe39b16bd0ab08b7f80886aa02e89be63394ddc8d3a6e3601c2cf2f46
     public: ae38493adfe85d72e05a82352d493e7f3bddbc8b4cba61633d34fb92da5f05af
 
-  gw02:
+  testgw02:
     mtu: 1280
     methods:
       - salsa2012+umac

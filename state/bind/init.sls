@@ -43,10 +43,21 @@ named.conf.local:
     - user: root
     - group: bind
     - mode: 640
-    - source: salt://bind/named.conf.local
+    - source: salt://bind/named.conf.local.tpl
+    - template: jinja
     - require:
       - pkg: bind9
 
+named.conf.tsigkeys:
+  file.managed:
+    - name: /etc/bind/named.conf.tsigkeys
+    - user: root
+    - group: bind
+    - mode: 640
+    - source: salt://bind/named.conf.tsigkeys.tpl
+    - template: jinja
+    - require:
+      - pkg: bind9
 
 # Create directory for zone information
 #
