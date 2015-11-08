@@ -1,5 +1,5 @@
 hosts:
-  gw01:
+  testgw01:
     id: 1
     enabled: 1
     location: gw01
@@ -13,7 +13,7 @@ hosts:
       freifunk: fd00:fffd:fffd::1
       icvpn: 
 
-  gw02:
+  testgw02:
     id: 2
     enabled: 1
     location: gw02
