@@ -7,11 +7,11 @@ hosts:
     ipv4:
       public: 176.9.72.29
       freifunk: 10.185.0.1
-      icvpn: 10.207.0.21
+      icvpn:
     ipv6:
       public: 2a01:4f8:151:204::fffd
       freifunk: fd00:65a8:93a4::1
-      icvpn: fec0::a:cf:0:15
+      icvpn:
 
   gw02:
     id: 2
@@ -21,11 +21,11 @@ hosts:
     ipv4:
       public: 46.38.238.133
       freifunk: 10.185.0.2
-      icvpn: 10.207.0.27
+      icvpn: 10.207.0.29
     ipv6:
       public: 2a03:4000:2:4fc::fffd
       freifunk: fd00:65a8:93a4::2
-      icvpn: fec0::a:cf:0:1b
+      icvpn: fec0::a:cf:0:1d
 
   gw03:
     id: 3
