@@ -28,9 +28,6 @@
 /sbin/ip -4 rule add prio 190 iif fffd.vpn table sink
 /sbin/ip -6 rule add prio 190 iif fffd.vpn table sink
 
-/sbin/ip -4 rule add prio 190 iif fffd.vpn.legacy table sink
-/sbin/ip -6 rule add prio 190 iif fffd.vpn.legacy table sink
-
 /sbin/ip -4 rule add prio 190 iif icvpn table sink
 /sbin/ip -6 rule add prio 190 iif icvpn table sink
 
