@@ -3,7 +3,7 @@
 tinc:
   pkg.installed:
     - name: tinc
-  
+
   service.running:
     - name: tinc
     - enable: True
@@ -120,4 +120,12 @@ tinc.icvpn.repo:
     - require:
       - pkg: tinc
 
-
+# Allow tinc traffic
+#
+tinc.ferm:
+  file:
+    - managed
+    - name: /etc/ferm.d/10-tinc.conf
+    - source: salt://tinc/ferm.conf.tpl
+    - makedirs: True
+    - template: jinja
