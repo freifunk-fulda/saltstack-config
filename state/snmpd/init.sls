@@ -12,7 +12,7 @@ snmpd:
       - pkg: fastd
       - pkg: snmpd
     - watch:
-      - file: /etc/snmp/snmpd.conf
+      - file: /etc/snmp/*
 
 # Configure snmpd
 #
@@ -23,6 +23,13 @@ snmpd.conf:
     - source: salt://snmpd/snmpd.conf
     - makedirs: True
     - template: jinja
+
+# Create include directory
+#
+/etc/snmp/conf.d:
+   file.directory:
+     - name: /etc/snmp/conf.d
+     - makedirs: True
 
 # Reduce snmpd logging
 #
@@ -36,7 +43,6 @@ snmpd.default:
     - mode: 640
     - makedirs: True
 
-
 # Allow snmpd management traffic
 #
 snmpd.ferm:
@@ -45,4 +51,3 @@ snmpd.ferm:
     - name: /etc/ferm.d/20-snmp.conf
     - source: salt://snmpd/ferm.conf
     - makedirs: True
-
