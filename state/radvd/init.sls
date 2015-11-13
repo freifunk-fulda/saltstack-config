@@ -26,3 +26,11 @@ radvd.conf:
     - require:
       - pkg: radvd
 
+
+# Enable process monitoring with Net-SNMP
+#
+radvd.snmp.proc.conf:
+  file.managed:
+    - name: /etc/snmp/conf.d/proc.radvd.conf
+    - source: salt://radvd/netsnmp.proc.conf
+    - makedirs: True
