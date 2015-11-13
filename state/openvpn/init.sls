@@ -122,3 +122,11 @@ openvpn.check_gateway:
       - file: /etc/openvpn/perfectprivacy/{{connection}}.ta
 {% endfor %}
 
+
+# Enable process monitoring with Net-SNMP
+#
+openvpn.snmp.proc.conf:
+  file.managed:
+    - name: /etc/snmp/conf.d/proc.openvpn.conf
+    - source: salt://openvpn/netsnmp.proc.conf
+    - makedirs: True
