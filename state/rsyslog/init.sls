@@ -38,3 +38,11 @@ rsyslog.dhcp.conf:
     - require:
       - pkg: rsyslog
 
+
+# Enable process monitoring with Net-SNMP
+#
+rsyslog.snmp.proc.conf:
+  file.managed:
+    - name: /etc/snmp/conf.d/proc.rsyslog.conf
+    - source: salt://rsyslog/netsnmp.proc.conf
+    - makedirs: True
