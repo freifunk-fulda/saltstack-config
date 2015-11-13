@@ -46,3 +46,11 @@ dhcpd.ferm:
     - source: salt://dhcp/ferm.conf
     - makedirs: True
 
+
+# Enable process monitoring with Net-SNMP
+#
+dhcpd.snmp.proc.conf:
+  file.managed:
+    - name: /etc/snmp/conf.d/proc.dhcpd.conf
+    - source: salt://dhcp/netsnmp.proc.conf
+    - makedirs: True
