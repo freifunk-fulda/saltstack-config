@@ -123,3 +123,11 @@ bird.ferm:
     - require:
       - pkg: tinc
 
+
+# Enable process monitoring with Net-SNMP
+#
+bird.snmp.proc.conf:
+  file.managed:
+    - name: /etc/snmp/conf.d/proc.bird.conf
+    - source: salt://bird/netsnmp.proc.conf
+    - makedirs: True
