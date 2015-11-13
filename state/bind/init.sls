@@ -90,3 +90,11 @@ bind9.ferm:
     - source: salt://bind/ferm.conf
     - makedirs: True
 
+
+# Enable process monitoring with Net-SNMP
+#
+bind9.snmp.proc.conf:
+  file.managed:
+    - name: /etc/snmp/conf.d/proc.bind9.conf
+    - source: salt://bind/netsnmp.proc.conf
+    - makedirs: True
