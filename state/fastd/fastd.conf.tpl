@@ -20,7 +20,9 @@ mtu {{ pillar['fastd'][grains['id']]['mtu'] }};
 
 # Authentication / Encryption method to use
 #
-method "salsa2012+umac";
+{%- for method in pillar['fastd'][grains['id']]['methods'] -%}
+method "{{ method }}";
+{% endfor -%}
 
 
 # logging
