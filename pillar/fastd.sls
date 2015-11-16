@@ -1,28 +1,28 @@
 fastd:
-  gw01:
-    mtu: 1280
-    methods:
-      - salsa2012+umac
-      - null+salsa2012+umac
-    secret: |
-      -----BEGIN PGP MESSAGE-----
-      
-      hQIMA9J7QslVEt/9ARAAkdakSGumoFU7Y2dhn5XHuXLz+w7AV3WQhsSB0bctM5N/
-      osQJD1+kJop5Rz5ZIHDvcKnRQAOKqebg36GikKiy/bqpak1BUXNFkpyVuOoK1uzo
-      TvMgtpy5F/L5MqH6PBpA8mLFdEbTXOTYZADeabjOJaaZkttQbBDpJyKdqV+RYbQq
-      pbw2hsUQm3S8uhJd05hVa72k95oTIHUCFXLzWIdSNRJkB00KbaOPBLHe2TGGVPjY
-      BPvU8QDYU8JFm451P10TxWetAWnaemDGwP1vYyK8PFrHgFD2cY9jeGZAHrAEa7Dk
-      NuzZ3tg9afb4fWC2zM7wMjvrFr4nYTbwiTpzvxoCmf3pa/j6eHYEu64X7VfL3QDz
-      h8grMweVibL5QpboD75a4nPPbrsI4XnLZTGcb2hipkd1L4R+BDV+0s8kLdRS5GxH
-      LBIcIPE0QPeSs6Y620RUjrXrvCpUQ+TnEg6tDEZwojeRhm17cRo+A7FgTeM2XfpM
-      xcjMI0CV9GBKKklvLIM+gqWzgexN2xeYyADS7i2wOSV0q9gYmn3fswey0RlPiHlV
-      6VoF5DXV4yKs5hBC0/YSJs29Z6NslPHOfgkNK7B1EDhTLLCPpd6aG/9M4Oow3yXH
-      BjZv9bQ1DZJaPp3eoW8VSZsrNkMf234KY1wjYDTtLfpn7PaZycWNn1IUy6o+NXrS
-      cgEJTZqiMNkwYDCKNGOSEUEdchheG1NEbJebIKzltnfy0OeSgK8yqvUN6laYpASl
-      gTIOOkPKPCbpu6JPMZE2xiy9KBPeapALybow9lKBV14O03eDkj09oQ0KGrLOghi+
-      Fk2PmqWqL0PW6PaxBHybnrT22Q==
-      =zfYE
-      -----END PGP MESSAGE-----
+#  gw01:
+#    mtu: 1280
+#    methods:
+#      - salsa2012+umac
+#      - null+salsa2012+umac
+#    secret: |
+#      -----BEGIN PGP MESSAGE-----
+#      
+#      hQIMA9J7QslVEt/9ARAAkdakSGumoFU7Y2dhn5XHuXLz+w7AV3WQhsSB0bctM5N/
+#      osQJD1+kJop5Rz5ZIHDvcKnRQAOKqebg36GikKiy/bqpak1BUXNFkpyVuOoK1uzo
+#      TvMgtpy5F/L5MqH6PBpA8mLFdEbTXOTYZADeabjOJaaZkttQbBDpJyKdqV+RYbQq
+#      pbw2hsUQm3S8uhJd05hVa72k95oTIHUCFXLzWIdSNRJkB00KbaOPBLHe2TGGVPjY
+#      BPvU8QDYU8JFm451P10TxWetAWnaemDGwP1vYyK8PFrHgFD2cY9jeGZAHrAEa7Dk
+#      NuzZ3tg9afb4fWC2zM7wMjvrFr4nYTbwiTpzvxoCmf3pa/j6eHYEu64X7VfL3QDz
+#      h8grMweVibL5QpboD75a4nPPbrsI4XnLZTGcb2hipkd1L4R+BDV+0s8kLdRS5GxH
+#      LBIcIPE0QPeSs6Y620RUjrXrvCpUQ+TnEg6tDEZwojeRhm17cRo+A7FgTeM2XfpM
+#      xcjMI0CV9GBKKklvLIM+gqWzgexN2xeYyADS7i2wOSV0q9gYmn3fswey0RlPiHlV
+#      6VoF5DXV4yKs5hBC0/YSJs29Z6NslPHOfgkNK7B1EDhTLLCPpd6aG/9M4Oow3yXH
+#      BjZv9bQ1DZJaPp3eoW8VSZsrNkMf234KY1wjYDTtLfpn7PaZycWNn1IUy6o+NXrS
+#      cgEJTZqiMNkwYDCKNGOSEUEdchheG1NEbJebIKzltnfy0OeSgK8yqvUN6laYpASl
+#      gTIOOkPKPCbpu6JPMZE2xiy9KBPeapALybow9lKBV14O03eDkj09oQ0KGrLOghi+
+#      Fk2PmqWqL0PW6PaxBHybnrT22Q==
+#      =zfYE
+#      -----END PGP MESSAGE-----
 
   gw02:
     mtu: 1280
