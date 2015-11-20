@@ -20,7 +20,7 @@ radvd.conf:
     - name: /etc/radvd.conf
     - user: root
     - group: root
-    - mode: 640
+    - mode: 644
     - source: salt://radvd/radvd.conf.tpl
     - template: jinja
     - require:
