@@ -69,19 +69,6 @@ named.conf.tsigkeys:
     - makedirs: True
 
 
-# We want to use ourself as the primary resolver
-#
-resolv.conf:
-  file.managed:
-    - name: /etc/resolv.conf
-    - user: root
-    - group: root
-    - mode: 644
-    - source: salt://bind/resolv.conf
-    - require:
-      - pkg: bind9
-
-
 # Configure firewall to allow dns
 #
 bind9.ferm:

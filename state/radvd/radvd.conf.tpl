@@ -12,7 +12,7 @@ interface fffd.bat {
     AdvRouterAddr on;
   };
 
-  RDNSS fd00:65a8:93a4::3 {
+  RDNSS fd00:65a8:93a4::{{ pillar['hosts'][grains['id']]['id'] }} {
   };
 };
 

@@ -1,6 +1,6 @@
 # Install and start ferm
 #
-ferm:
+ferm.common:
   pkg.installed:
     - name: ferm
 
@@ -8,7 +8,7 @@ ferm:
     - name: ferm
     - reload: True
     - require:
-      - pkg: ferm
+      - pkg: ferm.common
     - watch:
       - file: /etc/ferm/ferm.conf
       - file: /etc/ferm.d/*
@@ -54,49 +54,6 @@ ferm.ipv6.conf:
     - managed
     - name: /etc/ferm.d/00-ipv6-default.conf
     - source: salt://ferm/ferm.ipv6.conf
-    - user: root
-    - group: root
-    - mode: 644
-    - makedirs: True
-
-
-# Install forwarding, mangle and nat rules
-# 
-ferm.mangle.ipv4.conf:
-  file:
-    - managed
-    - name: /etc/ferm.d/81-mangle.ipv4.conf
-    - source: salt://ferm/81-mangle.ipv4.conf
-    - user: root
-    - group: root
-    - mode: 644
-    - makedirs: True
-
-ferm.nat.ipv4.conf:
-  file:
-    - managed
-    - name: /etc/ferm.d/82-nat.ipv4.conf
-    - source: salt://ferm/82-nat.ipv4.conf
-    - user: root
-    - group: root
-    - mode: 644
-    - makedirs: True
-
-ferm.forward.ipv4.conf:
-  file:
-    - managed
-    - name: /etc/ferm.d/85-forward.ipv4.conf
-    - source: salt://ferm/85-forward.ipv4.conf
-    - user: root
-    - group: root
-    - mode: 644
-    - makedirs: True
-
-ferm.forward.ipv6.conf:
-  file:
-    - managed
-    - name: /etc/ferm.d/85-forward.ipv6.conf
-    - source: salt://ferm/85-forward.ipv6.conf
     - user: root
     - group: root
     - mode: 644

@@ -1,24 +1,25 @@
 # Install and enable apache2
 #
-apache2:
+apache2.gateway:
   pkg.installed:
     - pkgs: 
-      - apache2
       - libapache2-mod-wsgi
       - python-bottle
+    - require:
+      - pkg: apache2.common
 
   service.running:
     - name: apache2
     - enable: True
     - require:
-      - pkg: apache2
+      - pkg: apache2.gateway
     - watch:
       - file: /etc/apache2/*
 
   apache_module.enable:
     - name: ssl
     - require:
-      - pkg: apache2
+      - pkg: apache2.gateway
 
 
 # default websites (http and https)
@@ -32,7 +33,7 @@ vhost.default.conf:
     - source: salt://apache2/gateway.vhost.tpl
     - template: jinja
     - require:
-      - pkg: apache2
+      - pkg: apache2.gateway
 
 vhost.default.ssl.conf:
   file.managed:
@@ -43,44 +44,7 @@ vhost.default.ssl.conf:
     - source: salt://apache2/gateway.vhost.ssl.tpl
     - template: jinja
     - require:
-      - pkg: apache2
-
-
-# SSL key and certificate for the https website)
-#
-wildcard.fulda.freifunk.net.key:
-  file.managed:
-    - name: /etc/ssl/local/wildcard.fulda.freifunk.net.key
-    - user: root
-    - group: root
-    - mode: 440
-    - source: salt://apache2/wildcard.fulda.freifunk.net.key.tpl
-    - template: jinja
-    - makedirs: True
-    - require:
-      - pkg: apache2
-
-wildcard.fulda.freifunk.net.crt:
-  file.managed:
-    - name: /etc/ssl/local/wildcard.fulda.freifunk.net.crt
-    - user: root
-    - group: root
-    - mode: 440
-    - source: salt://apache2/wildcard.fulda.freifunk.net.crt
-    - makedirs: True
-    - require:
-      - pkg: apache2
-
-startcom.class2.server.crt:
-  file.managed:
-    - name: /etc/ssl/local/startcom.class2.server.crt
-    - user: root
-    - group: root
-    - mode: 440
-    - source: salt://apache2/startcom.class2.server.crt
-    - makedirs: True
-    - require:
-      - pkg: apache2
+      - pkg: apache2.gateway
 
 
 # Get website/keyupload repo
@@ -116,13 +80,6 @@ vhost.vnstat.cron:
     - mode: 755
     - source: salt://apache2/vnstat.cron
     - require:
-      - pkg: apache2
+      - pkg: apache2.gateway
 
-
-apache.ferm:
-  file:
-    - managed
-    - name: /etc/ferm.d/50-www.conf
-    - source: salt://apache2/ferm.conf
-    - makedirs: True
 
