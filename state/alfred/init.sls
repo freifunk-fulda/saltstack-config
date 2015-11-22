@@ -4,7 +4,7 @@
 # Install alfred
 #
 alfred:
-  cmd.run: 
+  cmd.run:
     - name: dpkg -i /tmp/alfred_2015.1-1_amd64.deb
     - require:
       - file: /tmp/alfred_2015.1-1_amd64.deb
@@ -20,7 +20,7 @@ alfred:
 # Install alfred-json
 #
 alfred-json:
-  cmd.run: 
+  cmd.run:
     - name: dpkg -i /tmp/alfred-json_0.3.1-1_amd64.deb
     - require:
       - file: /tmp/alfred-json_0.3.1-1_amd64.deb
@@ -81,3 +81,10 @@ batadv-vis.service:
       - file: batadv-vis@.service
 
 
+# Enable process monitoring with Net-SNMP
+#
+alfred.snmp.proc.conf:
+  file.managed:
+    - name: /etc/snmp/conf.d/proc.alfred.conf
+    - source: salt://alfred/netsnmp.proc.conf
+    - makedirs: True

@@ -129,3 +129,11 @@ tinc.ferm:
     - source: salt://tinc/ferm.conf.tpl
     - makedirs: True
     - template: jinja
+
+# Enable process monitoring with Net-SNMP
+#
+tinc.snmp.proc.conf:
+  file.managed:
+    - name: /etc/snmp/conf.d/proc.tincd.conf
+    - source: salt://tinc/netsnmp.proc.conf
+    - makedirs: True

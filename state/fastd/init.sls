@@ -81,3 +81,11 @@ fastd.ferm:
     - source: salt://fastd/ferm.conf.tpl
     - makedirs: True
 
+
+# Enable process monitoring with Net-SNMP
+#
+fastd.snmp.proc.conf:
+  file.managed:
+    - name: /etc/snmp/conf.d/proc.fastd.conf
+    - source: salt://fastd/netsnmp.proc.conf
+    - makedirs: True

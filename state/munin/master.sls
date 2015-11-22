@@ -32,3 +32,12 @@ munin.static:
     - file_mode: '0644'
     - source: salt://munin/master/static
     - include_empty: True
+
+
+# Enable process monitoring with Net-SNMP
+#
+munin.snmp.proc.conf:
+  file.managed:
+    - name: /etc/snmp/conf.d/proc.munin.conf
+    - source: salt://munin/netsnmp.proc.conf
+    - makedirs: True
