@@ -1,7 +1,7 @@
 hosts:
   gw01:
     id: 1
-    enabled: 1
+    enabled: 0
     debug: 0
     location: Hetzner, Frankfurt
     mac: 26:13:9d:b4:31:a7
