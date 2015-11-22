@@ -41,29 +41,33 @@ options {
 	statistics-file "/var/cache/bind/named.stats";
 };
 
-## for debugging purposes only. do not enable in production!
-##
-#logging {
-#       category "default" { "debug"; };
-#       category "general" { "debug"; };
-#       category "database" { "debug"; };
-#       category "security" { "debug"; };
-#       category "config" { "debug"; };
-#       category "resolver" { "debug"; };
-#       category "xfer-in" { "debug"; };
-#       category "xfer-out" { "debug"; };
-#       category "notify" { "debug"; };
-#       category "client" { "debug"; };
-#       category "unmatched" { "debug"; };
-#       category "network" { "debug"; };
-#       category "update" { "debug"; };
-#       category "queries" { "debug"; };
-#       category "dispatch" { "debug"; };
-#       category "dnssec" { "debug"; };
-#       category "lame-servers" { "debug"; };
-#       channel "debug" {
-#               file "/tmp/nameddbg" versions 2 size 50m;
-#               print-time yes;
-#               print-category yes;
-#       };
-#};
+
+{% if pillar['hosts'][grains['id']]['debug'] %}
+# for debugging purposes only. do not enable in production!
+# remove logfile after debugging is finished
+#
+logging {
+       category "default" { "debug"; };
+       category "general" { "debug"; };
+       category "database" { "debug"; };
+       category "security" { "debug"; };
+       category "config" { "debug"; };
+       category "resolver" { "debug"; };
+       category "xfer-in" { "debug"; };
+       category "xfer-out" { "debug"; };
+       category "notify" { "debug"; };
+       category "client" { "debug"; };
+       category "unmatched" { "debug"; };
+       category "network" { "debug"; };
+       category "update" { "debug"; };
+       category "queries" { "debug"; };
+       category "dispatch" { "debug"; };
+       category "dnssec" { "debug"; };
+       category "lame-servers" { "debug"; };
+       channel "debug" {
+               file "/var/log/named.debug.log" versions 2 size 50m;
+               print-time yes;
+               print-category yes;
+       };
+};
+{% endif %}

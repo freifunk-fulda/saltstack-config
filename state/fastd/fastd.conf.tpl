@@ -27,7 +27,11 @@ method "{{ method }}";
 
 # logging
 #
+{% if pillar['hosts'][grains['id']]['debug'] -%}
 log to syslog level debug;
+{% else -%}
+log to syslog level verbose;
+{% endif %}
 hide ip addresses yes;
 hide mac addresses yes;
 

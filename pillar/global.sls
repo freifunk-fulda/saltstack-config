@@ -1,21 +1,21 @@
 hosts:
-#  gw01:
-#    id: 1
-#    enabled: 1
-#    location: Hetzner, Frankfurt
-#    mac: 26:13:9d:b4:31:a7
-#    ipv4:
-#      public: 176.9.72.29
-#      freifunk: 10.185.0.1
-#      icvpn:
-#    ipv6:
-#      public: 2a01:4f8:151:204::fffd
-#      freifunk: fd00:65a8:93a4::1
-#      icvpn:
+  gw01:
+    id: 1
+    enabled: 1
+    debug: 0
+    location: Hetzner, Frankfurt
+    mac: 26:13:9d:b4:31:a7
+    ipv4:
+      public: 176.9.72.29
+      freifunk: 10.185.0.1
+    ipv6:
+      public: 2a01:4f8:151:204::fffd
+      freifunk: fd00:65a8:93a4::1
 
   gw02:
     id: 2
     enabled: 1
+    debug: 0
     location: Netcup, Frankfurt
     mac: 26:13:9d:75:c2:51
     ipv4:
@@ -30,6 +30,7 @@ hosts:
   gw03:
     id: 3
     enabled: 1
+    debug: 0
     location: Netcup, Frankfurt
     mac: 26:13:9d:ea:e1:1b
     ipv4:
