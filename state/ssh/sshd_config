@@ -2,8 +2,13 @@
 
 # Network configuration
 Port {{ pillar['ssh']['port'] }}
-ListenAddress {{ pillar['hosts'][grains['id']]['ipv4']['public'] }}
-ListenAddress {{ pillar['hosts'][grains['id']]['ipv4']['freifunk'] }}
+
+{% for key, ipv4 in pillar['hosts'][grains['id']]['ipv4'].items() if ipv4 -%}
+ListenAddress {{ ipv4 }}
+{% endfor %}
+{% for key, ipv6 in pillar['hosts'][grains['id']]['ipv6'].items() if ipv6 -%}
+ListenAddress {{ ipv6 }}
+{% endfor %}
 
 # Protocol version and version 2 hostkeys
 Protocol 2
