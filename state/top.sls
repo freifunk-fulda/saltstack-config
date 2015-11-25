@@ -14,6 +14,7 @@ base:
 
     - sysctl
     - rsyslog
+    - logrotate
     - snmpd
     - munin
     - postfix
