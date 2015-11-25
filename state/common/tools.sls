@@ -9,6 +9,7 @@ tools:
       - sysstat
       - vnstat
       - vnstati
+      - iperf
       - mtr
       - less
       - haveged
