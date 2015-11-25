@@ -34,7 +34,8 @@ rsyslog.dhcp.conf:
     - user: root
     - group: root
     - mode: 644
-    - source: salt://rsyslog/rsyslog.dhcp.conf
+    - source: salt://rsyslog/rsyslog.dhcp.conf.tpl
+    - template: jinja
     - require:
       - pkg: rsyslog
 
