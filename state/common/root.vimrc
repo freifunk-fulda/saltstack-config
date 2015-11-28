@@ -74,7 +74,7 @@ highlight SpecialKey ctermfg=darkgray
 
 " Show tailing spaces and tabs
 set list
-set listchars=tab:»·,trail:·
+set listchars=tab:>>,trail:.
 
 " Enable statusline
 set laststatus=2
