@@ -20,9 +20,9 @@ mtu {{ pillar['fastd'][grains['id']]['mtu'] }};
 
 # Authentication / Encryption method to use
 #
-{%- for method in pillar['fastd'][grains['id']]['methods'] -%}
+{% for method in pillar['fastd'][grains['id']]['methods'] -%}
 method "{{ method }}";
-{% endfor -%}
+{% endfor %}
 
 
 # logging
