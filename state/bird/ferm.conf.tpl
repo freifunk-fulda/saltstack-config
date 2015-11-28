@@ -8,6 +8,9 @@ table filter {
     interface {{ pillar['tinc']['netname'] }} {
       proto tcp dport 179 ACCEPT;
     }
+    interface fffd.bat {
+      proto tcp dport 179 ACCEPT;
+    }
   }
 }
 
