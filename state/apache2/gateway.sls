@@ -35,6 +35,11 @@ vhost.default.conf:
     - require:
       - pkg: apache2.gateway
 
+vhost.default.symlink:
+  file.symlink:
+    - name: /etc/apache2/sites-enabled/000-default.conf
+    - target: /etc/apache2/sites-available/000-default.conf
+
 vhost.default.ssl.conf:
   file.managed:
     - name: /etc/apache2/sites-available/000-default-ssl.conf
@@ -45,6 +50,11 @@ vhost.default.ssl.conf:
     - template: jinja
     - require:
       - pkg: apache2.gateway
+
+vhost.default.ssl.symlink:
+  file.symlink:
+    - name: /etc/apache2/sites-enabled/000-default-ssl.conf
+    - target: /etc/apache2/sites-available/000-default-ssl.conf
 
 
 # Get website/keyupload repo
