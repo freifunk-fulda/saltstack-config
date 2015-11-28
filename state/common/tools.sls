@@ -10,6 +10,7 @@ tools:
       - vnstat
       - vnstati
       - iperf
+      - tcpdump
       - mtr
       - less
       - haveged
