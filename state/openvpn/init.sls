@@ -108,7 +108,7 @@ openvpn:
 #
 openvpn.check_gateway:
   cmd.run:
-    - name: /opt/fffd-utils/check_gateway.new.sh
+    - name: /opt/fffd-utils/check_gateway.sh
     - creates: /etc/openvpn/openvpn.conf
     - requires:
       - git: fffd-utils.repo
