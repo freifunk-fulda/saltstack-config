@@ -11,6 +11,9 @@ table filter {
     interface fffd.bat {
       proto tcp dport 179 ACCEPT;
     }
+
+    # Accept bird-lg
+    proto tcp dport 5002 saddr 5.45.103.39 ACCEPT;
   }
 }
 

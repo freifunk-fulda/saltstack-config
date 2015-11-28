@@ -29,6 +29,7 @@ bird6:
       - file: /etc/bird/*
 
 
+
 # bird ipv4 configuration
 #
 /etc/bird/bird.conf:
@@ -110,6 +111,41 @@ bird6:
       - FORCE_META: "1"
     - require:
       - git: fffd-utils.repo
+
+
+
+bird-lg:
+  pip.installed:
+    - pkgs:
+      - pymemcache
+      - dnspython
+      - pydot
+      - flask
+
+  git.latest:
+    - name: https://github.com/moepman/bird-lg.git
+    - target: /opt/bird-lg
+
+  service.running:
+    - name: bird-lg
+    - enable: True
+    - require:
+      - git: bird-lg
+
+  file.managed:
+    - name: /opt/bird-lg/lgproxy.cfg
+    - source: salt://bird/bird-lg/lgproxy.cfg.tpl
+    - template: jinja
+
+bird-lg.service:
+  file.managed:
+    - name: /etc/systemd/system/bird-lg.service
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://bird/bird-lg/bird-lg.service
+    - makedirs: True
+
 
 
 
