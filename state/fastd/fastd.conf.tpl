@@ -36,6 +36,11 @@ hide ip addresses yes;
 hide mac addresses yes;
 
 
+# Enable status socket
+#
+status socket "/var/run/fastd.sock";
+
+
 # Our own secret key
 #
 secret "{{ pillar['fastd'][grains['id']]['secret']}}";
