@@ -81,6 +81,43 @@ batadv-vis.service:
       - file: batadv-vis@.service
 
 
+# Announce facts about server
+alfred.announce:
+  pkg.installed:
+    - pkgs:
+      - ethtool
+      - python3-netifaces
+  git.latest:
+    - name: https://github.com/freifunk-fulda/alfred-announce.git
+    - target: /opt/alfred-announce
+  cmd.wait:
+    - name: python3 setup.py install
+    - cwd: /opt/alfred-announce 
+    - watch:
+      - git: alfred.announce
+
+alfred.announce.facts:
+  git.latest:
+    - name: https://github.com/freifunk-fulda/alfred-facts.git
+    - target: /etc/alfred/facts
+
+alfred.announce.cron:
+  file.managed:
+    - name: /etc/cron.d/alfred-announce
+    - contents: |
+        * *    * * *   root    python3 -m alfred.announce -b fffd.bat -i fffd.bat -f fffd.vpn
+
+
+# Firewall configuration
+#
+alfred.ferm:
+  file:
+    - managed
+    - name: /etc/ferm.d/50-alfred.conf
+    - source: salt://alfred/ferm.conf
+    - makedirs: True
+
+
 # Enable process monitoring with Net-SNMP
 #
 alfred.snmp.proc.conf:
