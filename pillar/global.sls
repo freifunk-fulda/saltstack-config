@@ -16,7 +16,7 @@ hosts:
 
   gw02:
     id: 2
-    enabled: 0
+    enabled: 1
     debug: 0
     location: Netcup, Frankfurt
     mac: 26:13:9d:75:c2:51
