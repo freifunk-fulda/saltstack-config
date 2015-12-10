@@ -9,6 +9,7 @@ isc-dhcp-server:
     - require:
       - pkg: isc-dhcp-server
       - pkg: fastd
+      - mount: /var/lib/dhcp
     - watch:
       - file: /etc/dhcp/*
 
@@ -36,6 +37,18 @@ dhcpd.default:
     - source: salt://dhcp/isc-dhcp-server.default
     - require:
       - pkg: isc-dhcp-server
+
+# Mount tmpfs to /var/lib/dhcp to keep leases in RAM
+#
+/var/lib/dhcp:
+  mount.mounted:
+    - device: none
+    - fstype: tmpfs
+    - opts: size=10M
+    - dump: 0
+    - pass_num: 0
+    - persist: True
+    - mkmnt: True
 
 # Firewall configuration
 #
