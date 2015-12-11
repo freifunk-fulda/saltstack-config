@@ -31,6 +31,7 @@ base:
     - networking.gateway
 
     - fffd-utils
+    - salt
 
     - dhcp
     - bind
