@@ -10,3 +10,4 @@ base:
     - bind
     - tinc
     - openvpn
+    - peerings

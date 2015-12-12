@@ -9,7 +9,6 @@ bird:
     - enable: True
     - require:
       - pkg: bird
-      - pkg: tinc
     - watch:
       - file: /etc/bird/*
 
@@ -24,7 +23,6 @@ bird6:
     - enable: True
     - require:
       - pkg: bird6
-      - pkg: tinc
     - watch:
       - file: /etc/bird/*
 
@@ -42,7 +40,6 @@ bird6:
     - template: jinja
     - require:
       - pkg: bird
-      - pkg: tinc
 
 /etc/bird/bird.conf.d:
   file.recurse:
@@ -56,7 +53,6 @@ bird6:
     - template: jinja
     - require:
       - pkg: bird
-      - pkg: tinc
 
 
 # bird ipv6 configuration
@@ -71,7 +67,6 @@ bird6:
     - template: jinja
     - require:
       - pkg: bird6
-      - pkg: tinc
 
 /etc/bird/bird6.conf.d:
   file.recurse:
@@ -85,9 +80,9 @@ bird6:
     - template: jinja
     - require:
       - pkg: bird6
-      - pkg: tinc
 
 
+{% if pillar.peerings[grains['id']].type == "icvpn" %}
 /etc/bird/icvpn:
   file.directory:
     - user: root
@@ -111,7 +106,7 @@ bird6:
       - FORCE_META: "1"
     - require:
       - git: fffd-utils.repo
-
+{% endif %}
 
 
 bird-lg:
@@ -156,8 +151,6 @@ bird.ferm:
     - source: salt://bird/ferm.conf.tpl
     - makedirs: True
     - template: jinja
-    - require:
-      - pkg: tinc
 
 
 # Enable process monitoring with Net-SNMP
