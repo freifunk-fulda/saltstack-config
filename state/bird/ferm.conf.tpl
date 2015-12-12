@@ -7,10 +7,10 @@ table filter {
   chain INPUT {
     # Allow bgp traffic between our gateways
     interface fffd.bat {
-      {% for host in pillar.hosts.keys() -%}
+      {% for host in pillar.hosts.keys() if host != grains['id'] -%}
       proto tcp dport 179 saddr {{ pillar.hosts[host].ipv4.freifunk }} ACCEPT;
       proto tcp dport 179 saddr {{ pillar.hosts[host].ipv6.freifunk }} ACCEPT;
-      {%- endfor %}
+      {% endfor %}
     }
     {% if pillar.peerings[grains['id']].type == "icvpn" -%}
     # Allow bgp traffic on interface {{ pillar['tinc']['netname'] }}
