@@ -14,15 +14,15 @@ peerings:
         proto: ip6gre
         ttl: 128
         mtu: 1400
-        remote: fe80:42:42:42::
+        remote: fd00:42:42:42::1
         tun4:
           mask: 255.255.255.252
           left: 172.16.185.1
           right: 172.16.185.2
         tun6:
           mask: 64
-          left: fe80:23:23:23::1
-          right: fe80:23:23:23::2
+          left: fd00:23:23:23::1
+          right: fd00:23:23:23::2
 
   gw03:
     type: icvpn
