@@ -40,4 +40,11 @@ ferm.munin.conf:
     - makedirs: True
 
 
+# Enable process monitoring with Net-SNMP
+#
+munin.snmp.proc.conf:
+  file.managed:
+    - name: /etc/snmp/conf.d/proc.munin.conf
+    - source: salt://munin/netsnmp.proc.conf
+    - makedirs: True
 

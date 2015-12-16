@@ -1,0 +1,5 @@
+# THIS FILE IS CONTROLLED BY SALTSTACK!
+
+[bind9_rndc]
+user root
+env.querystats /var/cache/bind/named.stats

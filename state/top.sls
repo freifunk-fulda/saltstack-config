@@ -32,6 +32,7 @@ base:
 
     - fffd-utils
     - salt
+    - munin.gateway
 
     - dhcp
     - bind

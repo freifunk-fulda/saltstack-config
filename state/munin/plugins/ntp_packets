@@ -1,0 +1,32 @@
+#!/bin/bash
+# -*- sh -*-
+
+. $MUNIN_LIBDIR/plugins/plugin.sh
+
+if [ "$1" = "autoconf" ]; then
+	echo yes
+	exit 0
+fi
+
+
+if [ "$1" = "config" ]; then
+
+	echo 'graph_title ntp packet rate'
+	echo 'graph_args --lower-limit 0'
+	echo 'graph_vlabel pps'
+	echo 'graph_category time'
+	echo "in.label in"
+	echo "in.type COUNTER"
+	echo "in.draw AREASTACK"
+	echo "in.info packets received"
+
+	echo "out.label out"
+	echo "out.type COUNTER"
+	echo "out.draw AREASTACK"
+	echo "out.info packets sent"
+
+	exit 0
+fi
+
+ntpdc -c iostats |grep -E 'received packets|packets sent' |sed 's/packets sent: */out.value /;s/received packets: */in.value /'
+

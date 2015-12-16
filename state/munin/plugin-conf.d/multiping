@@ -1,0 +1,10 @@
+# THIS FILE IS CONTROLLED BY SALTSTACK!
+
+[multiping_freifunk]
+env.host google.com ns.ripe.net gw03.fulda.freifunk.net gw02.fulda.freifunk.net
+env.ping_args -I fffd.internet -c 1
+
+[multiping_public]
+env.host google.com ns.ripe.net gw03.fulda.freifunk.net gw02.fulda.freifunk.net
+env.ping_args -c 1
+

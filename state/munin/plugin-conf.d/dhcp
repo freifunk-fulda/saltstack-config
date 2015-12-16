@@ -1,0 +1,6 @@
+# THIS FILE IS CONTROLLED BY SALTSTACK!
+
+[dhcpd3]
+user root
+env.leasefile /var/lib/dhcp/dhcpd.leases
+env.configfile /etc/dhcp/dhcpd.conf
