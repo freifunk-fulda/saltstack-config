@@ -5,12 +5,28 @@
 domain (ip ip6)
 table filter {
   chain INPUT {
+    # Allow bgp traffic between our gateways
+    interface fffd.bat {
+      {% for host in pillar.hosts.keys() if host != grains['id'] -%}
+      proto tcp dport 179 saddr {{ pillar.hosts[host].ipv4.freifunk }} ACCEPT;
+      proto tcp dport 179 saddr {{ pillar.hosts[host].ipv6.freifunk }} ACCEPT;
+      {% endfor %}
+    }
+    {% if pillar.peerings[grains['id']].type == "icvpn" -%}
+    # Allow bgp traffic on interface {{ pillar['tinc']['netname'] }}
     interface {{ pillar['tinc']['netname'] }} {
       proto tcp dport 179 ACCEPT;
     }
-    interface fffd.bat {
+    {%- endif %}
+
+    {% if pillar.peerings[grains['id']].type == "ice" -%}
+    # Allow bgp with our icevpn peers
+    {% for peer in pillar.peerings[grains['id']].peers.keys() %}
+    interface tun-{{ peer }} {
       proto tcp dport 179 ACCEPT;
     }
+    {% endfor %}
+    {%- endif %}
 
     # Accept bird-lg
     proto tcp dport 5002 saddr 5.45.103.39 ACCEPT;

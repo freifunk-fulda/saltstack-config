@@ -39,5 +39,11 @@ base:
     - radvd
     - apache2.gateway
     - openvpn
-    - tinc
     - bird
+
+{% if pillar.peerings[grains['id']].type == "icvpn" %}
+    - tinc
+{% elif pillar.peerings[grains['id']].type == "ice" %}
+    - ice
+{% endif %}
+
