@@ -13,15 +13,14 @@ ListenAddress {{ ipv6 }}
 # Protocol version and version 2 hostkeys
 Protocol 2
 HostKey /etc/ssh/ssh_host_rsa_key
-HostKey /etc/ssh/ssh_host_dsa_key
 HostKey /etc/ssh/ssh_host_ecdsa_key
 
 # Privilege Separation is turned on for security
 UsePrivilegeSeparation yes
 
 # Ciphrs
-Ciphers aes256-ctr,aes192-ctr,aes128-ctr
-MACs hmac-sha2-512,hmac-sha2-256,hmac-sha1
+Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
+MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-ripemd160-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,hmac-ripemd160,umac-128@openssh.com
 
 # Lifetime and size of ephemeral version 1 server key
 KeyRegenerationInterval 3600
@@ -58,7 +57,7 @@ PermitEmptyPasswords no
 ChallengeResponseAuthentication no
 
 # Change to no to disable tunnelled clear text passwords
-#PasswordAuthentication yes
+PasswordAuthentication no
 
 # Kerberos options
 #KerberosAuthentication no
