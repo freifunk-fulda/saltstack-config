@@ -7,22 +7,40 @@ peerings:
     type: icvpn
 
   gw02:
-    type: none
+    type: ice
     peers:
-      ffda:
-        as: 65038
+      dn42_major:
+        as: 4242422600
         proto: ip6gre
         ttl: 128
         mtu: 1400
-        remote: fd00:42:42:42::1
+        keyexchange: ikev1
+        ike: aes128-sha256-modp2048!
+        esp: aes128-sha1-modp2048!
+        remote: 2a02:c200::10:3:0:5324:42
         tun4:
           mask: 255.255.255.252
-          left: 172.16.185.1
-          right: 172.16.185.2
-        tun6:
-          mask: 64
-          left: fd00:23:23:23::1
-          right: fd00:23:23:23::2
+          left: 172.20.240.134
+          right: 172.20.240.133
+#        tun6:
+#          mask: 64
+#          left: fd00:23:23:23::1
+#          right: fd00:23:23:23::2
+        rightrsasigkey: |
+          -----BEGIN PUBLIC KEY-----
+          MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAyNsW6I5uAzxjt8E10x1c
+          b59AtEeU4SC+FZyu1CKoRyVVsQkdLL42JZlpoSF99B740Z2KWWxaMY0cg9oSy1d1
+          T6XQ92Exm01aEqrxys0mF7i+rkmjFGuXdoOANb3bAlJy1N84aD8z+crxzH0nwHCi
+          rcKHCAOUSv40dmRZW6FJlh/+R1xBVSp7CPUfSeferTyeZ+JswawTT7r2ZTNnMka+
+          8IjBRiEFRVq7D0kF7prBuaWXWl1iSB1UiUdh/SVtX8MC/BASkgcFT+g+Z5yn8LkO
+          yOZ1CVIF6+AoW94E+65SK7WSJShIlzWsc1Uh5nw0F9a1Mo29ToeV2GRfT6q/pDT/
+          oqpXB8NhrIMlNLIK6rDEmBW/VCUij/vaGWsEe/f1uFX5h9SvFCYPRdWw0JntqgwR
+          eagKwIX+4lEXHChb3FkEfPNIAiRr2rRxDxBGyM8kxPBNfIVdAkTqqNEPPacdI27I
+          oC6klzpOsNojD5oThYfagAp2dAZc2K8cZ2fB1UFDGrcVi6krP3MTwVbVOt62a0n0
+          kAQJhJWPsxBvhSbCehkiWLdLRUIWdUCZfOFeADA5+QNIvmf2vpWiiiXD9Xdd+4bu
+          cPjFuUwmI2Wo2D1VYUXkoYOkeOlPfv2YiPzBPoBw2vGUXRlNI4/z0HgJnAj1/ULz
+          lXi8ZcGYXA1j9+zgkwVT7F8CAwEAAQ==
+          -----END PUBLIC KEY-----
 
   gw03:
     type: icvpn
