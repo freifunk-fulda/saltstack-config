@@ -44,6 +44,7 @@ base:
 {% if pillar.peerings[grains['id']].type == "icvpn" %}
     - tinc
 {% elif pillar.peerings[grains['id']].type == "ice" %}
-    - ice
+    - ice.gre
+    - ice.ipsec
 {% endif %}
 

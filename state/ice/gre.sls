@@ -18,7 +18,7 @@ gre:
     - user: root
     - group: root
     - mode: 640
-    - source: salt://ice/tun-.tpl
+    - source: salt://ice/gre/tun-.tpl
     - template: jinja
     - context:
         peer: {{ peer }}
@@ -29,7 +29,7 @@ gre.ferm:
   file:
     - managed
     - name: /etc/ferm.d/30-gre.conf
-    - source: salt://ice/ferm.conf.tpl
+    - source: salt://ice/gre/ferm.conf.tpl
     - makedirs: True
     - template: jinja
 

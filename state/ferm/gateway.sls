@@ -29,6 +29,7 @@ ferm.forward.ipv4.conf:
     - group: root
     - mode: 644
     - makedirs: True
+    - template: jinja
 
 ferm.forward.ipv6.conf:
   file:
@@ -39,4 +40,5 @@ ferm.forward.ipv6.conf:
     - group: root
     - mode: 644
     - makedirs: True
+    - template: jinja
 
