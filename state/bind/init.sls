@@ -76,6 +76,7 @@ bind9.ferm:
     - name: /etc/ferm.d/50-dns.conf
     - source: salt://bind/ferm.conf
     - makedirs: True
+    - template: jinja
 
 
 # Enable process monitoring with Net-SNMP
