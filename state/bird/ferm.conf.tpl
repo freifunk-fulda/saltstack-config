@@ -30,6 +30,7 @@ table filter {
 
     # Accept bird-lg
     proto tcp dport 5000 saddr 5.45.103.39 ACCEPT;
+    proto tcp dport 5000 saddr 10.185.0.11 ACCEPT;
   }
 }
 
