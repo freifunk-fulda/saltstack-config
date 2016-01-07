@@ -118,7 +118,7 @@ bird-lg:
       - flask
 
   git.latest:
-    - name: https://github.com/moepman/bird-lg.git
+    - name: https://github.com/mweinelt/bird-lg.git
     - target: /opt/bird-lg
 
   service.running:

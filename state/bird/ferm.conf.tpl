@@ -29,7 +29,7 @@ table filter {
     {%- endif %}
 
     # Accept bird-lg
-    proto tcp dport 5002 saddr 5.45.103.39 ACCEPT;
+    proto tcp dport 5000 saddr 5.45.103.39 ACCEPT;
   }
 }
 
