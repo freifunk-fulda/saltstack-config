@@ -22,10 +22,10 @@ peerings:
           mask: 255.255.255.252
           left: 172.20.240.134
           right: 172.20.240.133
-#        tun6:
-#          mask: 64
-#          left: fd00:23:23:23::1
-#          right: fd00:23:23:23::2
+        tun6:
+          mask: 64
+          left: fe80::2
+          right: fe80::1
         rightrsasigkey: |
           -----BEGIN PUBLIC KEY-----
           MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAyNsW6I5uAzxjt8E10x1c

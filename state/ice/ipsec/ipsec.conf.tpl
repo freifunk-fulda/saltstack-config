@@ -41,6 +41,7 @@ conn tun-{{ peer }}
         right={{ values['remote'] }}
         leftrsasigkey=/etc/ipsec.d/public/{{grains['id']}}.pub
         rightrsasigkey=/etc/ipsec.d/public/{{ peer }}.pub
+        keyexchange={{ values['keyexchange']}}
         ike={{ values['ike'] }}
         esp={{ values['esp'] }}
 

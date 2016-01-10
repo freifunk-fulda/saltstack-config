@@ -3,6 +3,7 @@
 # Interface for ICE peering with {{ peer }}
 #
 auto tun-{{ peer }}
+
 iface tun-{{ peer }} inet static
 	{% if 'tun4' in pillar.peerings[grains['id']].peers[peer].keys() -%}
 	address {{ pillar.peerings[grains['id']].peers[peer].tun4.left }}
