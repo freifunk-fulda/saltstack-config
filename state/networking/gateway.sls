@@ -19,5 +19,6 @@
     - group: root
     - mode: 755
     - source: salt://networking/rc.local.gateway
+    - template: jinja
 
 

@@ -28,9 +28,15 @@
 /sbin/ip -4 rule add prio 190 iif fffd.vpn table sink
 /sbin/ip -6 rule add prio 190 iif fffd.vpn table sink
 
-/sbin/ip -4 rule add prio 190 iif icvpn table sink
-/sbin/ip -6 rule add prio 190 iif icvpn table sink
-
 /sbin/ip -4 rule add prio 190 iif fffd.internet table sink
 /sbin/ip -6 rule add prio 190 iif fffd.internet table sink
 
+{% if pillar.peerings[grains['id']].type == "icvpn" -%}
+/sbin/ip -4 rule add prio 190 iif icvpn table sink
+/sbin/ip -6 rule add prio 190 iif icvpn table sink
+{% elif pillar.peerings[grains['id']].type == "ice" -%}
+{% for peer, values in pillar.peerings[grains['id']].peers.iteritems() %}
+/sbin/ip -4 rule add prio 190 iif tun-{{peer}} table sink
+/sbin/ip -6 rule add prio 190 iif tun-{{peer}} table sink
+{% endfor %}
+{% endif %}
