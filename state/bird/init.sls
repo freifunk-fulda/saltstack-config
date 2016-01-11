@@ -7,6 +7,7 @@ bird:
   service.running:
     - name: bird
     - enable: True
+    - reload: True
     - require:
       - pkg: bird
     - watch:
@@ -21,6 +22,7 @@ bird6:
   service.running:
     - name: bird6
     - enable: True
+    - reload: True
     - require:
       - pkg: bird6
     - watch:

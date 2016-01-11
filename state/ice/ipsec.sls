@@ -15,6 +15,7 @@ strongswan:
   service.running:
     - name: strongswan
     - enable: True
+    - reload: True
     - require:
       - pkg: strongswan
     - watch:
