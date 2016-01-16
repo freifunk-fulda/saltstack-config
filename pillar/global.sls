@@ -16,7 +16,7 @@ hosts:
 
   gw02:
     id: 2
-    enabled: 1
+    enabled: 0
     debug: 0
     location: Webtropia, Duesseldorf
     mac: 00:1c:42:00:04:93
@@ -31,7 +31,7 @@ hosts:
 
   gw03:
     id: 3
-    enabled: 1
+    enabled: 0
     debug: 0
     location: Netcup, Frankfurt
     mac: 26:13:9d:ea:e1:1b
