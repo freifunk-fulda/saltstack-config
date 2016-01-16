@@ -44,3 +44,6 @@ peerings:
 
   gw03:
     type: icvpn
+
+  gw04:
+    type: none
