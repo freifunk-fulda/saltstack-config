@@ -25,7 +25,7 @@ hosts:
       freifunk: 10.185.0.2
       icvpn: 10.207.0.29
     ipv6:
-      public: 2001:4ba0:babe:493::0
+      public: 2001:4ba0:babe:493::fffd
       freifunk: fd00:65a8:93a4::2
       icvpn: fec0::a:cf:0:1d
 
