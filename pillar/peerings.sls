@@ -2,6 +2,14 @@
 # We allow peering in icvpn using bgp over tinc (type: icvpn) or
 # the new and improved icevpn using bgp over gre/ip6gre (type: ice)
 
+# Transfer Network: 172.20.241.0/24
+# Usage:
+#  - 172.20.241.0/30   dn42_andi
+#  - 172.20.241.4/30   -
+#  - 172.20.241.8/30   -
+#  - 172.20.241.12/30  -
+
+
 peerings:
   gw01:
     type: icvpn
@@ -46,4 +54,37 @@ peerings:
     type: icvpn
 
   gw04:
-    type: none
+    type: ice
+    peers:
+      dn42_andi:
+        as: 4242423991
+        proto: ip6gre
+        ttl: 128
+        mtu: 1400
+        keyexchange: ikev1
+        ike: aes128-sha256-modp2048!
+        esp: aes128-sha1-modp2048!
+        remote: 2a01:4f8:201:6344::1
+        tun4:
+          mask: 255.255.255.252
+          left: 172.20.241.1
+          right: 172.20.241.2
+        tun6:
+          mask: 64
+          left: fe80::1
+          right: fe80::2
+        rightrsasigkey: |
+          -----BEGIN PUBLIC KEY-----
+          MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAvbqA8Wm96TBEok8ScWbG
+          x2RP3tmzsnBhOCToNA580EiHR96ckW3bvgbsEc70rc+NE4JKmdZRiRspkSizvBhP
+          ddo7RKGszZkT0MZVrWdgvma6CJlvJxye/B0kZXGmcns1JLzSC0ctRB5qcJTitEkX
+          ckao7ONUZ+8pjYH+FszK9FqEbOQHql1fLkdvZ42OJaML2mkcZ3trQbVpowcQ2cp4
+          89hqSlDV0Bbu3cm7cfJjAiRCrjlFLyfDXZAi2/0eWJcF22QjT5L2q1f1eLpPx/9d
+          mo/EdwmfdmW+vPrgWPArx4tyuyqd7ugsaBM5P3YiKawo7sGYwu53NXlH//BL33pE
+          RzaAjpkuaJ0tdiWaeuKgB7eyE4DA6eY+k3b35PJujcm7iuRMUszum4UsPb66YLLg
+          19OUoZSJ5697ipE/yEyMqkXurlS6xuHTxmZwmV8fQ2g3f1BiWDWJWGXs0Tci/lWS
+          RWcPUwiSlDojXUkfprs71W4RV5T2/y5edX6MUaN9Sm6qv8grDE1lnv5F+67LSyPc
+          AxRn6uTi+vyGlY4qVCDIZNHQBQ10GoBTvnOWJWydMcLur7MTCwvLdkDfpopXk2zE
+          hd+KD1LPIKR0swsmSInyOZ0q4VuShw/HB7zs2a2GUHT3VFHJb7mKClooS6D5ZvIt
+          hiK2h6mBeiycttM/F7q4pQkCAwEAAQ==
+          -----END PUBLIC KEY-----
