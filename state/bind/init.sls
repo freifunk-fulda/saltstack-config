@@ -20,7 +20,8 @@ named.conf:
     - user: root
     - group: bind
     - mode: 640
-    - source: salt://bind/named.conf
+    - source: salt://bind/named.conf.tpl
+    - template: jinja
     - require:
       - pkg: bind9
 
