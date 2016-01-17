@@ -5,7 +5,7 @@
 # Transfer Network: 172.20.241.0/24
 # Usage:
 #  - 172.20.241.0/30   dn42_andi
-#  - 172.20.241.4/30   -
+#  - 172.20.241.4/30   dn42_flokli
 #  - 172.20.241.8/30   -
 #  - 172.20.241.12/30  -
 
@@ -15,6 +15,12 @@ peerings:
     type: icvpn
 
   gw02:
+    type: none
+
+  gw03:
+    type: icvpn
+
+  gw04:
     type: ice
     peers:
       dn42_major:
@@ -22,7 +28,7 @@ peerings:
         proto: ip6gre
         ttl: 128
         mtu: 1400
-        keyexchange: ikev1
+        keyexchange: ikev2
         ike: aes128-sha256-modp2048!
         esp: aes128-sha1-modp2048!
         remote: 2a02:c200::10:3:0:5324:42
@@ -50,12 +56,6 @@ peerings:
           lXi8ZcGYXA1j9+zgkwVT7F8CAwEAAQ==
           -----END PUBLIC KEY-----
 
-  gw03:
-    type: icvpn
-
-  gw04:
-    type: ice
-    peers:
       dn42_andi:
         as: 4242423991
         proto: ip6gre
@@ -88,3 +88,39 @@ peerings:
           hd+KD1LPIKR0swsmSInyOZ0q4VuShw/HB7zs2a2GUHT3VFHJb7mKClooS6D5ZvIt
           hiK2h6mBeiycttM/F7q4pQkCAwEAAQ==
           -----END PUBLIC KEY-----
+
+      dn42_flokli:
+        as: 4242422100
+        proto: ip6gre
+        ttl: 128
+        mtu: 1400
+        keyexchange: ikev2
+        ike: aes128-sha256-modp2048!
+        esp: aes128-sha1-modp2048!
+  
+        remote: 2a01:4f8:171:7de::1
+        tun4:
+          left: 172.20.241.5
+          right: 172.20.241.6
+          mask: 255.255.255.252
+        tun6:
+          left: fe80::1
+          right: fe80::2
+          mask: 64
+  
+        rightrsasigkey: |
+          -----BEGIN PUBLIC KEY-----
+          MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAyUotBHkEAkVEVLDeUfBB
+          u5AifCOWZ5m1v+OL1sb+LErUEcbT08G0ZHxi/CIC69Z74+mNhkS5nMP348wsPHeE
+          6JqcLqlj0z3de+ctu+abBjuiVuwpgvIXO7QnUc6RQv9N1Hl/hc/VDj19zv9slNfO
+          ovj7sVClUf/K6k+t3PNyJeyx4JIbcMbOSHSZ6kaOLqtPRHNCaQkPBDK2dBp8SIxh
+          8U5RwyWCXP6XpTT5HbQo+d/mJC2vUjg1Uq/9GfHAhZgTO9TwOV1RksVmtMBkwZ4y
+          P0kJ/0VFFMNhrZSVUcrDxhdcddX8Fp/iu4xtXaU7XlpqoWAyF5Aq3dEdcARxnOtp
+          sDeH9ejqdaQImC7KZ59oPz8mJp/bjP9/SKJIcZYltM8RS8zE8F484Wznbg4Fpesp
+          FMfnIWqAmFEhXK9pyqCCw9Aeu7brRktyyBtwmficHz/GP2S3TTVlqkJcjdnzqEsc
+          K8XYqPuixgLtehsnPmdDZ2nuIJxSkBQJTj9SPDQB9jFtDKTI3TOEuA2fVZa+wKnL
+          ALhvmFyLh5ClRCC5Se64BnrZ3iwTbcG+EI0rxVdZONFyUBHJluHIlHdxtZ1XA92p
+          RMpm/dJNJXerIu35PcBbs+4evvMiYWvfZgQosYmscYfroFCQTV8GrFu//Mo2pTTy
+          /TfeQ5bZsjZAgOk6vkZ6/fUCAwEAAQ==
+          -----END PUBLIC KEY-----
+
