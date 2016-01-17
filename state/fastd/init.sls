@@ -34,7 +34,7 @@ fastd:
 /etc/systemd/system/fastd@.service.d/batman.conf:
   file.managed:
     - makedirs: True
-    - content: |
+    - contents: |
         [Unit]
         Reqiures=batman@%i.service
         After=batman@%i.service
