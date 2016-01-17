@@ -36,7 +36,7 @@ fastd:
     - makedirs: True
     - content: |
         [Unit]
-        Requres=batman@%i.service
+        Reqiures=batman@%i.service
         After=batman@%i.service
 
 
