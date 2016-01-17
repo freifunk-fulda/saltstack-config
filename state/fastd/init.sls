@@ -64,7 +64,14 @@ fastd.peers.backend:
     - target: /etc/fastd/fffd/fffd-peers-backbone
 
 # Create directory for fastd keys of nodes
+# and allow www-data to access it
 #
+/etc/fastd/fffd:
+  file.directory:
+    - user: root
+    - group: www-data
+    - mode: 750
+
 /etc/fastd/fffd/fffd-peers-nodes:
   file.directory:
     - user: root
