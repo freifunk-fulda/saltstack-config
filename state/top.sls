@@ -48,3 +48,6 @@ base:
     - ice.ipsec
 {% endif %}
 
+  'gw02':
+    - webtropia
+
