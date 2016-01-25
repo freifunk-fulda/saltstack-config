@@ -4,6 +4,7 @@
 # all gateways are slave dns servers
 
 
+# old zone
 zone "fffd" {
        type slave;
        masters { {{ pillar['bind']['master']['ipv4'] }}; {{ pillar['bind']['master']['ipv6'] }}; };
@@ -20,6 +21,25 @@ zone "nodes.fffd" {
        type slave;
        masters { {{ pillar['bind']['master']['ipv4'] }}; {{ pillar['bind']['master']['ipv6'] }}; };
        file "/opt/fffd-dns/zones/db.nodes.fffd";
+};
+
+#new zone
+zone "fffd.eu" {
+       type slave;
+       masters { {{ pillar['bind']['master']['ipv4'] }}; {{ pillar['bind']['master']['ipv6'] }}; };
+       file "/opt/fffd-dns/zones/db.fffd.eu";
+};
+
+zone "services.fffd.eu" {
+       type slave;
+       masters { {{ pillar['bind']['master']['ipv4'] }}; {{ pillar['bind']['master']['ipv6'] }}; };
+       file "/opt/fffd-dns/zones/db.services.fffd.eu";
+};
+
+zone "nodes.fffd.eu" {
+       type slave;
+       masters { {{ pillar['bind']['master']['ipv4'] }}; {{ pillar['bind']['master']['ipv6'] }}; };
+       file "/opt/fffd-dns/zones/db.nodes.fffd.eu";
 };
 
 zone "0.185.10.in-addr.arpa" {
