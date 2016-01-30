@@ -48,20 +48,22 @@ hosts:
       freifunk: fd00:65a8:93a4::2
       icvpn: fec0::a:cf:0:1d
 
-  gw03:
-    id: 3
-    enabled: 0
-    debug: 0
-    location: Netcup, Frankfurt
-    mac: 26:13:9d:ea:e1:1b
-    ipv4:
-      public: 5.45.97.58 
-      freifunk: 10.185.0.3
-      icvpn: 10.207.0.42
-    ipv6:
-      public: 2a03:4000:5:144::fffd
-      freifunk: fd00:65a8:93a4:0::3
-      icvpn: fec0::a:cf:0:2a
+# gw03 is permanently disabled
+#
+#  gw03:
+#    id: 3
+#    enabled: 0
+#    debug: 0
+#    location: Netcup, Frankfurt
+#    mac: 26:13:9d:ea:e1:1b
+#    ipv4:
+#      public: 5.45.97.58 
+#      freifunk: 10.185.0.3
+#      icvpn: 10.207.0.42
+#    ipv6:
+#      public: 2a03:4000:5:144::fffd
+#      freifunk: fd00:65a8:93a4:0::3
+#      icvpn: fec0::a:cf:0:2a
 
   gw04:
     id: 4
