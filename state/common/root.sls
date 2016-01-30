@@ -1,3 +1,9 @@
+root.password:
+  user:
+    - present
+    - name: root
+    - password: "{{ pillar['root']['password'] }}"
+
 root.screenrc:
   file:
     - managed
