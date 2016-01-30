@@ -1,36 +1,13 @@
 # Add package repo
 #
 
-# Install alfred
+# Install alfred and related tools
 #
 alfred:
-  cmd.run:
-    - name: dpkg -i /tmp/alfred_2015.1-1_amd64.deb
-    - require:
-      - file: /tmp/alfred_2015.1-1_amd64.deb
-    - watch:
-      - file: /tmp/alfred_2015.1-1_amd64.deb
-
-
-/tmp/alfred_2015.1-1_amd64.deb:
-   file.managed:
-      - source: salt://alfred/alfred_2015.1-1_amd64.deb
-
-
-# Install alfred-json
-#
-alfred-json:
-  cmd.run:
-    - name: dpkg -i /tmp/alfred-json_0.3.1-1_amd64.deb
-    - require:
-      - file: /tmp/alfred-json_0.3.1-1_amd64.deb
-    - watch:
-      - file: /tmp/alfred-json_0.3.1-1_amd64.deb
-
-/tmp/alfred-json_0.3.1-1_amd64.deb:
-   file.managed:
-      - source: salt://alfred/alfred-json_0.3.1-1_amd64.deb
-
+  pkg.installed:
+    - sources:
+      - alfred: salt://alfred/alfred_2015.1-1_amd64.deb
+      - alfred-json: salt://alfred/alfred-json_0.3.1-1_amd64.deb
 
 
 # Add systemd service alfred
@@ -65,8 +42,7 @@ alfred.service:
     - name: alfred@fffd.service
     - enable: True
     - require:
-      - cmd: alfred
-      - cmd: alfred-json
+      - pkg: alfred
       - file: alfred@.service
       - file: batadv-vis@.service
 
@@ -75,8 +51,7 @@ batadv-vis.service:
     - name: batadv-vis@fffd.service
     - enable: True
     - require:
-      - cmd: alfred
-      - cmd: alfred-json
+      - pkg: alfred
       - file: alfred@.service
       - file: batadv-vis@.service
 
