@@ -5,9 +5,9 @@ base:
     - snmpd
     - fastd
     - apache2
+    - peerings
 
   'gw*':
     - bind
     - tinc
     - openvpn
-    - peerings

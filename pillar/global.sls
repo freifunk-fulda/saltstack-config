@@ -35,7 +35,7 @@ hosts:
 
   gw02:
     id: 2
-    enabled: 0
+    enabled: 1
     debug: 0
     location: Webtropia, Duesseldorf
     mac: 00:1c:42:00:04:93
@@ -77,3 +77,14 @@ hosts:
       public: 2a01:4f8:121:332f::fffd
       freifunk: fd00:65a8:93a4:0::4
       icvpn: fec0::a:cf:0:2a
+
+  srv1:
+    debug: 0
+    location: Hetzner, Nuernberg
+    mac: 26:13:9d:eb:61:8d
+    ipv4:
+      public: 176.9.236.213
+      freifunk: 10.185.0.15
+    ipv6:
+      public: 2a01:4f8:150:51c7::fffd
+      freifunk: fd00:65a8:93a4:0::15

@@ -124,3 +124,5 @@ peerings:
           /TfeQ5bZsjZAgOk6vkZ6/fUCAwEAAQ==
           -----END PUBLIC KEY-----
 
+  srv1:
+    type: none

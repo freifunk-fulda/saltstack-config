@@ -98,3 +98,28 @@ fastd:
       X+HBdbCLC5LMyGiqmLQMWz212Jwf
       =S4tE
       -----END PGP MESSAGE-----
+
+  srv1:
+    mtu: 1280
+    methods:
+      - salsa2012+umac
+      - null+salsa2012+umac
+    secret: |
+      -----BEGIN PGP MESSAGE-----
+      hQIMA9J7QslVEt/9AQ/+LVW4hh0G9JRdimrJ5JIuWjYIkKpscwdBPbw8E9kJkjRZ
+      VP0Y2kSpur9IyzLCu3dg+r8BuDUGHCFjeGV6xDggvQRcox3t8cvnG/6qL2SWL9u8
+      UKDlfLdpky8ZEPMMiOiw181oxyq0UcolVb9rrQ81siPqZFZnlIWCcIIXsZ41jpl0
+      c0MUa2ZQIShJH1z44x55bCdI6A8XqVnBGCWGGgKWktq4q8YaXp8DAZOt7fZSCzzc
+      yb0oQIuBcrY2i2cOGx8pDg+LYfTL8ivwk7ey6uXHXg8/1yqFmkyR8HfG0M6Bp6tK
+      SbIa+ewoQb+yQqbjkBlijEmrB1Jqp2FMKJ+vp+9wVTgMxCAggjhFLmKFmz2mKHyH
+      T8uuLsR54kPMV0ob8VgwcDDnQPEIglLYRPN8++jS+7wJkWn0DecctPk1MiDHghYv
+      e/Ty67OtG1MBDuiPQvtc3Qe1m1C4auH6ACpOxTqymoPjtpHhP0duoW14maU7wvJB
+      6op57WMum3N23P2zdiJTJ1Zyrs9QTfoEjthOr7w3RzT0TcBvmAFe5sbI7un/6ox/
+      fmBF6Bq1CWITPwJGbl9X4AghpGkU3tPFPsY6IEM2edWXYqeB4UKPXB1fxZGZu4cv
+      TFMKnGqH26VTS0w7bwiBaV9SneTB9Tqy3o6+AyCB4cV7GP/YYA7UknkqwBinN6jS
+      dAFRDEmYxqnQC0FUD6HWDcMuqjEv8fQbke9JCw86FRdl9RSgfhMTFmPbxKcihLhn
+      ZNRHLptLyHjK2puDbC4nQUhsbkEPZvBoMxzy2Gva1XuWILbrwukOJJh6hiz5J8VX
+      lyttg+FKl29wahbSgxiU4BXlRnVn
+      =bJdb
+      -----END PGP MESSAGE-----
+

@@ -19,6 +19,7 @@ base:
     - munin
     - postfix
     - ntp
+    - apt
 
     - ssh.server
     - ssh.client
@@ -50,4 +51,7 @@ base:
 
   'gw02':
     - webtropia
+
+  'srv1':
+    - apache2.homepage
 
