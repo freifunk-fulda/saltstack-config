@@ -6,8 +6,8 @@ base:
     - fastd
     - apache2
     - peerings
+    - bind
 
   'gw*':
-    - bind
     - tinc
     - openvpn

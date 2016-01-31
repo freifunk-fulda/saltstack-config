@@ -1,6 +1,13 @@
 # Add package repo
 #
 
+# Install dependencies
+#
+alfred.deps:
+  pkg.installed:
+    - name: libjansson4
+
+
 # Install alfred and related tools
 #
 alfred:

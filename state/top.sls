@@ -25,18 +25,19 @@ base:
     - ssh.client
 
     - apache2.common
+    - fffd-utils.common
 
 
   'gw*':
     - ferm.gateway
     - networking.gateway
 
-    - fffd-utils
     - salt
     - munin.gateway
+    - fffd-utils.gateway
 
     - dhcp
-    - bind
+    - bind.gateway
     - radvd
     - apache2.gateway
     - openvpn
@@ -54,4 +55,5 @@ base:
 
   'srv1':
     - apache2.homepage
+    - bind.master
 

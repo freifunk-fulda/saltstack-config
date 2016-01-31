@@ -1,0 +1,8 @@
+#!/bin/sh
+
+mkdir -p /var/lib/bind/zones
+
+/opt/fffd-dns/dns-nodenames.py > /var/lib/bind/zones/db.nodes.fffd.eu
+rndc reload > /dev/null
+
+exit 0
