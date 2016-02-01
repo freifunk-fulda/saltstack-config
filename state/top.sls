@@ -5,6 +5,8 @@ base:
     - common.root
     - common.apt-backports
 
+    - salt
+
     - networking.common
     - ferm.common
 
@@ -32,7 +34,6 @@ base:
     - ferm.gateway
     - networking.gateway
 
-    - salt
     - munin.gateway
     - fffd-utils.gateway
 
@@ -56,4 +57,5 @@ base:
   'srv1':
     - apache2.homepage
     - bind.master
+    - salt.master
 
