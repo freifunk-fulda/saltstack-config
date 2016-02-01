@@ -58,4 +58,5 @@ base:
     - apache2.homepage
     - bind.master
     - salt.master
+    - mysql.server
 

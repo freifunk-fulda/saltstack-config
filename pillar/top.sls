@@ -11,3 +11,6 @@ base:
   'gw*':
     - tinc
     - openvpn
+
+  'srv*':
+    - mysql
