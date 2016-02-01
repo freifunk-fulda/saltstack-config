@@ -83,11 +83,11 @@ alfred.announce.facts:
     - name: https://github.com/freifunk-fulda/alfred-facts.git
     - target: /etc/alfred/facts
 
-alfred.announce.cron:
-  file.managed:
-    - name: /etc/cron.d/alfred-announce
-    - contents: |
-        * *    * * *   root    python3 -m alfred.announce -b fffd.bat -i fffd.bat -f fffd.vpn
+#alfred.announce.cron:
+#  file.managed:
+#    - name: /etc/cron.d/alfred-announce
+#    - contents: |
+#        * *    * * *   root    python3 -m alfred.announce -b fffd.bat -i fffd.bat -f fffd.vpn
 
 
 # Firewall configuration
