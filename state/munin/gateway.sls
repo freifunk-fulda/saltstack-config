@@ -5,6 +5,7 @@ munin-node-gateway:
     - pkgs: 
       - munin-node
       - libnet-netmask-perl
+      - libhttp-date-perl
 
 
 # Deploy plugins
