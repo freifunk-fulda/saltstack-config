@@ -7,6 +7,7 @@ base:
     - apache2
     - peerings
     - bind
+    - ssmtp
 
   'gw*':
     - tinc
