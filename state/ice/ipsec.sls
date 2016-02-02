@@ -30,6 +30,41 @@ ipsec.conf:
     - makedirs: True
 
 
+# configure our rsa keypair
+#
+ipsec.key.pem:
+  file.managed:
+    - name: /etc/ipsec.d/private/{{ grains['id']] }}.pem
+    - source: salt://ice/ipsec/ipsec.pem.tpl
+    - template: jinja
+    - makedirs: True
+    - user: root
+    - group: root
+    - mode: 440
+
+ipsec.key.pub:
+  file.managed:
+    - name: /etc/ipsec.d/private/{{ grains['id']] }}.pub
+    - source: salt://ice/ipsec/ipsec.pub.tpl
+    - template: jinja
+    - makedirs: True
+    - user: root
+    - group: root
+    - mode: 440
+
+ipsec.secrets:
+  file.managed:
+    - name: /etc/ipsec.secrets
+    - source: salt://ice/ipsec/ipsec.secrets.tpl
+    - template: jinja
+    - makedirs: True
+    - user: root
+    - group: root
+    - mode: 600
+
+
+# configure our peers rsa public keys
+#
 {% for peer in pillar.peerings[grains['id']]['peers'].keys() -%}
 peer.{{peer}}.pub:
   file.managed:
