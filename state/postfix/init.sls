@@ -20,7 +20,7 @@ postfix.main.cf:
     - name: /etc/postfix/main.cf
     - user: root
     - group: root
-    - mode: 640
+    - mode: 644
     - source: salt://postfix/main.cf.tpl
     - template: jinja
     - require:
@@ -31,7 +31,7 @@ postfix.mailname:
     - name: /etc/mailname
     - user: root
     - group: root
-    - mode: 640
+    - mode: 644
     - source: salt://postfix/mailname.tpl
     - template: jinja
     - require:
