@@ -34,8 +34,8 @@ ipsec.conf:
 #
 ipsec.key.pem:
   file.managed:
-    - name: /etc/ipsec.d/private/{{ grains['id']] }}.pem
-    - source: salt://ice/ipsec/ipsec.pem.tpl
+    - name: /etc/ipsec.d/private/{{ grains['id'] }}.pem
+    - source: salt://ice/ipsec/self.pem.tpl
     - template: jinja
     - makedirs: True
     - user: root
@@ -44,8 +44,8 @@ ipsec.key.pem:
 
 ipsec.key.pub:
   file.managed:
-    - name: /etc/ipsec.d/private/{{ grains['id']] }}.pub
-    - source: salt://ice/ipsec/ipsec.pub.tpl
+    - name: /etc/ipsec.d/public/{{ grains['id'] }}.pub
+    - source: salt://ice/ipsec/self.pub.tpl
     - template: jinja
     - makedirs: True
     - user: root
