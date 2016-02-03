@@ -128,6 +128,8 @@ bird-lg:
     - enable: True
     - require:
       - git: bird-lg
+    - watch:
+      - file: /opt/bird-lg/lgproxy.cfg
 
   file.managed:
     - name: /opt/bird-lg/lgproxy.cfg
