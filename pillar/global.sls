@@ -72,11 +72,11 @@ hosts:
     location: Hetzner, Nuernberg
     mac: 26:13:9d:da:31:8a
     ipv4:
-      public: 178.63.83.51
+      public: 138.201.16.57
       freifunk: 10.185.0.4
       icvpn: 10.207.0.42
     ipv6:
-      public: 2a01:4f8:121:332f::fffd
+      public: 2a01:4f8:171:2729::fffd
       freifunk: fd00:65a8:93a4:0::4
       icvpn: fec0::a:cf:0:2a
 
@@ -85,8 +85,8 @@ hosts:
     location: Hetzner, Nuernberg
     mac: 26:13:9d:eb:61:8d
     ipv4:
-      public: 176.9.236.213
+      public: 138.201.16.58
       freifunk: 10.185.0.15
     ipv6:
-      public: 2a01:4f8:150:51c7::fffd
+      public: 2a01:4f8:171:2729::fdfd
       freifunk: fd00:65a8:93a4:0::15
