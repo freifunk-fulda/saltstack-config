@@ -14,6 +14,17 @@ snmpd:
     - watch:
       - file: /etc/snmp/*
 
+# Fix service dependencies
+#
+snmpd.service:
+  file.managed:
+    - name: /etc/systemd/system/snmpd.service.conf/wants-batman-fffd.conf
+    - contents: |
+        [Unit]
+        Wants=batman@fffd.service
+        After=batman@fffd.service
+    - makedirs: True
+
 # Configure snmpd
 #
 snmpd.conf:

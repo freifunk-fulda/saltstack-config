@@ -1,7 +1,7 @@
 [Unit]
 Description=A.L.F.R.E.D. (connection %I)
-After=network.target
 Wants=batman@%i.service
+After=batman@%i.service
 BindsTo=batman@%i.service
 
 [Service]
