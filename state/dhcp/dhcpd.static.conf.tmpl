@@ -1,0 +1,9 @@
+group {
+{%- for host in api.subnet_addresses(subnet_id) %}{% if host.mac %}
+    host {{ host.hostname }}.{{ domain }} { # {{ host.description }}
+        hardware ethernet {{ host.mac }};
+        fixed-address {{ host.ip }};
+    }
+{% endif %}{% endfor -%}
+}
+

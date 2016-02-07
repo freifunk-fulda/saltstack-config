@@ -38,6 +38,38 @@ dhcpd.default:
     - require:
       - pkg: isc-dhcp-server
 
+# Integrate phpIPAM
+#
+dhcpd.phpipam:
+  cron.present:
+    - name: /opt/fffd-utils/phpipam-integrator.py
+  pkg.installed:
+    - pkgs:
+      - python3-jinja2
+  file.directory:
+    - name: /var/cache/dhcp
+  cmd.wait:
+    - name: /opt/fffd-utils/phpipam-integrator.py
+    - requires:
+      - pkg: dhcpd.phpipam
+    - watch:
+      - file: /etc/phpipam-integrator
+      - file: /etc/dhcp/dhcpd.static.conf.tmpl
+
+dhcpd.phpipam.conf:
+  file.managed:
+    - name: /etc/phpipam-integrator
+    - source: salt://dhcp/phpipam-integrator.tmpl
+    - makedirs: True
+    - template: jinja
+
+dhcpd.phpipam.tmpl:
+  file.managed:
+    - name: /etc/dhcp/dhcpd.static.conf.tmpl
+    - source: salt://dhcp/dhcpd.static.conf.tmpl
+    - makedirs: True
+
+
 # Mount tmpfs to /var/lib/dhcp to keep leases in RAM
 #
 /var/lib/dhcp:
