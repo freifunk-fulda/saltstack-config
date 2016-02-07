@@ -8,7 +8,7 @@
 # The unique ID of this router, its IPv4 address in the freifunk network
 # and the AS number for freifunk fulda.
 #
-router id {{ pillar['hosts'][grains['id']]['ipv4']['icvpn'] }};
+router id {{ pillar['hosts'][grains['id']]['ipv4']['freifunk'] }};
 define ownas = 65142;
 define ownip = {{ pillar['hosts'][grains['id']]['ipv4']['freifunk'] }};
 
