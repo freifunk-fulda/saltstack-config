@@ -6,7 +6,7 @@
 # Usage:
 #  - 172.20.241.0/30   dn42_andi
 #  - 172.20.241.4/30   dn42_flokli
-#  - 172.20.241.8/30   -
+#  - 172.20.241.8/30   ffmr_gw01
 #  - 172.20.241.12/30  -
 
 
@@ -229,7 +229,6 @@ peerings:
         -----END PUBLIC KEY-----
 
     peers:
-
       dn42_andi:
         as: 4242423991
         proto: ip6gre
@@ -298,6 +297,40 @@ peerings:
           /TfeQ5bZsjZAgOk6vkZ6/fUCAwEAAQ==
           -----END PUBLIC KEY-----
 
+      ffmr_gw01:
+        as: 64877
+        proto: ip6gre
+        ttl: 128
+        mtu: 1400
+        keyexchange: ikev2
+        ike: aes128-sha256-modp2048!
+        esp: aes128-sha1-modp2048!
+
+        remote: 2a01:4a0:2002:2417::2
+        tun4:
+          left: 172.20.241.9
+          right: 172.20.241.10
+          mask: 255.255.255.252
+        tun6:
+          left: fe80::1
+          right: fe80::2
+          mask: 64
+
+        rightrsasigkey: |
+          -----BEGIN PUBLIC KEY-----
+          MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAxYu6DM8rvhlf5pVOcdmQ
+          yl3Ma+bk+obapT1SsTDXIJ3bTmShSfOddU0axW9nPFA4euafzYjaoyeqS5cCEbrq
+          x5ciRZHx7EY4EMbgbOjFbBRX+cgGcbJ1JdT/LABmUG0GdfxKFPkN1L/DIoljkJa9
+          Lq/haqVrICW6wNCKcLVufoucjViqcHVs67mQUv/dbxZvjcMNvs5HCF3oghp+psKE
+          aPfVV4Y19zAxTYn8fGIszIHnipjqllb+3iDxSDpV/wNKaK8g/EOqTZrMiwE8MMVW
+          XOGlmq4cusjI2u/DnHtLMOmWNdFUeoTjIno9Gmm3CMqmavhKAbNFPMyxHMJoaI77
+          +ObZjOyPSdaZTZw1+Zn8afi8QxtZk/DHQaYyw8ArEkfg6Wh8/8UobGRWlolECEfH
+          HR86+c8BT/ns+Pnw/WeXdkFQodJsqLh4heeTI9H+vKkiP7pLamaGiV6OirFPv1AJ
+          UF/xLBtbJdugaJ/n/OOawv5WhjB00MnxBgHpJeqrFkX78WMxYY/xNF/0u8MMSVRy
+          r7kjoR5jk1ZpVURnGPpUtziLKEeFQnl9tni2cyH3hl8YdkwjL2s5icIPf/muJdSS
+          tHplHZcFzv5JHUWI5HvmHYYAeGt4SYe1DX0rvJtaOPhxCjeHW3e7+k1O2gRhtchq
+          6gmOd3FmA/WFbC6nuGf8HcsCAwEAAQ==
+          -----END PUBLIC KEY-----
 
   srv1:
     type: none
