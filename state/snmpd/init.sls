@@ -18,7 +18,7 @@ snmpd:
 #
 snmpd.service:
   file.managed:
-    - name: /etc/systemd/system/snmpd.service.conf/wants-batman-fffd.conf
+    - name: /etc/systemd/system/snmpd.service.d/wants-batman-fffd.conf
     - contents: |
         [Unit]
         Wants=batman@fffd.service
