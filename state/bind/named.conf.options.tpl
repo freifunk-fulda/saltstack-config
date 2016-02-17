@@ -37,6 +37,8 @@ options {
 		10.185.0.0/16;
 		fd00:65a8:93a4::/48;
 	};
+
+	max-udp-size 2047;
 	
 	statistics-file "/var/cache/bind/named.stats";
 };
