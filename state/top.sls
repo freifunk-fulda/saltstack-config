@@ -51,6 +51,10 @@ base:
     - ice.ipsec
 {% endif %}
 
+  'kvm*':
+    - libvirt
+    - ksm
+
   'gw02':
     - webtropia
 
@@ -59,4 +63,3 @@ base:
     - bind.master
     - salt.master
     - mysql.server
-

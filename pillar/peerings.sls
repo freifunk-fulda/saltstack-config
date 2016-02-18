@@ -334,3 +334,6 @@ peerings:
 
   srv1:
     type: none
+
+  kvm1:
+    type: none
