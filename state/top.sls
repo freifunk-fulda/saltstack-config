@@ -54,6 +54,7 @@ base:
   'kvm*':
     - libvirt
     - ksm
+    - networking.bridgeutils
 
   'gw02':
     - webtropia
