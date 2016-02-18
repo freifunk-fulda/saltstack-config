@@ -6,7 +6,6 @@ fastd:
       - null+salsa2012+umac
     secret: |
       -----BEGIN PGP MESSAGE-----
-
       hQIMA9J7QslVEt/9ARAAkdakSGumoFU7Y2dhn5XHuXLz+w7AV3WQhsSB0bctM5N/
       osQJD1+kJop5Rz5ZIHDvcKnRQAOKqebg36GikKiy/bqpak1BUXNFkpyVuOoK1uzo
       TvMgtpy5F/L5MqH6PBpA8mLFdEbTXOTYZADeabjOJaaZkttQbBDpJyKdqV+RYbQq
@@ -31,7 +30,6 @@ fastd:
       - null+salsa2012+umac
     secret: |
       -----BEGIN PGP MESSAGE-----
-
       hQIMA9J7QslVEt/9ARAAt0kt+p7Y6GeqKuF1BQaCDR48quV6DaRswIAJs3GK9xPR
       HID4Jz/d1KTYpnGUKxW4Gk+lnLGJxVrguaH9TiSQEI4MjVM/k5FYjSiNroiO1DXB
       zMb2Cc2Eecpc4NBFFfpVlv5cbyW+V2hd2t5k9OEs83ZAoQf+IDcoaCZKEHvhVLu/
@@ -56,7 +54,6 @@ fastd:
       - null+salsa2012+umac
     secret: |
       -----BEGIN PGP MESSAGE-----
-
       hQIMA9J7QslVEt/9AQ//bQBWRL4xgdIX/+ysZp+ZfUB/xzwW1c9VvsLpY/JR5irz
       Ckh8pydfdNGYU9kSEVdUZrQlWzrhYLm7E3hbWSy78scpNr3BHfoDIsqh0FOXJ2IL
       3vEiTV8s2FpVApXFbOqcEadKBKbYyRe0d5RFghztFwopyl3uy4xpfGZowOyNgCFs
@@ -81,7 +78,6 @@ fastd:
       - null+salsa2012+umac
     secret: |
       -----BEGIN PGP MESSAGE-----
-
       hQIMA9J7QslVEt/9AQ//cmiDKzJ9Jf/8d6Qod4YK2a3mb+QQSd0QBP1PZeOXtmew
       9lRXKhKVR2OHZnxD/x8ibtS4d4Eghxfg3CH4fUH9nHkNcrOiv26vvojSD5PoVF7b
       SCUI0CXBy7m/1W0eaWFvecldciMFvFhW/ie7bTSF1Z4LUdB3/FjUqGHuZiHFtHk3
