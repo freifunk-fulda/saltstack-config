@@ -4,6 +4,7 @@ base:
     - common.tools
     - common.root
     - common.apt-backports
+    - common.locales
 
     - salt
 
