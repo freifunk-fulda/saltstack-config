@@ -51,7 +51,8 @@ base:
     - ice.ipsec
 {% endif %}
 
-  'kvm*':
+  'roles:kvm':
+    - match: grain
     - libvirt
     - ksm
     - networking.bridgeutils

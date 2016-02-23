@@ -1,7 +1,7 @@
 # THIS FILE IS CONTROLLED BY SALTSTACK!
 #
 # BATMAN Interface
-{% if grains['id'].startswith('kvm') -%}
+{% if grains['roles'] == 'kvm' %}
 allow-hotplug fffd.bat
 iface fffd.bat inet manual
 
@@ -25,4 +25,3 @@ iface fffd.bat inet static
         address {{ pillar['hosts'][grains['id']]['ipv4']['freifunk'] }}
         netmask 255.255.192.0
 {%- endif %}
-

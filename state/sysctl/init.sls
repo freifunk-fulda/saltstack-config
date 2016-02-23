@@ -20,7 +20,7 @@
 {% endif %}
 
 # Set kvm values (i.e., enable ksm)
-{% if grains['id'].startswith('kvm') %}
+{% if grains['roles'] == 'kvm' %}
 /etc/sysctl.d/30-ksm.conf:
   file:
     - managed
