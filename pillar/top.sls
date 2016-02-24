@@ -12,6 +12,7 @@ base:
   'gw*':
     - tinc
     - openvpn
+    - dhcp
 
   'srv*':
     - mysql

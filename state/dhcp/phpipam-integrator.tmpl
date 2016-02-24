@@ -1,8 +1,8 @@
 [DEFAULT]
-url = https://ipam.fulda.freifunk.net
-app = integrator
-username = integrator
-password = U2hxjaSfnU
+url = {{ pillar['dhcp']['integrator']['url'] }}
+app = {{ pillar['dhcp']['integrator']['app'] }}
+username = {{ pillar['dhcp']['integrator']['username'] }}
+password = {{ pillar['dhcp']['integrator']['password'] }}
 
 
 [dhcp]
@@ -10,6 +10,5 @@ output = /var/cache/dhcp/dhcpd.static.conf
 template = /etc/dhcp/dhcpd.static.conf.tmpl
 trigger = systemctl try-restart isc-dhcp-server
 
-subnet_id = 15
-domain = fffd.eu
-
+subnet_id = {{ pillar['dhcp']['integrator']['subnet_id'] }}
+domain = {{ pillar['dhcp']['integrator']['domain'] }}
