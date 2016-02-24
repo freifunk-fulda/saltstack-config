@@ -2,23 +2,23 @@ dhcp:
   integrator:
     url: https://ipam.fulda.freifunk.net
     subnet_id: 15
-    doman: fffd.eu
+    domain: fffd.eu
     app: integrator
     username: integrator
     password: |
       -----BEGIN PGP MESSAGE-----
-      hQIMA9J7QslVEt/9AQ/+KPr4ItZXOPj/VqjaUCqTAwN+1EQrEK8uQhVk/OQIGZor
-      lKEvNEppM0XEJPtRjl7MGePby9uik1EPToipGeDI6RrENqPdWhd+0s5tC8nw9wAQ
-      JFg9nlr8k80IQyu2r2M+AmO0tdwJLkPpg5d9u1A/g4jObE8Y7rhzh6D8mFU/1a4r
-      Q/zcuoAvLJG8OrkGKeHzhH/WmCfV1XVUNr7CDS8iysezbNVCpJ6oNp+RP4EL9wBJ
-      OI5mP6WGseAQdEemM0NPRlb7dGyLJy19uSUAtSgqVQE3//FbT2sGyzuiK1WhmDKM
-      NTyyfPc0uG0Ofku3hGS3YrQrdA9ldgFBS/neWHsKHrj/E+5pIIA3GCNILLELmo80
-      tSwXn45WG2sVvN1Dw+GPkSDnFvO3iaHMV4kq/s1hGv43xveGj0kGAgNbkiMKc7aY
-      z4j8qIpO8eS3i/TrkRZCOCPS2bqky5N2uYpV3fhYFmrAdPLZWXSJUsf0/91AmrS8
-      T498gCzfTOa0sR+/YedE19MybLt8rCSSDC9aSIdhPEQBxLZWzakyCW2Ezb+dMa3V
-      WDljOYQZ5At4Ua6+z9XOZ6QbFSCTjPabBjQVV6GgM1zAiwUDd0gScW1a6I3dbM7j
-      +In6Cl2u69UXKlxHl2c5vkfgbxVRlk/QuJ/KUQDyGUqG0Mjz/SCk8XUDcBNyinHS
-      TQFgfYaKFgqw4GoFLOlgOKrOOj5o+9H0fDuX5i+icxsvZFq14fXVuDUHT0tzqm4Y
-      VJG4Eq4GZX3062VFyyF8StZq4U9bhukumQr26P/V
-      =k/Sq
+      hQIMA9J7QslVEt/9AQ//W3ghuZgGTuqQPTl51Mv0AT5p+Z0IZ2CCKiHEzijNyODl
+      PkaiPS3G9QO2D1qGyGdwRHdcKkAwEnoBN2cy4iZf9fpKy0eaeMI71Ew2L4EAwjzu
+      1MWys7g2lNtxfTehB1IeyVPLm7/oaouGNZVF3O/l9UWPgBe+4HeI00G/KTzDBqSw
+      nmEWVkWldem5gbjbJl7QKPFiwGcPBOuQuHqsCUPIL8zMuWSUR2XXEZt2q5TEedQv
+      xaqkENxO3kGcyvOx0coxDzINBXYsP1NKiZwLCHOydXB/N+Ub6fr/+RLFvOolOWE0
+      EFzrvEuDwXXa7XRB60ABz3s7UGkEVOh1J7wzsqXpvugdxrqwAoTkRV5cB5tPGZOL
+      6Tl04K3W7z1i8M3xBAeOQ5Lhq7/ECeO7r4Hra7Pz8hMQx9eVDcxKOei4CFbfx/QB
+      BN5DAXiJHsir+ZeUUOrXL6Oj0575O/Kz7QmLbqKvcRBIQ9RxXxwIvVA7RN9QYTCE
+      0kunDAZeytjs3AUds3fZHYsURRkJPPq+NQUDpouZADOngNBWEGeQP3UmINQ0Nt4s
+      Y42dv8URa1bpSNogi/TFgSH3cKJsHk8TyXof6qP8vBwhl+fd81ZwKzosCoHTAmjX
+      +nXohUosQhZ8ptgrptbduBoOsoynOaCCX40GBLZvqjY8xEsivzj+9skO43z7hknS
+      RQECRBTJ8jtRVFPYeySNetih2z9WADDQjo/848syT5Ry/6qbAoYOcjou+EfJtfV4
+      BCsvdwI1rqJYAyCccBYmq4C2EY0ZKg==
+      =IanJ
       -----END PGP MESSAGE-----

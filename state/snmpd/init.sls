@@ -62,3 +62,19 @@ snmpd.ferm:
     - name: /etc/ferm.d/20-snmp.conf
     - source: salt://snmpd/ferm.conf
     - makedirs: True
+
+
+{% if grains['id'].startswith('gw') %}
+# On gateways, extend snmpd by get_pp_endpoint.sh
+#
+snmpd.extend.ppendpoint:
+  file.managed:
+    - name: /etc/snmp/conf.d/extend.ppendpoint.conf
+    - contents: |
+        # THIS FILE IS CONTROLLED BY SALTSTACK!
+        extend ppendpoint /opt/fffd-utils/get_pp_endpoint.sh
+    - makedirs: True
+    - require:
+      - git: fffd-utils.repo
+{% endif %}
+
