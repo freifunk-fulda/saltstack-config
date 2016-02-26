@@ -8,5 +8,4 @@ sysfsutils:
     - name: sysfsutils
     - enable: True
     - watch:
-      - file: /etc/sysfs.conf
       - file: /etc/sysctl.d/*

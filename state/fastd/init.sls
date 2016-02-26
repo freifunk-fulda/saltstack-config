@@ -39,8 +39,8 @@ fastd:
         Reqiures=batman@%i.service
         After=batman@%i.service
 
-
-# fastd configuration files
+{% if grains['id'].startswith('gw') -%}
+# fastd configuration files for gateways
 #
 fastd.conf:
   file.managed:
@@ -53,7 +53,21 @@ fastd.conf:
     - template: jinja
     - require:
       - pkg: fastd
-
+{%- else %}
+# fastd configuration files for all other servers
+#
+fastd.conf:
+  file.managed:
+    - name: /etc/fastd/fffd/fastd.conf
+    - user: root
+    - group: root
+    - mode: 640
+    - source: salt://fastd/fastd.conf.srv.tpl
+    - makedirs: True
+    - template: jinja
+    - require:
+      - pkg: fastd
+{%- endif %}
 
 # Get fastd keys of backend nodes
 #

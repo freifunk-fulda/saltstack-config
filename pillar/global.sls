@@ -96,7 +96,7 @@ hosts:
     location: AStA, Fulda
     mac: aa:65:d9:e2:9b:6b
     ipv4:
-      public: 193.174.29.189
+      public: 10.0.9.31
       freifunk: 10.185.0.13
     ipv6:
       freifunk: fd00:65a8:93a4:0::13
