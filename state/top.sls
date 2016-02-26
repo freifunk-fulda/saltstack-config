@@ -52,6 +52,12 @@ base:
     - ice.ipsec
 {% endif %}
 
+  'roles:kvm':
+    - match: grain
+    - libvirt
+    - ksm
+    - networking.bridgeutils
+
   'gw02':
     - webtropia
 
@@ -60,4 +66,3 @@ base:
     - bind.master
     - salt.master
     - mysql.server
-

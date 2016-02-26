@@ -18,3 +18,15 @@
     - source: salt://sysctl/20-freifunk-gw.conf
     - makedirs: True
 {% endif %}
+
+# Set kvm values (i.e., enable ksm)
+{% if grains['roles'] == 'kvm' %}
+/etc/sysctl.d/30-ksm.conf:
+  file:
+    - managed
+    - name: /etc/sysctl.d/30-kvm.conf
+    - source: salt://sysctl/30-kvm.conf
+    - makedirs: True
+    - require:
+      - pkg: sysfsutils
+{% endif %}
