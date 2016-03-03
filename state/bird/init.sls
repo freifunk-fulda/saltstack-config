@@ -84,7 +84,10 @@ bird6:
       - pkg: bird6
 
 
-{% if pillar.peerings[grains['id']].type == "icvpn" %}
+# directory for icvpn peer configuration AND for ROA files.
+# also needed for ice peerings as location for ROA files
+# content to this directory gets added by fffd-utils state
+#
 /etc/bird/icvpn:
   file.directory:
     - user: root
@@ -92,25 +95,10 @@ bird6:
     - mode: 755
     - makedirs: True
 
-/etc/cron.hourly/update-icvpn:
-  file.symlink:
-    - target: /opt/fffd-utils/update-icvpn.sh
-    - force: True
-    - require:
-      - git: fffd-utils.repo
-      - file: /etc/bird/icvpn
-
-  cmd.script:
-    - source: /opt/fffd-utils/update-icvpn.sh
-    - shell: /bin/bash
-    - env:
-      - FORCE_VPN: "1"
-      - FORCE_META: "1"
-    - require:
-      - git: fffd-utils.repo
-{% endif %}
 
 
+# bird looking glass
+#
 bird-lg:
   pip.installed:
     - pkgs:
