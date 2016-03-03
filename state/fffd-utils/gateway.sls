@@ -35,18 +35,20 @@ check_gateway.cron:
     - name: /opt/fffd-utils/update-icvpn.sh {{ pillar.peerings[grains['id']].type }}
     - user: root
     - minute: 0
-    - hour: *
+    - hour: '*'
     - require:
       - git: fffd-utils.repo
       - file: /etc/bird/icvpn
 
-  cmd.script:
-    - source: /opt/fffd-utils/update-icvpn.sh {{ pillar.peerings[grains['id']].type }}
+  cmd.wait:
+    - name: /opt/fffd-utils/update-icvpn.sh {{ pillar.peerings[grains['id']].type }}
     - shell: /bin/bash
     - env:
       - FORCE_VPN: "1"
       - FORCE_META: "1"
     - require:
+      - git: fffd-utils.repo
+    - watch:
       - git: fffd-utils.repo
 {% endif %}
 
