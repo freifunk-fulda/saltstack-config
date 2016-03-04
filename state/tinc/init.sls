@@ -29,16 +29,6 @@ tinc:
 
 # ICVPN: peers repo and automatic update
 #
-tinc.icvpn-meta.repo:
-  git.latest:
-    - name: https://github.com/freifunk/icvpn-meta
-    - target: /opt/icvpn-meta
-
-tinc.icvpn-scripts.repo:
-  git.latest:
-    - name: https://github.com/freifunk/icvpn-scripts
-    - target: /opt/icvpn-scripts
-
 tinc.icvpn.repo:
   git.latest:
     - name: https://github.com/freifunk/icvpn
