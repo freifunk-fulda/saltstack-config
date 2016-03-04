@@ -26,7 +26,7 @@
 ddns-update-style none;
 
 # our domain name
-option domain-name "fffd";
+option domain-name "fffd.eu";
 
 # lease time parameters
 default-lease-time 600;
@@ -41,7 +41,7 @@ subnet 10.185.0.0 netmask 255.255.192.0 {
         range 10.185.{{ pillar['hosts'][grains['id']]['id'] }}0.0 10.185.{{ pillar['hosts'][grains['id']]['id'] }}9.255;
         option routers 10.185.0.{{ pillar['hosts'][grains['id']]['id'] }};
         option domain-name-servers 10.185.0.{{ pillar['hosts'][grains['id']]['id'] }}{% for host in pillar['hosts'].keys() if host != grains['id'] and host.startswith('gw') and pillar['hosts'][host]['enabled'] -%}, 10.185.0.{{ pillar['hosts'][host]['id'] }}{% endfor -%};
-        option ntp-servers ntp{{ pillar['hosts'][grains['id']]['id'] }}.services.fffd{% for host in pillar['hosts'].keys() if host != grains['id'] and host.startswith('gw') and pillar['hosts'][host]['enabled'] -%}, ntp{{ pillar['hosts'][host]['id'] }}.services.fffd{% endfor -%};
+        option ntp-servers ntp{{ pillar['hosts'][grains['id']]['id'] }}.services.fffd.eu{% for host in pillar['hosts'].keys() if host != grains['id'] and host.startswith('gw') and pillar['hosts'][host]['enabled'] -%}, ntp{{ pillar['hosts'][host]['id'] }}.services.fffd.eu{% endfor -%};
 
         # static DHCP
         include "/var/cache/dhcp/dhcpd.static.conf";
