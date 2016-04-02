@@ -10,9 +10,9 @@ RemainAfterExit=true
 ExecStart=/sbin/ip link add name %i.dummy type dummy
 ExecStart=/usr/sbin/batctl -m %i.bat if add %i.dummy
 ExecStart=/sbin/ifup %i.bat
+ExecStop=/sbin/ifdown %i.bat
 ExecStop=/usr/sbin/batctl -m %i.bat if del %i.dummy
 ExecStop=/sbin/ip link del dev %i.dummy
-ExecStop=/sbin/ifdown %i.bat
 
 
 [Install]
