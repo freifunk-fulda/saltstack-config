@@ -2,6 +2,7 @@ fastd:
   gw01:
     mtu: 1280
     methods:
+      - null
       - null+salsa2012+umac
       - salsa2012+umac
     secret: |
@@ -26,8 +27,9 @@ fastd:
   gw02:
     mtu: 1280
     methods:
-      - salsa2012+umac
+      - null
       - null+salsa2012+umac
+      - salsa2012+umac
     secret: |
       -----BEGIN PGP MESSAGE-----
       hQIMA9J7QslVEt/9ARAAt0kt+p7Y6GeqKuF1BQaCDR48quV6DaRswIAJs3GK9xPR
@@ -50,8 +52,9 @@ fastd:
   gw03:
     mtu: 1280
     methods:
-      - salsa2012+umac
+      - null
       - null+salsa2012+umac
+      - salsa2012+umac
     secret: |
       -----BEGIN PGP MESSAGE-----
       hQIMA9J7QslVEt/9AQ//bQBWRL4xgdIX/+ysZp+ZfUB/xzwW1c9VvsLpY/JR5irz
@@ -74,8 +77,9 @@ fastd:
   gw04:
     mtu: 1280
     methods:
-      - salsa2012+umac
+      - null
       - null+salsa2012+umac
+      - salsa2012+umac
     secret: |
       -----BEGIN PGP MESSAGE-----
       hQIMA9J7QslVEt/9AQ//cmiDKzJ9Jf/8d6Qod4YK2a3mb+QQSd0QBP1PZeOXtmew
@@ -98,8 +102,9 @@ fastd:
   srv1:
     mtu: 1280
     methods:
-      - salsa2012+umac
+      - null
       - null+salsa2012+umac
+      - salsa2012+umac
     secret: |
       -----BEGIN PGP MESSAGE-----
       hQIMA9J7QslVEt/9AQ/+LVW4hh0G9JRdimrJ5JIuWjYIkKpscwdBPbw8E9kJkjRZ
@@ -122,8 +127,9 @@ fastd:
   kvm1:
     mtu: 1280
     methods:
-      - salsa2012+umac
+      - null
       - null+salsa2012+umac
+      - salsa2012+umac
     secret: |
       -----BEGIN PGP MESSAGE-----
       hQIMA9J7QslVEt/9AQ/5AWtSC4vSRv/qkM7b808ThlVxX5i9FqVpJcsarqulJBu/
