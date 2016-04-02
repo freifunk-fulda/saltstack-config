@@ -15,7 +15,7 @@
 # for traffic from our own network, which is not destined to an rfc1918
 # destination, we lookup table internet
 #
-/sbin/ip -4 rule add prio 110 from 10.185.0.0/16 table internet
+/sbin/ip -4 rule add prio 110 from 10.185.0.0/16 table main
 #/sbin/ip -6 rule add prio 110 from 10.185.0.0/16 table internet
 
 
