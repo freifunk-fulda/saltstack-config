@@ -2,8 +2,8 @@ fastd:
   gw01:
     mtu: 1280
     methods:
-      - salsa2012+umac
       - null+salsa2012+umac
+      - salsa2012+umac
     secret: |
       -----BEGIN PGP MESSAGE-----
       hQIMA9J7QslVEt/9ARAAkdakSGumoFU7Y2dhn5XHuXLz+w7AV3WQhsSB0bctM5N/
