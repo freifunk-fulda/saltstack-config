@@ -44,7 +44,7 @@ sshd.ferm:
   file:
     - managed
     - name: /etc/ferm.d/50-sshd.conf
-    - source: salt://ssh/ferm.conf.tpl
+    - source: salt://ssh/ferm.ssh.conf.tpl
     - makedirs: True
     - template: jinja
 
@@ -60,3 +60,18 @@ start-after-tinc.systemd:
     - makedirs: True
     - require:
       - pkg: openssh-server
+
+
+# enable mosh
+#
+mosh:
+  pkg.installed:
+    - name: mosh
+
+mosh.ferm:
+  file:
+    - managed
+    - name: /etc/ferm.d/50-mosh.conf
+    - source: salt://ssh/ferm.mosh.conf
+    - makedirs: True
+
