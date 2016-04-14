@@ -10,6 +10,7 @@ base:
     - ssmtp
 
   'gw*':
+    - ffrl
     - tinc
     - openvpn
     - dhcp
