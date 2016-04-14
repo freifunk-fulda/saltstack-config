@@ -7,7 +7,7 @@ ffrl:
       address: 185.66.194.68
       mask: 255.255.255.254
     ipv6:
-      network: 2a03:2260:100f:2::
+      network: "2a03:2260:100f:2::"
       mask: 64
 
     peers:
@@ -85,7 +85,7 @@ ffrl:
       address: 185.66.194.69
       mask: 255.255.255.254
     ipv6:
-      network: 2a03:2260:100f:4::
+      network: "2a03:2260:100f:4::"
       mask: 64
 
     peers:

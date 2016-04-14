@@ -1,11 +1,13 @@
 # Load gre kernel modules
 #
-ip6_gre:
+ffrl.ip6_gre:
   kmod.present:
+    - name: ip6_gre
     - persist: True
 
-gre:
+ffrl.gre:
   kmod.present:
+    - name: gre
     - persist: True
 
 
@@ -37,7 +39,7 @@ gre:
 {% endfor -%}
 
 
-gre.ferm:
+ffrl.gre.ferm:
   file:
     - managed
     - name: /etc/ferm.d/30-gre-ffrl.conf
