@@ -35,7 +35,7 @@ hosts:
 
   gw02:
     id: 2
-    enabled: 1
+    enabled: 0
     debug: 0
     location: Webtropia, Duesseldorf
     mac: 00:1c:42:00:04:93

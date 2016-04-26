@@ -16,7 +16,7 @@
 # destination, we lookup table internet
 #
 /sbin/ip -4 rule add prio 110 from 10.185.0.0/16 table internet
-#/sbin/ip -6 rule add prio 110 from 10.185.0.0/16 table internet
+/sbin/ip -6 rule add prio 110 from 2a03:2260:100f:0100::/56 table internet
 
 
 # finally, everything except local traffic will hit the sink table with
@@ -40,3 +40,8 @@
 /sbin/ip -6 rule add prio 190 iif tun-{{peer}} table sink
 {% endfor %}
 {% endif %}
+
+{% for key in pillar.ffrl.peers.endpoints.keys() %}
+/sbin/ip -4 rule add prio 190 iif tun-{{key}} table sink
+/sbin/ip -6 rule add prio 190 iif tun-{{key}} table sink
+{% endfor %}

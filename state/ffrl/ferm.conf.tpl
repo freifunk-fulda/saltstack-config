@@ -10,8 +10,8 @@ table filter {
   chain INPUT {
     # GRE
     #
-    {% for peer, values in pillar.ffrl[grains['id']].peers.iteritems() -%}
-    proto 47 saddr {{ values['endpoint'] }} ACCEPT;
+    {% for peer, value in pillar.ffrl.peers.endpoints.iteritems() -%}
+    proto 47 saddr {{ value }} ACCEPT;
     {% endfor %}
   }
 }
@@ -23,8 +23,8 @@ domain (ip ip6)
 table raw {
   chain PREROUTING {
     proto gre {
-      {% for peer, values in pillar.ffrl[grains['id']].peers.iteritems() -%}
-      saddr {{ values['endpoint'] }} NOTRACK;
+      {% for peer, value in pillar.ffrl.peers.endpoints.iteritems() -%}
+      saddr {{ value }} NOTRACK;
       {%- endfor %}
     }
   }

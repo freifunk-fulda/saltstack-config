@@ -1,14 +1,12 @@
 # THIS FILE IS CONTROLLED BY SALTSTACK
 
-# Dummy interface for ffrl nat
+# Dummy interface for ffrl routing
 #
-auto {{ pillar.ffrl[grains['id']].iface.name }}
-iface {{ pillar.ffrl[grains['id']].iface.name }} inet manual
-    pre-up /sbin/ip link add {{ pillar.ffrl[grains['id']].iface.name }} type dummy
-    up /sbin/ip link set {{ pillar.ffrl[grains['id']].iface.name }} address {{ pillar.ffrl[grains['id']].iface.mac }}
-    address {{ pillar.ffrl[grains['id']].ipv4.address }}
-    netmask {{ pillar.ffrl[grains['id']].ipv4.mask }}
+auto {{ pillar.ffrl.iface }}
+iface {{ pillar.ffrl.iface }} inet manual
+    up /sbin/ip link add dev {{ pillar.ffrl.iface }} type dummy
+    up /sbin/ip link set dev {{ pillar.ffrl.iface }} address {{ pillar.ffrl[grains['id']].mac }}
+    up /sbin/ip link set dev {{ pillar.ffrl.iface }} up
+    up /sbin/ip addr add dev {{ pillar.ffrl.iface }} {{ pillar.ffrl[grains['id']].ipv4.address }}/{{ pillar.ffrl[grains['id']].ipv4.mask }}
+    down /sbin/ip link del dev {{ pillar.ffrl.iface }}
 
-iface {{ pillar.ffrl[grains['id']].iface.name }} inet6 manual
-    address {{ pillar.ffrl[grains['id']].ipv6.network }}
-    mask {{ pillar.ffrl[grains['id']].ipv6.mask }}

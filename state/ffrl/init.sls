@@ -13,9 +13,9 @@ ffrl.gre:
 
 # Add dummy interface for NAT
 #
-/etc/network/interfaces.d/tun-{{ pillar.ffrl[grains['id']].iface.name }}:
+/etc/network/interfaces.d/{{ pillar.ffrl.iface }}:
   file.managed:
-    - name: /etc/network/interfaces.d/{{ pillar.ffrl[grains['id']].iface.name }}
+    - name: /etc/network/interfaces.d/{{ pillar.ffrl.iface }}
     - user: root
     - group: root
     - mode: 640

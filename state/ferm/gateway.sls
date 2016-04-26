@@ -9,6 +9,7 @@ ferm.mangle.ipv4.conf:
     - group: root
     - mode: 644
     - makedirs: True
+    - template: jinja
 
 ferm.nat.ipv4.conf:
   file:
@@ -19,6 +20,7 @@ ferm.nat.ipv4.conf:
     - group: root
     - mode: 644
     - makedirs: True
+    - template: jinja
 
 ferm.forward.ipv4.conf:
   file:
