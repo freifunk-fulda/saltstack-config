@@ -2,7 +2,7 @@ fastd:
   gw01:
     mtu: 1280
     methods:
-      - null
+      - "null"
       - null+salsa2012+umac
       - salsa2012+umac
     secret: |
@@ -27,7 +27,7 @@ fastd:
   gw02:
     mtu: 1280
     methods:
-      - null
+      - "null"
       - null+salsa2012+umac
       - salsa2012+umac
     secret: |
@@ -52,7 +52,7 @@ fastd:
   gw03:
     mtu: 1280
     methods:
-      - null
+      - "null"
       - null+salsa2012+umac
       - salsa2012+umac
     secret: |
@@ -77,7 +77,7 @@ fastd:
   gw04:
     mtu: 1280
     methods:
-      - null
+      - "null"
       - null+salsa2012+umac
       - salsa2012+umac
     secret: |
@@ -102,7 +102,7 @@ fastd:
   srv1:
     mtu: 1280
     methods:
-      - null
+      - "null"
       - null+salsa2012+umac
       - salsa2012+umac
     secret: |
@@ -127,7 +127,7 @@ fastd:
   kvm1:
     mtu: 1280
     methods:
-      - null
+      - "null"
       - null+salsa2012+umac
       - salsa2012+umac
     secret: |
