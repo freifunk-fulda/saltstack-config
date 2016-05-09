@@ -35,7 +35,7 @@ hosts:
 
   gw02:
     id: 2
-    enabled: 0
+    enabled: 1
     debug: 0
     location: Webtropia, Duesseldorf
     mac: 00:1c:42:00:04:93
@@ -100,3 +100,4 @@ hosts:
       freifunk: 10.185.0.13
     ipv6:
       freifunk: fd00:65a8:93a4:0::13
+

@@ -111,7 +111,8 @@ peerings:
         keyexchange: ikev2
         ike: aes128-sha256-modp2048!
         esp: aes128-sha1-modp2048!
-        remote: 2a02:c200::10:3:0:5324:42
+        remote: 2a02:c205:3000:5324::42
+
         tun4:
           mask: 255.255.255.252
           left: 172.20.240.134
