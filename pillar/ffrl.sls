@@ -129,6 +129,16 @@ ffrl:
 
       ffrl-a-fra:
         tun4:
+          remote: 100.64.5.124
+          self: 100.64.5.125
+          mask: 255.255.255.254
+        tun6:
+          remote: 2a03:2260:0:2be::1
+          self: 2a03:2260:0:2be::2
+          mask: 64
+
+      ffrl-b-fra:
+        tun4:
           remote: 100.64.5.130
           self: 100.64.5.131
           mask: 255.255.255.254

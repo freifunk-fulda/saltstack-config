@@ -62,8 +62,8 @@ base:
     - webtropia
     - ffrl
 
-#  'gw04':
-#    - ffrl
+  'gw04':
+    - ffrl
 
   'srv1':
     - apache2.homepage
