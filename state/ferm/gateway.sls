@@ -11,6 +11,17 @@ ferm.mangle.ipv4.conf:
     - makedirs: True
     - template: jinja
 
+ferm.mangle.ipv6.conf:
+  file:
+    - managed
+    - name: /etc/ferm.d/81-mangle.ipv6.conf
+    - source: salt://ferm/81-mangle.ipv6.conf
+    - user: root
+    - group: root
+    - mode: 644
+    - makedirs: True
+    - template: jinja
+
 ferm.nat.ipv4.conf:
   file:
     - managed
