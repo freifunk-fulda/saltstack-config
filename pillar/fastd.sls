@@ -29,7 +29,7 @@ fastd:
     methods:
       - "null"
       - null+salsa2012+umac
-      - salsa2012+umac
+#      - salsa2012+umac
     secret: |
       -----BEGIN PGP MESSAGE-----
       hQIMA9J7QslVEt/9ARAAt0kt+p7Y6GeqKuF1BQaCDR48quV6DaRswIAJs3GK9xPR
