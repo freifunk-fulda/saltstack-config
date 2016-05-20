@@ -19,9 +19,10 @@
     - makedirs: True
 {% endif %}
 
+
 # Set kvm values (i.e., enable ksm)
 {% if grains['roles'] == 'kvm' %}
-/etc/sysctl.d/30-ksm.conf:
+/etc/sysctl.d/30-kvm.conf:
   file:
     - managed
     - name: /etc/sysctl.d/30-kvm.conf
@@ -30,3 +31,15 @@
     - require:
       - pkg: sysfsutils
 {% endif %}
+
+
+# Reload sysctl variables after configuration changes
+#
+sysctl.reload:
+  cmd.wait:
+    - name: /sbin/sysctl -p
+    - watch:
+      - file: /etc/sysctl.d/10-default.conf
+      - file: /etc/sysctl.d/20-freifunk-gw.conf
+      - file: /etc/sysctl.d/30-kvm.conf
+
