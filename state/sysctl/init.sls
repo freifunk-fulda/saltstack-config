@@ -40,6 +40,9 @@ sysctl.reload:
     - name: /sbin/sysctl -p
     - watch:
       - file: /etc/sysctl.d/10-default.conf
+{% if grains['id'].startswith('gw') %}
       - file: /etc/sysctl.d/20-freifunk-gw.conf
+{% endif %}
+{% if grains['roles'] == 'kvm' %}
       - file: /etc/sysctl.d/30-kvm.conf
-
+{% endif %}
