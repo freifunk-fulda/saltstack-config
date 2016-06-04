@@ -23,7 +23,9 @@ hosts:
     enabled: 0
     debug: 0
     location: Hetzner, Frankfurt
-    mac: 26:13:9d:b4:31:a7
+    # the last digit of the mac address will be substituted
+    # by the fastd instance number
+    mac: 26:13:9d:b4:31:a
     ipv4:
       public: 176.9.72.29
       freifunk: 10.185.0.1
@@ -38,7 +40,9 @@ hosts:
     enabled: 1
     debug: 0
     location: Webtropia, Duesseldorf
-    mac: 00:1c:42:00:04:93
+    # the last digit of the mac address will be substituted
+    # by the fastd instance number
+    mac: 00:1c:42:00:04:9
     ipv4:
       public: 89.163.209.240
       freifunk: 10.185.0.2
@@ -70,7 +74,9 @@ hosts:
     enabled: 1
     debug: 0
     location: Hetzner, Nuernberg
-    mac: 26:13:9d:da:31:8a
+    # the last digit of the mac address will be substituted
+    # by the fastd instance number
+    mac: 26:13:9d:da:31:8
     ipv4:
       public: 138.201.16.57
       freifunk: 10.185.0.4

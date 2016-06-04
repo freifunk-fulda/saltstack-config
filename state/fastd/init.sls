@@ -20,7 +20,7 @@ fastd:
 
 
 # Disable the fastd default service
-# (we want fastd@fffd instead)
+# (we want fastd@fffd1 and fastd@fffd2 instead)
 #
 /etc/systemd/system/fastd.service:
   file.symlink:
@@ -29,7 +29,7 @@ fastd:
     - makedirs: True
 
 
-# Make fastd instances dependon the according batman interfaces
+# Make fastd instances depend on the according batman interfaces
 #
 /etc/systemd/system/fastd@.service.d/batman.conf:
   file.managed:
@@ -49,6 +49,30 @@ fastd.conf:
     - group: root
     - mode: 640
     - source: salt://fastd/fastd.conf.tpl
+    - makedirs: True
+    - template: jinja
+    - require:
+      - pkg: fastd
+
+fastd1.conf:
+  file.managed:
+    - name: /etc/fastd/fffd1/fastd.conf
+    - user: root
+    - group: root
+    - mode: 640
+    - source: salt://fastd/fastd1.conf.tpl
+    - makedirs: True
+    - template: jinja
+    - require:
+      - pkg: fastd
+
+fastd2.conf:
+  file.managed:
+    - name: /etc/fastd/fffd2/fastd.conf
+    - user: root
+    - group: root
+    - mode: 640
+    - source: salt://fastd/fastd2.conf.tpl
     - makedirs: True
     - template: jinja
     - require:

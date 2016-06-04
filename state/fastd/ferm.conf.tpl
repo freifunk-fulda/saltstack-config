@@ -5,5 +5,5 @@
 domain (ip ip6)
 table filter
 chain INPUT
-proto udp dport 10000 ACCEPT;
+proto udp dport (10000 20000) ACCEPT;
 
