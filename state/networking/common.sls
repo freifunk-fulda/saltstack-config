@@ -20,4 +20,6 @@ resolv.conf:
     - mode: 644
     - source: salt://networking/resolv.conf.tpl
     - template: jinja
+    - require:
+      - pkg: bind9
 
