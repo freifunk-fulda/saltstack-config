@@ -26,15 +26,23 @@ sshd.conf:
       - pkg: openssh-server
 
 
-# Add ssh keys of admins
+# Empty the authorized_keys file,
+# and add ssh keys of admins
 #
+sshd.root.authorized_keys.emptyfile:
+  file.managed:
+    - name: /root/.ssh/authorized_keys
+    - contents:
+      - ""
+
 {% for owner, key in pillar['ssh']['authorized_keys'].items() %}
 sshd.root.authorized_keys.{{ owner }}:
-  ssh_auth:
-    - present
+  ssh_auth.present:
     - user: root
     - name: {{ key }}
     - comment: {{ owner }}
+    - require:
+      - file: sshd.root.authorized_keys.emptyfile
 {% endfor %}
 
 
