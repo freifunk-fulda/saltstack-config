@@ -11,10 +11,10 @@ fi
 
 # Depending on the argument, we add or delete rules
 #
-if [ "$1" == "start" ]; then
+if [ "$1" = "start" ]; then
   TYPE='add'
 else
-  TYPE=del
+  TYPE='del'
 fi
 
 

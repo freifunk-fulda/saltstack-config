@@ -41,7 +41,7 @@ subnet 10.185.0.0 netmask 255.255.192.0 {
         authoritative;
         range 10.185.{{ pillar['hosts'][grains['id']]['id'] }}0.0 10.185.{{ pillar['hosts'][grains['id']]['id'] }}9.255;
         option routers 10.185.0.{{ pillar['hosts'][grains['id']]['id'] }};
-        option domain-name-servers 10.185.0.{{ pillar.hosts.grains['id']['id'] }}, {{ pillar.bind.master.ipv4 }};
+        option domain-name-servers 10.185.0.{{ pillar['hosts'][grains['id']]['id'] }}, {{ pillar.bind.master.ipv4 }};
         option ntp-servers ntp{{ pillar['hosts'][grains['id']]['id'] }}.services.fffd.eu;
 
         # static DHCP
