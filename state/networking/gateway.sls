@@ -9,16 +9,33 @@
     - source: salt://networking/rt_tables.gateway
 
 
-# Add routing rules
-# (needs a better solution)
+# Script to add or delete routing rules
 #
-/etc/rc.local:
+/etc/policyrouting.sh:
   file.managed:
-    - name: /etc/rc.local
+    - name: /etc/policyrouting.sh
     - user: root
     - group: root
     - mode: 755
-    - source: salt://networking/rc.local.gateway
+    - source: salt://networking/policyrouting.sh
     - template: jinja
 
+# Systemd unit to add or delete routing rules
+#
+/etc/systemd/system/policyrouting.service:
+  file.managed:
+    - name: /etc/systemd/system/policyrouting.service
+    - user: root
+    - group: root
+    - mode: 755
+    - source: salt://networking/policyrouting.service
 
+  service.running:
+    - name: policyrouting.service
+    - enable: True
+    - requires:
+      - file: /etc/systemd/system/policyrouting.service
+      - file: /etc/policyrouting.sh
+    - watch:
+      - file: /etc/systemd/system/policyrouting.service
+      - file: /etc/policyrouting.sh
