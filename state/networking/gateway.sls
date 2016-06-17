@@ -17,7 +17,7 @@
     - user: root
     - group: root
     - mode: 755
-    - source: salt://networking/policyrouting.sh
+    - source: salt://networking/policyrouting.sh.tpl
     - template: jinja
 
 # Systemd unit to add or delete routing rules
