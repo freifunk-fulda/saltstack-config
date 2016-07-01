@@ -13,6 +13,7 @@ options {
 	listen-on-v6 {
 		::1;
 		{{ pillar['hosts'][grains['id']]['ipv6']['freifunk'] }};
+		{{ pillar['ffrl']['ipv6']['network'] }}{{ pillar.hosts[grains.id].id }};
 
 		# this is needed to get replys from other dns servers.
 		# note: firewall only allows related answers
