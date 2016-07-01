@@ -42,7 +42,7 @@ base:
     - bind.gateway
     - radvd
     - apache2.gateway
-    - openvpn
+#    - openvpn
     - bird
 
 {% if pillar.peerings[grains['id']].type == "icvpn" %}
