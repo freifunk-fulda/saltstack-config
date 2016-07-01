@@ -33,6 +33,11 @@ secret "{{ pillar['fastd'][grains['id']]['secret']}}";
 
 # Include peers
 #
-include peers from "fffd-peers-backbone";
+include peers from "fffd-peers-backbone/servers";
 include peers from "fffd-peers-nodes";
+
+
+# Limit peers to 100 per fastd instance
+#
+peer limit 100;
 
