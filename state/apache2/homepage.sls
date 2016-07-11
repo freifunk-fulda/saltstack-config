@@ -1,17 +1,10 @@
-# Websites (http and https)
+# Install dependencies for Websites
 #
-homepage.packages:
-  pkg.installed:
+apache2.homepage:
+  pkg.latest:
     - pkgs:
       - php5
       - php5-mysql
       - php5-gd
-
-vhost.dummy.conf:
-  file.managed:
-    - name: /etc/apache2/sites-available/dummy.conf
-    - user: root
-    - group: root
-    - mode: 640
-    - contents: ''
-
+    - require:
+      - pkg: apache2.common

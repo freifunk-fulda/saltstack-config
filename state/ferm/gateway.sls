@@ -1,32 +1,19 @@
 # Install forwarding, mangle and nat rules
 # 
-ferm.mangle.ipv4.conf:
-  file:
-    - managed
-    - name: /etc/ferm.d/81-mangle.ipv4.conf
-    - source: salt://ferm/81-mangle.ipv4.conf
+ferm.mangle.conf:
+  file.managed:
+    - name: /etc/ferm.d/81-mangle.conf
+    - source: salt://ferm/files/81-mangle.conf
     - user: root
     - group: root
     - mode: 644
     - makedirs: True
     - template: jinja
 
-ferm.mangle.ipv6.conf:
-  file:
-    - managed
-    - name: /etc/ferm.d/81-mangle.ipv6.conf
-    - source: salt://ferm/81-mangle.ipv6.conf
-    - user: root
-    - group: root
-    - mode: 644
-    - makedirs: True
-    - template: jinja
-
-ferm.nat.ipv4.conf:
-  file:
-    - managed
-    - name: /etc/ferm.d/82-nat.ipv4.conf
-    - source: salt://ferm/82-nat.ipv4.conf
+ferm.nat.conf:
+  file.managed:
+    - name: /etc/ferm.d/82-nat.conf
+    - source: salt://ferm/files/82-nat.conf
     - user: root
     - group: root
     - mode: 644
@@ -34,10 +21,9 @@ ferm.nat.ipv4.conf:
     - template: jinja
 
 ferm.forward.ipv4.conf:
-  file:
-    - managed
+  file.managed:
     - name: /etc/ferm.d/85-forward.ipv4.conf
-    - source: salt://ferm/85-forward.ipv4.conf
+    - source: salt://ferm/files/85-forward.ipv4.conf
     - user: root
     - group: root
     - mode: 644
@@ -45,13 +31,11 @@ ferm.forward.ipv4.conf:
     - template: jinja
 
 ferm.forward.ipv6.conf:
-  file:
-    - managed
+  file.managed:
     - name: /etc/ferm.d/85-forward.ipv6.conf
-    - source: salt://ferm/85-forward.ipv6.conf
+    - source: salt://ferm/files/85-forward.ipv6.conf
     - user: root
     - group: root
     - mode: 644
     - makedirs: True
     - template: jinja
-

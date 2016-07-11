@@ -3,11 +3,11 @@
 radvd:
   pkg.installed:
     - name: radvd
+
   service.running:
     - name: radvd
     - enable: True
     - require:
-      - pkg: radvd
       - file: /etc/sysctl.d/10-default.conf
     - watch:
       - file: /etc/radvd.conf
@@ -21,10 +21,8 @@ radvd.conf:
     - user: root
     - group: root
     - mode: 644
-    - source: salt://radvd/radvd.conf.tpl
+    - source: salt://radvd/files/radvd.conf.tpl
     - template: jinja
-    - require:
-      - pkg: radvd
 
 
 # Enable process monitoring with Net-SNMP
@@ -32,5 +30,5 @@ radvd.conf:
 radvd.snmp.proc.conf:
   file.managed:
     - name: /etc/snmp/conf.d/proc.radvd.conf
-    - source: salt://radvd/netsnmp.proc.conf
+    - source: salt://radvd/files/netsnmp.proc.conf
     - makedirs: True

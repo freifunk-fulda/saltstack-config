@@ -19,7 +19,7 @@ ffrl.gre:
     - user: root
     - group: root
     - mode: 640
-    - source: salt://ffrl/dummy.tpl
+    - source: salt://ffrl/files/dummy.tpl
     - template: jinja
 
 
@@ -32,7 +32,7 @@ ffrl.gre:
     - user: root
     - group: root
     - mode: 640
-    - source: salt://ffrl/tun-.tpl
+    - source: salt://ffrl/files/tun-.tpl
     - template: jinja
     - context:
         peer: {{ peer }}
@@ -43,7 +43,7 @@ ffrl.gre.ferm:
   file:
     - managed
     - name: /etc/ferm.d/30-gre-ffrl.conf
-    - source: salt://ffrl/ferm.conf.tpl
+    - source: salt://ffrl/files/ferm.conf.tpl
     - makedirs: True
     - template: jinja
 

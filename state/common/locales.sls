@@ -1,4 +1,4 @@
-# generate locales and set the default one
+# generate locales and set the default
 
 us_locale:
   locale.present:
@@ -13,4 +13,3 @@ default_locale:
     - name: en_US.UTF-8
     - require:
       - locale: us_locale
-

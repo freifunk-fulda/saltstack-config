@@ -1,7 +1,8 @@
-# Install and enable apache2
+# Install and enable apache2 modules needed on gateways.
+# Requires installation of apache2 from apache2.common state
 #
 apache2.gateway:
-  pkg.installed:
+  pkg.latest:
     - pkgs: 
       - libapache2-mod-wsgi
       - python-bottle
@@ -11,11 +12,10 @@ apache2.gateway:
   service.running:
     - name: apache2
     - enable: True
-    - require:
-      - pkg: apache2.gateway
     - watch:
       - file: /etc/apache2/*
 
+apache2.gateway.wsgi:
   apache_module.enable:
     - name: ssl
     - require:
@@ -23,14 +23,15 @@ apache2.gateway:
 
 
 # default websites (http and https)
+# Add configuration files and enable the vhosts
 #
 vhost.default.conf:
   file.managed:
     - name: /etc/apache2/sites-available/000-default.conf
     - user: root
-    - group: root
-    - mode: 640
-    - source: salt://apache2/gateway.vhost.tpl
+    - group: www-data
+    - mode: 440
+    - source: salt://apache2/files/gateway.vhost.tpl
     - template: jinja
     - require:
       - pkg: apache2.gateway
@@ -44,9 +45,9 @@ vhost.default.ssl.conf:
   file.managed:
     - name: /etc/apache2/sites-available/000-default-ssl.conf
     - user: root
-    - group: root
+    - group: www-data
     - mode: 640
-    - source: salt://apache2/gateway.vhost.ssl.tpl
+    - source: salt://apache2/files/gateway.vhost.ssl.tpl
     - template: jinja
     - require:
       - pkg: apache2.gateway
@@ -57,7 +58,7 @@ vhost.default.ssl.symlink:
     - target: /etc/apache2/sites-available/000-default-ssl.conf
 
 
-# Get website/keyupload repo
+# Install the keyupload tool from git
 #
 fffd-keyupload:
   git.latest:
@@ -77,10 +78,10 @@ fffd-keyupload.sudoers:
     - user: root
     - group: root
     - mode: 660
-    - source: salt://apache2/fffd-keyupload.sudoers
+    - source: salt://apache2/files/fffd-keyupload.sudoers
 
 
-# statistics
+# Enable collection of statistics data
 #
 vhost.vnstat.cron:
   file.managed:
@@ -88,8 +89,6 @@ vhost.vnstat.cron:
     - user: root
     - group: root
     - mode: 755
-    - source: salt://apache2/vnstat.cron
+    - source: salt://apache2/files/vnstat.cron
     - require:
       - pkg: apache2.gateway
-
-

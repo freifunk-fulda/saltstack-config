@@ -1,64 +1,27 @@
-# Install and enable bind9
+# Install master specific configuration files
 #
-bind9:
-  pkg.installed:
-    - name: bind9
-  service.running:
-    - name: bind9
-    - enable: True
-    - require:
-      - pkg: bind9
-    - watch:
-      - file: /etc/bind/named.conf
-      - file: /etc/bind/named.conf.*
-
-# bind9 configuration
-#
-named.conf:
-  file.managed:
-    - name: /etc/bind/named.conf
-    - user: root
-    - group: bind
-    - mode: 640
-    - source: salt://bind/named.conf.tpl
-    - template: jinja
-    - require:
-      - pkg: bind9
-
-
-named.conf.options:
-  file.managed:
-    - name: /etc/bind/named.conf.options
-    - user: root
-    - group: bind
-    - mode: 640
-    - source: salt://bind/named.conf.options.tpl
-    - template: jinja
-    - require:
-      - pkg: bind9
-
-
-named.conf.local:
+bind9.master.named.conf.local:
   file.managed:
     - name: /etc/bind/named.conf.local
     - user: root
     - group: bind
     - mode: 640
-    - source: salt://bind/named.conf.local.master.tpl
+    - source: salt://bind/files/named.conf.local.master.tpl
     - template: jinja
     - require:
       - pkg: bind9
 
-named.conf.tsigkeys:
+bind9.master.named.conf.tsigkeys:
   file.managed:
     - name: /etc/bind/named.conf.tsigkeys
     - user: root
     - group: bind
     - mode: 640
-    - source: salt://bind/named.conf.tsigkeys.master.tpl
+    - source: salt://bind/files/named.conf.tsigkeys.master.tpl
     - template: jinja
     - require:
       - pkg: bind9
+
 
 # Clone zone information repo
 #
@@ -68,9 +31,9 @@ named.conf.tsigkeys:
     - target: /opt/fffd-dns
 
 
-# Refresh zone repo regularly
+# Refresh zone repo regularly using cron
 #
-zones.update:
+bind9.zones.update:
   file.symlink:
     - name: /etc/cron.d/update_fffd-dns
     - target: /opt/fffd-utils/update_fffd-dns.cron
@@ -86,9 +49,7 @@ fffd-dns-nodes.cron:
     - user: root
     - group: root
     - mode: 755
-    - source: salt://bind/fffd-dns-nodes.cron
-    - require:
-      - pkg: bind9
+    - source: salt://bind/files/fffd-dns-nodes.cron
 
   cmd.run:
     - name: /etc/cron.hourly/fffd-dns-nodes
@@ -96,18 +57,20 @@ fffd-dns-nodes.cron:
 
 # Configure firewall to allow dns
 #
-bind9.ferm:
+bind9.master.ferm:
   file.managed:
     - name: /etc/ferm.d/50-dns.conf
-    - source: salt://bind/ferm.master.conf
+    - source: salt://bind/files/ferm.master.conf
     - makedirs: True
     - template: jinja
+    - require:
+      - pkg: bind9
 
 
 # Enable process monitoring with Net-SNMP
 #
-bind9.snmp.proc.conf:
+bind9.master.snmp.proc.conf:
   file.managed:
     - name: /etc/snmp/conf.d/proc.bind9.conf
-    - source: salt://bind/netsnmp.proc.conf
+    - source: salt://bind/files/netsnmp.proc.conf
     - makedirs: True

@@ -7,8 +7,6 @@ rsyslog:
   service.running:
     - name: rsyslog
     - enable: True
-    - require:
-      - pkg: rsyslog
     - watch:
       - file: /etc/rsyslog.conf
       - file: /etc/rsyslog.d/*
@@ -22,9 +20,8 @@ rsyslog.conf:
     - user: root
     - group: root
     - mode: 644
-    - source: salt://rsyslog/rsyslog.conf
-    - require:
-      - pkg: rsyslog
+    - source: salt://rsyslog/files/rsyslog.conf
+
 
 # Disable dhcp logging
 #
@@ -34,10 +31,8 @@ rsyslog.dhcp.conf:
     - user: root
     - group: root
     - mode: 644
-    - source: salt://rsyslog/rsyslog.dhcp.conf.tpl
+    - source: salt://rsyslog/files/rsyslog.dhcp.conf.tpl
     - template: jinja
-    - require:
-      - pkg: rsyslog
 
 
 # Enable process monitoring with Net-SNMP
@@ -45,5 +40,5 @@ rsyslog.dhcp.conf:
 rsyslog.snmp.proc.conf:
   file.managed:
     - name: /etc/snmp/conf.d/proc.rsyslog.conf
-    - source: salt://rsyslog/netsnmp.proc.conf
+    - source: salt://rsyslog/files/netsnmp.proc.conf
     - makedirs: True

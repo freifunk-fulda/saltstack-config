@@ -1,4 +1,4 @@
-# Install and start the latest fastd package
+# Install the latest fastd package
 #
 fastd:
   pkgrepo.managed:
@@ -9,7 +9,7 @@ fastd:
     - keyid: 16EF3F64CB201D9C
     - keyserver: pgpkeys.mit.edu
 
-  pkg.installed:
+  pkg.latest:
     - name: fastd
 
 
@@ -33,20 +33,19 @@ fastd:
         Requires=batman@fffd.service
         After=batman@fffd.service
 
-{% if grains['id'].startswith('gw') -%}
+
 # fastd configuration files for gateways
 #
+{% if grains['id'].startswith('gw') -%}
 fastd.conf:
   file.managed:
     - name: /etc/fastd/fffd/fastd.conf
     - user: root
     - group: root
     - mode: 640
-    - source: salt://fastd/fastd.conf.tpl
+    - source: salt://fastd/files/fastd.conf.tpl
     - makedirs: True
     - template: jinja
-    - require:
-      - pkg: fastd
 
 fastd1.conf:
   file.managed:
@@ -54,11 +53,9 @@ fastd1.conf:
     - user: root
     - group: root
     - mode: 640
-    - source: salt://fastd/fastd1.conf.tpl
+    - source: salt://fastd/files/fastd1.conf.tpl
     - makedirs: True
     - template: jinja
-    - require:
-      - pkg: fastd
 
   service.running:
     - name: fastd@fffd2
@@ -72,11 +69,9 @@ fastd2.conf:
     - user: root
     - group: root
     - mode: 640
-    - source: salt://fastd/fastd2.conf.tpl
+    - source: salt://fastd/files/fastd2.conf.tpl
     - makedirs: True
     - template: jinja
-    - require:
-      - pkg: fastd
 
   service.running:
     - name: fastd@fffd1
@@ -84,20 +79,19 @@ fastd2.conf:
     - watch:
       - file: /etc/fastd/fffd/*
 
-{%- else %}
+
 # fastd configuration files for all other servers
 #
+{%- else %}
 fastd.conf:
   file.managed:
     - name: /etc/fastd/fffd/fastd.conf
     - user: root
     - group: root
     - mode: 640
-    - source: salt://fastd/fastd.conf.srv.tpl
+    - source: salt://fastd/files/fastd.conf.srv.tpl
     - makedirs: True
     - template: jinja
-    - require:
-      - pkg: fastd
 
   service.running:
     - name: fastd@fffd
@@ -106,13 +100,14 @@ fastd.conf:
       - file: /etc/fastd/fffd/*
 {%- endif %}
 
+
 # Get fastd keys of backend nodes
 #
-# Disabled for transition phase - backbone is handled by a different fastd instance
 fastd.peers.backend:
   git.latest:
     - name: https://github.com/freifunk-fulda/fffd-peers-backbone.git
     - target: /etc/fastd/fffd/fffd-peers-backbone
+
 
 # Create directory for fastd keys of nodes
 # and allow www-data to access it
@@ -136,7 +131,7 @@ fastd.peers.backend:
 fastd.ferm:
   file.managed:
     - name: /etc/ferm.d/11-fastd.conf
-    - source: salt://fastd/ferm.conf.tpl
+    - source: salt://fastd/files/ferm.conf.tpl
     - makedirs: True
 
 
@@ -145,5 +140,5 @@ fastd.ferm:
 fastd.snmp.proc.conf:
   file.managed:
     - name: /etc/snmp/conf.d/proc.fastd.conf
-    - source: salt://fastd/netsnmp.proc.conf
+    - source: salt://fastd/files/netsnmp.proc.conf
     - makedirs: True

@@ -1,7 +1,10 @@
-// THIS FILE IS CONTROLLED BY SALTSTACK!
+# THIS FILE IS CONTROLLED BY SALTSTACK!
+#
+# bind9 - zone configuration
+# all gateways are slave dns servers
 
-
-// old zones
+# old zones
+#
 zone "fffd" {
 	type master;
 	notify yes;
@@ -17,7 +20,8 @@ zone "services.fffd" {
 };
 
 
-// new zones
+# new zones
+#
 zone "fffd.eu" {
 	type master;
 	notify yes;
@@ -40,7 +44,8 @@ zone "nodes.fffd.eu" {
 };
 
 
-// reverse zones
+# reverse zones
+#
 zone "185.10.in-addr.arpa" {
 	type master;
 	notify yes;
@@ -54,4 +59,3 @@ zone "0.0.0.0.4.a.3.9.8.a.5.6.0.0.d.f.ip6.arpa" {
 	allow-transfer { key "fffd-axfr-tsig"; };
 	file "/opt/fffd-dns/zones/0.0.0.0.4.a.3.9.8.a.5.6.0.0.d.f.ip6.arpa";
 };
-

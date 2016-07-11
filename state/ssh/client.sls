@@ -6,6 +6,4 @@ openssh-client:
     - user: root
     - group: root
     - mode: 640
-    - source: salt://ssh/ssh_config
-    - require:
-      - pkg: openssh-client
+    - source: salt://ssh/files/ssh_config

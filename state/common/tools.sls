@@ -1,3 +1,5 @@
+# Install a bunch of standard tools
+#
 tools:
   pkg.installed:
     - pkgs:
@@ -27,5 +29,5 @@ tools:
 tools.snmp.proc.conf:
   file.managed:
     - name: /etc/snmp/conf.d/proc.common.tools.conf
-    - source: salt://common/netsnmp.proc.conf
+    - source: salt://common/files/netsnmp.proc.conf
     - makedirs: True

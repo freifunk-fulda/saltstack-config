@@ -1,3 +1,6 @@
+# This state will build B.A.T.M.A.N from source
+# and install it to /usr/local
+
 # Install batman_adv and batctl build dependencies
 #
 batman_adv_dep:
@@ -10,11 +13,10 @@ batman_adv_dep:
 
 batman_adv_dep_backports:
   pkg.latest:
-{% if grains['osfinger'] == "Debian-8" %}
+    - name: linux-headers-amd64
     - fromrepo: jessie-backports
-{% endif %}
-    - pkgs:
-      - linux-headers-amd64
+    - require:
+      - pkg: apt.backports
 
 
 # Build batman_adv and batctl from source
@@ -56,6 +58,7 @@ batman_adv:
 
 
 # Add systemd service
+#
 batman@.service:
   file.managed:
     - name: /etc/systemd/system/batman@.service

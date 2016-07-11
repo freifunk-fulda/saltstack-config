@@ -1,3 +1,5 @@
+# Remove some unwanted tools
+#
 unwanted:
   pkg.purged:
     - pkgs:

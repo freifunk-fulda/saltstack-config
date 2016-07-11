@@ -3,7 +3,6 @@ base:
     - common.unwanted
     - common.tools
     - common.root
-    - common.apt-backports
     - common.locales
 
     - salt
@@ -38,11 +37,12 @@ base:
     - munin.gateway
     - fffd-utils.gateway
 
-    - dhcp
+    - bind.common
     - bind.gateway
+    - dhcp
+
     - radvd
     - apache2.gateway
-#    - openvpn
     - bird
 
 {% if pillar.peerings[grains['id']].type == "icvpn" %}
@@ -67,6 +67,7 @@ base:
 
   'srv1':
     - apache2.homepage
+    - bind.common
     - bind.master
     - salt.master
     - mysql.server

@@ -3,14 +3,14 @@
 sshd:
   pkg.installed:
     - name: openssh-server
+
   service.running:
     - name: ssh
     - enable: True
-    - require:
-      - pkg: openssh-server
     - watch:
       - file: /etc/ssh/sshd_config
       - file: /etc/systemd/system/ssh.service.d/want-tinc.conf
+
 
 # sshd configuration
 #
@@ -20,10 +20,8 @@ sshd.conf:
     - user: root
     - group: root
     - mode: 640
-    - source: salt://ssh/sshd_config
+    - source: salt://ssh/files/sshd_config
     - template: jinja
-    - require:
-      - pkg: openssh-server
 
 
 # Empty the authorized_keys file,
@@ -49,10 +47,9 @@ sshd.root.authorized_keys.{{ owner }}:
 # Allow ssh traffic
 #
 sshd.ferm:
-  file:
-    - managed
+  file.managed:
     - name: /etc/ferm.d/50-sshd.conf
-    - source: salt://ssh/ferm.ssh.conf.tpl
+    - source: salt://ssh/files/ferm.ssh.conf.tpl
     - makedirs: True
     - template: jinja
 
@@ -64,7 +61,7 @@ start-after-tinc.systemd:
     - user: root
     - group: root
     - mode: 644
-    - source: salt://ssh/start-after-tinc.systemd
+    - source: salt://ssh/files/start-after-tinc.systemd
     - makedirs: True
     - require:
       - pkg: openssh-server
@@ -77,9 +74,8 @@ mosh:
     - name: mosh
 
 mosh.ferm:
-  file:
-    - managed
+  file.managed:
     - name: /etc/ferm.d/50-mosh.conf
-    - source: salt://ssh/ferm.mosh.conf
+    - source: salt://ssh/files/ferm.mosh.conf
     - makedirs: True
 

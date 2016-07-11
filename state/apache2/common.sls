@@ -1,18 +1,16 @@
 # Install and enable apache2
 #
 apache2.common:
-  pkg.installed:
-    - pkgs: 
-      - apache2
+  pkg.latest:
+    - name: apache2
 
   service.running:
     - name: apache2
     - enable: True
-    - require:
-      - pkg: apache2.common
     - watch:
       - file: /etc/apache2/*
 
+apache2.common.ssl:
   apache_module.enable:
     - name: ssl
     - require:
@@ -25,9 +23,9 @@ wildcard.fulda.freifunk.net.key:
   file.managed:
     - name: /etc/ssl/local/wildcard.fulda.freifunk.net.key
     - user: root
-    - group: root
+    - group: www-data
     - mode: 440
-    - source: salt://apache2/wildcard.fulda.freifunk.net.key.tpl
+    - source: salt://apache2/files/wildcard.fulda.freifunk.net.key.tpl
     - template: jinja
     - makedirs: True
     - require:
@@ -40,9 +38,9 @@ wildcard.fulda.freifunk.net.crt:
   file.managed:
     - name: /etc/ssl/local/wildcard.fulda.freifunk.net.crt
     - user: root
-    - group: root
+    - group: www-data
     - mode: 440
-    - source: salt://apache2/wildcard.fulda.freifunk.net.crt
+    - source: salt://apache2/files/wildcard.fulda.freifunk.net.crt
     - makedirs: True
     - require:
       - pkg: apache2.common
@@ -51,9 +49,9 @@ startcom.class2.server.crt:
   file.managed:
     - name: /etc/ssl/local/startcom.class2.server.crt
     - user: root
-    - group: root
+    - group: www-data
     - mode: 440
-    - source: salt://apache2/startcom.class2.server.crt
+    - source: salt://apache2/files/startcom.class2.server.crt
     - makedirs: True
     - require:
       - pkg: apache2.common
@@ -65,7 +63,7 @@ apache.ferm:
   file:
     - managed
     - name: /etc/ferm.d/50-www.conf
-    - source: salt://apache2/ferm.conf
+    - source: salt://apache2/files/ferm.conf
     - makedirs: True
     - require:
       - pkg: apache2.common

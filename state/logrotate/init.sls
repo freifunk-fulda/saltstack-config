@@ -1,4 +1,4 @@
-# Install logrotate
+# Install and configure logrotate
 #
 logrotate:
   pkg.installed
@@ -12,9 +12,7 @@ logrotate.conf:
     - user: root
     - group: root
     - mode: 644
-    - source: salt://logrotate/logrotate.conf
-    - require:
-      - pkg: logrotate
+    - source: salt://logrotate/files/logrotate.conf
 
 logrotate.apache2.conf:
   file.managed:
@@ -22,9 +20,7 @@ logrotate.apache2.conf:
     - user: root
     - group: root
     - mode: 644
-    - source: salt://logrotate/apache2.conf
-    - require:
-      - pkg: logrotate
+    - source: salt://logrotate/files/apache2.conf
 
 logrotate.rsyslog.conf:
   file.managed:
@@ -32,6 +28,4 @@ logrotate.rsyslog.conf:
     - user: root
     - group: root
     - mode: 644
-    - source: salt://logrotate/rsyslog.conf
-    - require:
-      - pkg: logrotate
+    - source: salt://logrotate/files/rsyslog.conf

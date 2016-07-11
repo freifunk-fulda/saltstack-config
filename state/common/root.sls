@@ -1,30 +1,27 @@
+# Configure the root users environment
+#
 root.password:
-  user:
-    - present
+  user.present:
     - name: root
     - password: "{{ pillar['root']['password'] }}"
 
 root.screenrc:
-  file:
-    - managed
+  file.managed:
     - name: /root/.screenrc
-    - source: salt://common/root.screenrc
+    - source: salt://common/files/root.screenrc
 
 root.bashrc:
-  file:
-    - managed
+  file.managed:
     - name: /root/.bashrc
-    - source: salt://common/root.bashrc
+    - source: salt://common/files/root.bashrc
 
 root.vimrc:
-  file:
-    - managed
+  file.managed:
     - name: /root/.vimrc
-    - source: salt://common/root.vimrc
+    - source: salt://common/files/root.vimrc
 
 root.htoprc:
-  file:
-    - managed
+  file.managed:
     - name: /root/.config/htop/htoprc
-    - source: salt://common/root.htoprc
+    - source: salt://common/files/root.htoprc
     - makedirs: True
