@@ -1,0 +1,4 @@
+# THIS FILE IS CONTROLLED BY SALTSTACK!
+
+[fastd]
+user root

@@ -13,13 +13,13 @@ interface fffd.bat {
     AdvRouterAddr on;
   };
 
-  prefix {{ pillar.ffrl.ipv6.network }}/{{ pillar.ffrl.ipv6.netmask }} {
+  prefix {{ pillar.ffrl.ipv6.network }}/64 {
     AdvOnLink on;
     AdvAutonomous on;
     AdvRouterAddr on;
   };
 
-  RDNSS fe80:: {
+  RDNSS {{ pillar['ffrl']['ipv6']['network'] }}{{ pillar.hosts[grains.id].id }} {
   };
 };
 

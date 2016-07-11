@@ -12,12 +12,6 @@ fastd:
   pkg.installed:
     - name: fastd
 
-  service.running:
-    - name: fastd@fffd
-    - enable: True
-    - watch:
-      - file: /etc/fastd/fffd/*
-
 
 # Disable the fastd default service
 # (we want fastd@fffd1 and fastd@fffd2 instead)
@@ -36,8 +30,8 @@ fastd:
     - makedirs: True
     - contents: |
         [Unit]
-        Reqiures=batman@%i.service
-        After=batman@%i.service
+        Requires=batman@fffd.service
+        After=batman@fffd.service
 
 {% if grains['id'].startswith('gw') -%}
 # fastd configuration files for gateways
@@ -66,6 +60,12 @@ fastd1.conf:
     - require:
       - pkg: fastd
 
+  service.running:
+    - name: fastd@fffd2
+    - enable: True
+    - watch:
+      - file: /etc/fastd/fffd/*
+
 fastd2.conf:
   file.managed:
     - name: /etc/fastd/fffd2/fastd.conf
@@ -77,6 +77,13 @@ fastd2.conf:
     - template: jinja
     - require:
       - pkg: fastd
+
+  service.running:
+    - name: fastd@fffd1
+    - enable: True
+    - watch:
+      - file: /etc/fastd/fffd/*
+
 {%- else %}
 # fastd configuration files for all other servers
 #
@@ -91,6 +98,12 @@ fastd.conf:
     - template: jinja
     - require:
       - pkg: fastd
+
+  service.running:
+    - name: fastd@fffd
+    - enable: True
+    - watch:
+      - file: /etc/fastd/fffd/*
 {%- endif %}
 
 # Get fastd keys of backend nodes
@@ -108,13 +121,13 @@ fastd.peers.backend:
   file.directory:
     - user: root
     - group: www-data
-    - mode: 750
+    - mode: 755
 
 /etc/fastd/fffd/fffd-peers-nodes:
   file.directory:
     - user: root
     - group: www-data
-    - mode: 770
+    - mode: 775
     - makedirs: True
 
 

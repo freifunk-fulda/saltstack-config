@@ -37,7 +37,7 @@ secret "{{ pillar['fastd'][grains['id']]['secret']}}";
 
 # Include peers
 #
-include peers from "fffd-peers-backbone";
+include peers from "fffd-peers-backbone/gateways";
 
 
 # Interface configuration

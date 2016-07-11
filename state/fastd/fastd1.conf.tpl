@@ -19,13 +19,7 @@ status socket "/var/run/fastd1.sock";
 
 # Include global configuration
 #
-include "fastd.conf";
-
-
-# Include peers
-#
-include peers from "fffd-peers-backbone";
-include peers from "fffd-peers-nodes";
+include "../fffd/fastd.conf";
 
 
 # Interface configuration

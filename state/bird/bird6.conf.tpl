@@ -43,11 +43,11 @@ table sink;                # sink for any source except local
 #
 function is_default() { return net ~ [ ::/0 ]; }
 function is_self_ula() { return net ~ [ fd00:65a8:93a4::/48+ ]; }
-function is_self_net() { return net ~ [ 2a03:2260:100f:100::/56 ]; }
+function is_self_net() { return net ~ [ 2a03:2260:100f::/48+ ]; }
 function is_freifunk() { return net ~ [ 
-	2001:0bf7::/32+,	# Foerderverein freie Netzwerke e.V.
+	2001:0bf7::/32+,		# Foerderverein freie Netzwerke e.V.
 	2001:67c:2d50::/48+,	# Freifunk Luebeck (via FF Rheinland)
-	2a03:2260::/29+ 	# Freifunk Rheinland e.V.
+	2a03:2260::/29+			# Freifunk Rheinland e.V.
 ]; }
 function is_ula() { return (net ~ [ fc00::/7{44,64} ]); };
 

@@ -44,8 +44,7 @@ function is_self_ula() { return net ~ [ 10.185.0.0/16+ ]; }
 function is_self_net() { return net ~ [ 185.66.194.68/31+ ]; }
 function is_freifunk() { return net ~ [ 10.0.0.0/8{15,24} ]; }
 function is_dn42() { return net ~ [
-	172.22.0.0/15{22,28},	# dn42 main net0
-	172.20.0.0/16{22,28},	# dn42 main net1
+	172.20.0.0/14{21,29},	# dn42 main net
 	172.22.0.0/23{23,32},	# dn42 Anycast
 	172.23.0.0/24{24,32}	# dn42 Anycast
 ]; }

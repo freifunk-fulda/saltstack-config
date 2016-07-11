@@ -9,7 +9,11 @@ RemainAfterExit=true
 
 ExecStart=/sbin/ip link add name %i.dummy type dummy
 ExecStart=/usr/local/sbin/batctl -m %i.bat if add %i.dummy
+ExecStart=/usr/local/sbin/batctl -m %i.bat dat 0
+ExecStart=/usr/local/sbin/batctl -m %i.bat mm 0
+ExecStart=/usr/local/sbin/batctl -m %i.bat gw server 100MBit/100MBit
 ExecStart=/sbin/ifup %i.bat
+
 ExecStop=/sbin/ifdown %i.bat
 ExecStop=/usr/local/sbin/batctl -m %i.bat if del %i.dummy
 ExecStop=/sbin/ip link del dev %i.dummy
