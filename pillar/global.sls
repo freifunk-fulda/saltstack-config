@@ -46,11 +46,9 @@ hosts:
     ipv4:
       public: 89.163.209.240
       freifunk: 10.185.0.2
-      icvpn: 10.207.0.29
     ipv6:
       public: 2001:4ba0:babe:493::fffd
       freifunk: fd00:65a8:93a4::2
-      icvpn: fec0::a:cf:0:1d
 
 # gw03 is permanently disabled
 #
@@ -80,11 +78,9 @@ hosts:
     ipv4:
       public: 138.201.16.57
       freifunk: 10.185.0.4
-      icvpn: 10.207.0.42
     ipv6:
       public: 2a01:4f8:171:2729::fffd
       freifunk: fd00:65a8:93a4:0::4
-      icvpn: fec0::a:cf:0:2a
 
   srv1:
     debug: 0
