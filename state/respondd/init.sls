@@ -17,7 +17,7 @@ respondd_deps:
        - ethtool
        - lsb-release
 
-respondder:
+respondd:
   service.running:
     - enable: True
     - require:
