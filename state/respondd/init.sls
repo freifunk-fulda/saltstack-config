@@ -24,3 +24,12 @@ respondd:
       - git: https://github.com/freifunk-darmstadt/respondder.git
       - file: /etc/systemd/system/respondd.service
       - pkg: respondd_deps
+
+
+# Allow snmpd management traffic
+#
+respondd.ferm:
+  file.managed:
+    - name: /etc/ferm.d/20-respondd.conf
+    - source: salt://respondd/files/ferm.conf
+    - makedirs: True
