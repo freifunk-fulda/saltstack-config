@@ -1,7 +1,7 @@
 # Install and enable snmpd
 #
 snmpd:
-  pkg.installed
+  pkg.installed:
     - name: snmpd
 
   service.running:

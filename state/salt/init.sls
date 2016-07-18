@@ -29,4 +29,4 @@ salt.carbon.conf:
     - source: salt://salt/files/carbon.conf
     - require:
       - pkg: salt-minion
-      - pkg: munin
+      - pkg: munin-node

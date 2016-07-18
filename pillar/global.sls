@@ -93,6 +93,9 @@ hosts:
     ipv4:
       public: 193.239.104.24
       freifunk: 10.185.0.15
+    ipv6:
+      public: (none)
+      freifunk: fd00:65a8:93a4:0::15
 
   kvm1:
     debug: 0

@@ -4,7 +4,7 @@
 
 interface fffd.bat {
   AdvSendAdvert on;
-#  AdvLinkMTU 1480;
+#  AdvLinkMTU 1280;
   MaxRtrAdvInterval 200;
 
   prefix fd00:65a8:93a4::/64 {

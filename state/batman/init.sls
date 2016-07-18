@@ -16,7 +16,7 @@ batman_adv_dep_backports:
     - name: linux-headers-amd64
     - fromrepo: jessie-backports
     - require:
-      - pkg: apt.backports
+      - pkgrepo: apt.backports
 
 
 # Build batman_adv and batctl from source

@@ -8,7 +8,7 @@ ntp:
     - enable: True
     - name: ntp
     - watch:
-      - file: /etc/files/ntp.conf
+      - file: /etc/ntp.conf
 
 
 # NTP configuration
