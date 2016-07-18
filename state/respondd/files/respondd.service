@@ -2,7 +2,7 @@
 Description=Respondd
 
 [Service]
-ExecStart=/opt/respondd/respondd.py
+ExecStart=/opt/respondd/respondd.py -g ff02::1:1001 -i fffd.bat -b fffd.bat
 Restart=always
 Environment=PATH=/usr/bin:/usr/local/bin
 
