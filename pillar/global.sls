@@ -56,16 +56,16 @@ hosts:
 #    id: 3
 #    enabled: 0
 #    debug: 0
-#    location: Netcup, Frankfurt
-#    mac: 26:13:9d:ea:e1:1b
+#    location: Hetzner RZ16, Falkenstein
+#    # the last digit of the mac address will be substituted
+#    # by the fastd instance number
+#    mac: 26:13:9d:ea:e1:1
 #    ipv4:
-#      public: 5.45.97.58 
+#      public:  5.9.98.185
 #      freifunk: 10.185.0.3
-#      icvpn: 10.207.0.42
 #    ipv6:
-#      public: 2a03:4000:5:144::fffd
+#      public: 2a01:4f8:162:30b4::fffd
 #      freifunk: fd00:65a8:93a4:0::3
-#      icvpn: fec0::a:cf:0:2a
 
   gw04:
     id: 4
@@ -101,5 +101,6 @@ hosts:
       public: 10.0.9.31
       freifunk: 10.185.0.13
     ipv6:
+      public: (none)
       freifunk: fd00:65a8:93a4:0::13
 
