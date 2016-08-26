@@ -41,8 +41,7 @@ table sink;                # sink for any source except local
 #
 function is_default() { return net ~ [ 0.0.0.0/0]; }
 function is_self_ula() { return net ~ [ 10.185.0.0/16+ ]; }
-function is_self_net() { return net ~ [ 185.66.194.68/31+ ]; }
-function is_self_net() { return net ~ [ 185.66.193.120/31+ ]; }
+function is_self_net() { return net ~ [ 185.66.194.68/31+, 185.66.193.120/31+ ]; }
 function is_freifunk() { return net ~ [ 10.0.0.0/8{15,24} ]; }
 function is_dn42() { return net ~ [
 	172.20.0.0/14{21,29},	# dn42 main net
