@@ -1,5 +1,6 @@
 base:
   '*':
+    - apt
     - common.unwanted
     - common.tools
     - common.root
@@ -21,7 +22,6 @@ base:
     - munin
     - postfix
     - ntp
-    - apt
 
     - ssh.server
     - ssh.client
@@ -60,6 +60,9 @@ base:
 
   'gw02':
     - webtropia
+    - ffrl
+
+  'gw03':
     - ffrl
 
   'gw04':

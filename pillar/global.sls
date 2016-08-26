@@ -50,22 +50,20 @@ hosts:
       public: 2001:4ba0:babe:493::fffd
       freifunk: fd00:65a8:93a4::2
 
-# gw03 is permanently disabled
-#
-#  gw03:
-#    id: 3
-#    enabled: 0
-#    debug: 0
-#    location: Hetzner RZ16, Falkenstein
-#    # the last digit of the mac address will be substituted
-#    # by the fastd instance number
-#    mac: 26:13:9d:ea:e1:1
-#    ipv4:
-#      public:  5.9.98.185
-#      freifunk: 10.185.0.3
-#    ipv6:
-#      public: 2a01:4f8:162:30b4::fffd
-#      freifunk: fd00:65a8:93a4:0::3
+  gw03:
+    id: 3
+    enabled: 1
+    debug: 0
+    location: Hetzner RZ16, Falkenstein
+    # the last digit of the mac address will be substituted
+    # by the fastd instance number
+    mac: 26:13:9d:ea:e1:1
+    ipv4:
+      public:  5.9.98.185
+      freifunk: 10.185.0.3
+    ipv6:
+      public: 2a01:4f8:162:30b4::fffd
+      freifunk: fd00:65a8:93a4:0::3
 
   gw04:
     id: 4
@@ -103,4 +101,3 @@ hosts:
     ipv6:
       public: (none)
       freifunk: fd00:65a8:93a4:0::13
-
