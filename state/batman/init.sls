@@ -13,7 +13,9 @@ batman_adv_dep:
 
 batman_adv_dep_backports:
   pkg.latest:
-    - name: linux-headers-amd64
+    - pkgs: 
+      - linux-image-amd64
+      - linux-headers-amd64
     - fromrepo: jessie-backports
     - require:
       - pkgrepo: apt.backports
