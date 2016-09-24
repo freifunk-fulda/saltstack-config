@@ -33,6 +33,9 @@ fi
 /sbin/ip -4 rule ${TYPE} prio 110 from 10.185.0.0/16 table internet
 /sbin/ip -6 rule ${TYPE} prio 110 from 2a03:2260:100f:0100::/56 table internet
 
+# traffic originated from the uplink nat interfaces should be routed to the internet
+#
+/sbin/ip -4 rule ${TYPE} prio 111 from {{ pillar.ffrl[grains.id].ipv4.address}}/{{ pillar.ffrl[grains.id].ipv4.mask }} table internet
 
 # finally, everything except local traffic will hit the sink table with
 # an unreachable default route, instead of looking up main table
