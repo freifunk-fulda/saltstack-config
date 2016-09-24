@@ -27,22 +27,11 @@ sshd.conf:
 # Empty the authorized_keys file,
 # and add ssh keys of admins
 #
-sshd.root.authorized_keys.emptyfile:
+sshd.root.authorized_keys:
   file.managed:
     - name: /root/.ssh/authorized_keys
-    - contents:
-      - ""
-
-{% for owner, key in pillar['ssh']['authorized_keys'].items() %}
-sshd.root.authorized_keys.{{ owner }}:
-  ssh_auth.present:
-    - user: root
-    - name: {{ key }}
-    - comment: {{ owner }}
-    - require:
-      - file: sshd.root.authorized_keys.emptyfile
-{% endfor %}
-
+    - source: salt://ssh/files/authorized_keys.tpl
+    - template: jinja
 
 # Allow ssh traffic
 #
