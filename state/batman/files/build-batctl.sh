@@ -2,8 +2,8 @@
 
 PACKAGE="batctl"
 REMOTE="git://git.open-mesh.org/batctl.git"
-TAG="v2016.2"
-TARGET_VERSION="2016.2"
+TAG="v2016.3"
+TARGET_VERSION="2016.3"
 BUILD_ROOT="/usr/src/batctl"
 
 rebuild_required() {

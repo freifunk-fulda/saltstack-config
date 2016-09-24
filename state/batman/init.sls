@@ -10,6 +10,7 @@ batman_adv_dep:
       - pkg-config
       - checkinstall
       - libnl-3-dev
+      - libnl-genl-3-dev
 
 batman_adv_dep_backports:
   pkg.latest:

@@ -2,8 +2,8 @@
 
 PACKAGE="batman-adv"
 REMOTE="git://git.open-mesh.org/batman-adv.git"
-TAG="v2016.2"
-KMOD_VERSION="2016.2"
+TAG="v2016.3"
+KMOD_VERSION="2016.3"
 BUILD_ROOT="/usr/src/batman-adv"
 TARGET_KERNEL=$(dpkg -s linux-image-amd64 | grep "^Depends" | sed 's/Depends:\s*linux-image-//')
 
@@ -40,7 +40,7 @@ prepare() {
 	git checkout "$TAG"
 
 	# apply patches if they exist
-	if [ -d /usrc/src/$PACKAGE_patches/ ]; then
+	if [ -d /usr/src/$PACKAGE_patches/ ]; then
 		git am /usr/src/$PACKAGE_patches/*
 	fi
 }
