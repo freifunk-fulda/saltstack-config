@@ -12,8 +12,7 @@
 
 peerings:
   gw01:
-    type: icvpn
-
+    type: none
 
   gw02:
     type: ice
@@ -144,7 +143,7 @@ peerings:
 
   gw04:
     type: ice
-    self: 
+    self:
       private: |
         -----BEGIN PGP MESSAGE-----
         hQIMA9J7QslVEt/9AQ//ZJjk2/BCe0B9lDmiuDUK2dNXLwXROHhQ+6ILposJXdkN
@@ -271,7 +270,7 @@ peerings:
         keyexchange: ikev2
         ike: aes128-sha256-modp2048!
         esp: aes128-sha1-modp2048!
-  
+
         remote: 2a01:4f8:171:7de::1
         tun4:
           left: 172.20.241.5
@@ -281,7 +280,7 @@ peerings:
           left: fe80::1
           right: fe80::2
           mask: 64
-  
+
         rightrsasigkey: |
           -----BEGIN PUBLIC KEY-----
           MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAyUotBHkEAkVEVLDeUfBB

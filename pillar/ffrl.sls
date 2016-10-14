@@ -13,6 +13,73 @@ ffrl:
       ffrl-a-ber: 185.66.195.0
       ffrl-b-ber: 185.66.195.1
 
+  gw01:
+    mac: 1e:5e:98:b6:53:1e
+    ipv4:
+      address: 185.66.193.121
+      mask: 32
+
+    peers:
+      ffrl-a-ber:
+        tun4:
+          remote: 100.64.1.160
+          self: 100.64.1.161
+          mask: 255.255.255.254
+        tun6:
+          remote: 2a03:2260:0:421::1
+          self: 2a03:2260:0:421::2
+          mask: 64
+
+      ffrl-b-ber:
+        tun4:
+          remote: 100.64.1.166
+          self: 100.64.1.167
+          mask: 255.255.255.254
+        tun6:
+          remote: 2a03:2260:0:423::1
+          self: 2a03:2260:0:423::2
+          mask: 64
+
+      ffrl-a-dus:
+        tun4:
+          remote: 100.64.1.164
+          self: 100.64.1.165
+          mask: 255.255.255.254
+        tun6:
+          remote: 2a03:2260:0:422::1
+          self: 2a03:2260:0:422::2
+          mask: 64
+
+      ffrl-b-dus:
+        tun4:
+          remote: 100.64.1.170
+          self: 100.64.1.171
+          mask: 255.255.255.254
+        tun6:
+          remote: 2a03:2260:0:425::1
+          self: 2a03:2260:0:425::2
+          mask: 64
+
+      ffrl-a-fra:
+        tun4:
+          remote: 100.64.1.162
+          self: 100.64.1.163
+          mask: 255.255.255.254
+        tun6:
+          remote: 2a03:2260:0:421::1
+          self: 2a03:2260:0:421::2
+          mask: 64
+
+      ffrl-b-fra:
+        tun4:
+          remote: 100.64.1.168
+          self: 100.64.1.169
+          mask: 255.255.255.254
+        tun6:
+          remote: 2a03:2260:0:424::1
+          self: 2a03:2260:0:424::2
+          mask: 64
+
   gw02:
     mac: de:df:02:c0:e7:52
     ipv4:

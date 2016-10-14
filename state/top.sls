@@ -44,6 +44,7 @@ base:
     - radvd
     - apache2.gateway
     - bird
+    - ffrl
 
 {% if pillar.peerings[grains['id']].type == "icvpn" %}
     - tinc
@@ -60,13 +61,6 @@ base:
 
   'gw02':
     - webtropia
-    - ffrl
-
-  'gw03':
-    - ffrl
-
-  'gw04':
-    - ffrl
 
   'srv1':
     - apache2.homepage

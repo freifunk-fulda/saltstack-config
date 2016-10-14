@@ -22,18 +22,16 @@ hosts:
     id: 1
     enabled: 0
     debug: 0
-    location: Hetzner, Frankfurt
+    location: KMS
     # the last digit of the mac address will be substituted
     # by the fastd instance number
-    mac: 26:13:9d:b4:31:a
+    mac: da:e7:8e:72:da:a
     ipv4:
-      public: 176.9.72.29
+      public: 178.251.228.155
       freifunk: 10.185.0.1
-      icvpn: 10.207.0.32
     ipv6:
-      public: 2a01:4f8:151:204::fffd
+      public: 2a01:367:c1f2::fffd
       freifunk: fd00:65a8:93a4::1
-      icvpn: fec0::a:cf:0:20
 
   gw02:
     id: 2
