@@ -20,7 +20,7 @@ root:
 hosts:
   gw01:
     id: 1
-    enabled: 0
+    enabled: 1
     debug: 0
     location: KMS
     # the last digit of the mac address will be substituted
