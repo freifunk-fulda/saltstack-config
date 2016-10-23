@@ -1,0 +1,47 @@
+{
+  "core": { },
+  "receiver": {
+    "receivers": [
+      { "module": "announced",
+        "config": {
+          "target": {
+            "ip": "ff02::1",
+            "port": 1001
+          },
+          "port": 45123,
+          "interval": {
+            "statistics": 60,
+            "nodeinfo": 300
+          }
+        },
+        "overlay": false
+      },
+      { "module": "aliases",
+        "config": {
+          "file": "./aliases.json"
+        },
+        "overlay": true
+      }
+    ],
+    "ifaces": [
+      "fffd.bat"
+    ],
+    "storage": {
+      "interval": 300,
+      "file": "./raw.json"
+    },
+    "purge": {
+      "maxAge": 30,
+      "interval": 86400
+    }
+  },
+  "provider": {
+    "offlineTime": 900,
+    "metricsOfflineTime": 60,
+    "ffapiPath": "./ffapi/"
+  },
+  "webserver": {
+    "ip": "::1",
+    "port": 4000
+  }
+}

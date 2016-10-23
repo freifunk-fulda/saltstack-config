@@ -1,0 +1,70 @@
+{
+    "dataPath": "./hopglass/",
+    "siteName": "Freifunk Fulda",
+    "mapSigmaScale": 0.5,
+    "showContact": false,
+    "maxAge": 14,
+    "blinkingHours": 8,
+    "mapLayers": [
+            {
+              "name": "normal",
+                "url": "https://b.tiles.mapbox.com/v4/mapquest.streets-mb/{z}/{x}/{y}{retina}.jpg?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpbG10dnA3NzY3OTZ0dmtwejN2ZnUycjYifQ.1W5oTOnWXQ9R1w8u3Oo1yA",
+                "config": {
+                  "subdomains": "1234",
+                  "type": "osm",
+                  "attribution": "Tiles &copy; <a href=\"https://www.mapbox.com/\" target=\"_blank\">mapbox</a>, Data CC-BY-SA OpenStreetMap",
+                  "maxZoom": 19
+                }
+            }, 
+            { 
+              "name": "Mapbox (Sat)", 
+              "url": "https://c.tiles.mapbox.com/v3/tmcw.map-j5fsp01s/{z}/{x}/{y}{retina}.png", 
+              "config": { 
+                "type": "", 
+                "attribution": "Tiles &copy; <a href=\"https://www.mapbox.com/\" target=\"_blank\">MapQuest</a>", 
+                "maxZoom": 19 } 
+               }
+      ],
+    "siteNames": [{
+        "site": "fffd",
+        "name": "Freifunk Fulda"
+    }],
+    "hwImg": [{
+        "thumbnail": "https://rawgit.com/Moorviper/meshviewer_hwpics/master/nodes/{MODELHASH}.svg",
+        "caption": "Knoten {MODELHASH}"
+    }],
+"nodeInfos": [
+    { "iframe": "https://meshviewer.fulda.freifunk.net/grafana/dashboard-solo/db/node?panelId=5&theme=light&var-node={NODE_ID}", "height": "250px", "name": "Clients" },
+    { "iframe": "https://meshviewer.fulda.freifunk.net/grafana/dashboard-solo/db/node?panelId=3&theme=light&var-node={NODE_ID}", "height": "250px", "name": "Durchsatz Gesamt" },
+    { "iframe": "https://meshviewer.fulda.freifunk.net/grafana/dashboard-solo/db/node?panelId=4&theme=light&var-node={NODE_ID}", "height": "250px", "name": "Prozessor-Auslastung" },
+    { "iframe": "https://meshviewer.fulda.freifunk.net/grafana/dashboard-solo/db/node?panelId=1&theme=light&var-node={NODE_NAME}", "height": "200px", "name": "Laufzeit und Wahl des Gateways" },    
+    { "iframe": "https://meshviewer.fulda.freifunk.net/grafana/dashboard-solo/db/node?panelId=2&theme=light&var-node={NODE_ID}", "height": "400px", "name": "Verbindungsqualität" },
+    { "iframe": "https://meshviewer.fulda.freifunk.net/grafana/dashboard-solo/db/node?panelId=21&editorTab=Metrics&theme=light&var-node={NODE_NAME}", "height": "400px", "name": "Durchsatz pro Tag" }
+  ],
+"linkInfos": [
+{
+"iframe": "https://meshviewer.fulda.freifunk.net/grafana/dashboard-solo/db/link?panelId=1&theme=light&var-node={SOURCE}&var-node={TARGET}&var-source={SOURCE}&var-target={TARGET}",
+"height": "300px"
+},
+{
+"iframe": "https://meshviewer.fulda.freifunk.net/grafana/dashboard-solo/db/link?panelId=3&theme=light&var-node={SOURCE}&var-node={TARGET}&var-source={SOURCE}&var-target={TARGET}",
+"height": "300px"
+},
+{
+"iframe": "https://meshviewer.fulda.freifunk.net/grafana/dashboard-solo/db/link?panelId=4&theme=light&var-node={SOURCE}&var-node={TARGET}&var-source={SOURCE}&var-target={TARGET}",
+"height": "300px"
+}
+],
+"globalInfos": [
+    { "iframe": "https://meshviewer.fulda.freifunk.net/stats.html", "height": "250px", "name": "Aktueller Internet Traffic Freifunk Rheinland"},
+    { "iframe": "https://meshviewer.fulda.freifunk.net/grafana/dashboard-solo/db/global?panelId=3&theme=light", "height": "250px", "name": "Nutzer pro Knoten"},
+    { "iframe": "https://meshviewer.fulda.freifunk.net/grafana/dashboard-solo/db/global?panelId=4&theme=light", "height": "250px", "name": "Durchsatz" },
+    { "iframe": "https://meshviewer.fulda.freifunk.net/grafana/dashboard-solo/db/global?panelId=8&theme=light", "height": "250px", "name": "Durchsatz pro Gateway" },
+    { "iframe": "https://meshviewer.fulda.freifunk.net/grafana/dashboard-solo/db/global?panelId=9&theme=light", "height": "250px", "name": "Nutzer pro Gateway" },
+    { "iframe": "https://meshviewer.fulda.freifunk.net/grafana/dashboard-solo/db/global?panelId=10&theme=light", "height": "250px", "name": "Knoten pro Gateway"},
+    { "iframe": "https://meshviewer.fulda.freifunk.net/grafana/dashboard-solo/db/extras?panelId=11&theme=light", "height": "250px", "name": "Mittelwert Verbindungsqualitäten" },
+    { "caption": "wifi-aliases.txt", "href": "https://tunnelhoshi.net/hopglass/wifi-aliases.txt", "name": "Datei für Android App Wifi-Analyzer" },
+    { "caption": "WifiAnalyzer_Alias.txt", "href": "https://tunnelhoshi.net/hopglass/WifiAnalyzer_Alias.txt", "name": "Datei für Android App Wifi-Analyzer" },
+    { "caption": "HOSTS-Datei", "href": "https://tunnelhoshi.net/hopglass/hosts" , "name": "export: /etc/hosts"}
+  ] 
+}

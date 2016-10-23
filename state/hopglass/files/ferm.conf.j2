@@ -1,0 +1,9 @@
+domain (ip6) {
+  table filter {
+    chain INPUT {
+      {% for domain in pillar.get('domains', {}).keys() %}
+      interface {{domain}}-br proto udp dport 45123 ACCEPT;
+      {% endfor %}
+    }
+  }
+}
