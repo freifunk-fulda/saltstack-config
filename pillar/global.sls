@@ -30,7 +30,7 @@ hosts:
       public: 178.251.228.155
       freifunk: 10.185.0.1
     ipv6:
-      public: 2a01:367:c1f2::fffd
+      public: 2a01:0367:c1f2::130 
       freifunk: fd00:65a8:93a4::1
 
   gw02:
