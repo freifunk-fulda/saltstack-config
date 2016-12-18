@@ -3,13 +3,6 @@
 # Network configuration
 Port {{ pillar['ssh']['port'] }}
 
-{% for key, ipv4 in pillar['hosts'][grains['id']]['ipv4'].items() if ipv4 -%}
-ListenAddress {{ ipv4 }}
-{% endfor %}
-{% for key, ipv6 in pillar['hosts'][grains['id']]['ipv6'].items() if ipv6 -%}
-ListenAddress {{ ipv6 }}
-{% endfor %}
-
 # Protocol version and version 2 hostkeys
 Protocol 2
 HostKey /etc/ssh/ssh_host_rsa_key
@@ -96,4 +89,3 @@ Subsystem sftp /usr/lib/openssh/sftp-server
 # PAM authentication, then enable this but set PasswordAuthentication
 # and ChallengeResponseAuthentication to 'no'.
 UsePAM no
-

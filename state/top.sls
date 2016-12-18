@@ -7,51 +7,20 @@ base:
     - common.locales
 
     - salt
-
-    - networking.common
-    - ferm.common
-
-    - fastd
-    - batman
-    - respondd
-
     - sysctl
     - rsyslog
     - logrotate
     - snmpd
-    - munin
     - postfix
     - ntp
 
     - ssh.server
     - ssh.client
 
-    - apache2.common
-    - fffd-utils.common
 
-
-  'gw*':
-    - ferm.gateway
+  'roles:gateway':
+    - match: grain
     - networking.gateway
-
-    - munin.gateway
-    - fffd-utils.gateway
-
-    - bind.common
-    - bind.gateway
-    - dhcp
-
-    - radvd
-    - apache2.gateway
-    - bird
-    - ffrl
-
-{% if pillar.peerings[grains['id']].type == "icvpn" %}
-    - tinc
-{% elif pillar.peerings[grains['id']].type == "ice" %}
-    - ice.gre
-    - ice.ipsec
-{% endif %}
 
   'roles:kvm':
     - match: grain
@@ -59,12 +28,7 @@ base:
     - ksm
     - networking.bridgeutils
 
-  'gw02':
-    - webtropia
-
   'srv1':
     - apache2.homepage
-    - bind.common
-    - bind.master
     - salt.master
     - mysql.server

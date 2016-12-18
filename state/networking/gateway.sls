@@ -60,7 +60,6 @@ fffd.gre.ferm:
   file:
     - managed
     - name: /etc/ferm.d/30-gre-fffd.conf
-    - source: salt://networking/files/ferm.conf.tpl
+    - source: salt://networking/files/30-gre-fffd.conf.tpl
     - makedirs: True
     - template: jinja
-

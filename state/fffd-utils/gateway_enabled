@@ -1,8 +1,0 @@
-#!/bin/sh
-
-# enable or disable the gateway status of this gateway.
-# this variable will be evaluated by the check_gateway cronjob, 
-# which enabled or disabled the batman gateway mode.
-
-GATEWAY_ENABLED={{ pillar['hosts'][grains['id']]['enabled'] }}
-

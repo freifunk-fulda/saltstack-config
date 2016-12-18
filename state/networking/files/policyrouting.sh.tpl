@@ -49,9 +49,6 @@ fi
 /sbin/ip -4 rule ${TYPE} prio 190 iif fffd.vpn2 table sink
 /sbin/ip -6 rule ${TYPE} prio 190 iif fffd.vpn2 table sink
 
-/sbin/ip -4 rule ${TYPE} prio 190 iif fffd.internet table sink
-/sbin/ip -6 rule ${TYPE} prio 190 iif fffd.internet table sink
-
 {% if pillar.peerings[grains['id']].type == "icvpn" -%}
 /sbin/ip -4 rule ${TYPE} prio 190 iif icvpn table sink
 /sbin/ip -6 rule ${TYPE} prio 190 iif icvpn table sink
@@ -66,4 +63,3 @@ fi
 /sbin/ip -4 rule ${TYPE} prio 190 iif tun-{{key}} table sink
 /sbin/ip -6 rule ${TYPE} prio 190 iif tun-{{key}} table sink
 {% endfor %}
-

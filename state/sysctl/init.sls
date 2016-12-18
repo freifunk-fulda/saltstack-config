@@ -9,7 +9,7 @@
 
 # Set gateway values (i.e., enable packet forwarding)
 #
-{% if grains['id'].startswith('gw') %}
+{% iif grains['roles'] == 'gateway' %}
 /etc/sysctl.d/20-freifunk-gw.conf:
   file.managed:
     - name: /etc/sysctl.d/20-freifunk-gw.conf
@@ -36,10 +36,4 @@ sysctl.reload:
   cmd.wait:
     - name: /sbin/sysctl -p
     - watch:
-      - file: /etc/sysctl.d/10-default.conf
-{% if grains['id'].startswith('gw') %}
-      - file: /etc/sysctl.d/20-freifunk-gw.conf
-{% endif %}
-{% if grains['roles'] == 'kvm' %}
-      - file: /etc/sysctl.d/30-kvm.conf
-{% endif %}
+      - file: /etc/sysctl.d/*

@@ -9,11 +9,12 @@ base:
     - bind
     - ssmtp
 
-  'gw*':
+  'roles:gateway':
+    - match: grain
     - ffrl
     - tinc
     - openvpn
     - dhcp
 
-  'srv*':
+  'srv1':
     - mysql

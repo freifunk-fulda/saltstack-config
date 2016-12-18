@@ -24,10 +24,10 @@ tools:
       - python3-pip
 
 
-# Enable process monitoring with Net-SNMP
+# Enable process monitoring with Net-SNMP for some processes of tools
 #
 tools.snmp.proc.conf:
   file.managed:
     - name: /etc/snmp/conf.d/proc.common.tools.conf
-    - source: salt://common/files/netsnmp.proc.conf
+    - source: salt://snmpd/files/netsnmp.proc.conf
     - makedirs: True

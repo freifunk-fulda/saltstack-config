@@ -1,6 +1,0 @@
-# THIS FILE IS CONTROLLED BY SALTSTACK!
-#
-# allow keyupload utility to reload fastd
-
-www-data        ALL = NOPASSWD: /opt/fffd-keyupload/script/reload_fastd.sh
-

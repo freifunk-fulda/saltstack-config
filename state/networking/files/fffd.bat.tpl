@@ -1,7 +1,7 @@
 # THIS FILE IS CONTROLLED BY SALTSTACK!
 #
 # BATMAN Interface
-{% if 'kvm' in grains['roles'] %}
+{%- if 'kvm' in grains['roles'] %}
 allow-hotplug fffd.bat
 iface fffd.bat inet manual
 

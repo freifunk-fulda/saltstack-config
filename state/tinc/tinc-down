@@ -1,8 +1,0 @@
-#!/bin/sh
-
-# THIS FILE IS CONTROLLED BY SALTSTACK!
-#
-# stop the IC-VPN interface
-
-ifdown $INTERFACE
-
