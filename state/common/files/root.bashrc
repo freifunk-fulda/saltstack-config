@@ -53,3 +53,4 @@ alias l='ls -lh'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias listen='netstat -anp |grep LISTEN'
+alias batctl="batctl -m fffd.bat"
