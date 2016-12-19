@@ -1,0 +1,1 @@
+*/5 * * * * root /bin/sh /opt/fffd-keyupload/script/vnstat.sh

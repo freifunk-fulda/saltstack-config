@@ -13,7 +13,6 @@ base:
     - match: grain
     - ffrl
     - tinc
-    - openvpn
     - dhcp
 
   'srv1':

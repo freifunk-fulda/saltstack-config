@@ -5,12 +5,12 @@
 
 # Allow GRE (Protocol 47)
 #
-domain ip6
+domain ip
 table filter {
   chain INPUT {
     proto gre {
       {% for gw in pillar['hosts'].keys() if gw != grains['id'] and gw.startswith('gw') and pillar['hosts'][gw]['enabled'] -%}
-      saddr {{ pillar.hosts[gw].ipv6.public }} ACCEPT;
+      saddr {{ pillar.hosts[gw].ipv4.public }} ACCEPT;
       {% endfor %}
     }
   }
@@ -19,14 +19,13 @@ table filter {
 
 # Disable connection tracking for the GRE tunnel
 #
-domain ip6
+domain ip
 table raw {
   chain PREROUTING {
     proto gre {
       {% for gw in pillar['hosts'].keys() if gw != grains['id'] and gw.startswith('gw') and pillar['hosts'][gw]['enabled'] -%}
-      saddr {{ pillar.hosts[gw].ipv6.public }} NOTRACK;
+      saddr {{ pillar.hosts[gw].ipv4.public }} NOTRACK;
       {%- endfor %}
     }
   }
 }
-
