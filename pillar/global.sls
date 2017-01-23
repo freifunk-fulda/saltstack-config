@@ -55,7 +55,7 @@ hosts:
     location: Hetzner RZ19, Falkenstein
     # the last digit of the mac address will be substituted
     # by the fastd instance number
-    mac: 52:54:00:4c:cb:cb
+    mac: 52:54:00:4c:cb:c
     ipv4:
       public:  144.76.27.253
       freifunk: 10.185.0.3
