@@ -33,20 +33,20 @@ hosts:
       public: 2a01:0367:c1f2::130 
       freifunk: fd00:65a8:93a4::1
 
-  gw02:
-    id: 2
-    enabled: 1
-    debug: 0
-    location: Webtropia, Duesseldorf
-    # the last digit of the mac address will be substituted
-    # by the fastd instance number
-    mac: 00:1c:42:00:04:9
-    ipv4:
-      public: 89.163.209.240
-      freifunk: 10.185.0.2
-    ipv6:
-      public: 2001:4ba0:babe:493::fffd
-      freifunk: fd00:65a8:93a4::2
+#  gw02:
+#    id: 2
+#    enabled: 0
+#    debug: 0
+#    location: Webtropia, Duesseldorf
+#    # the last digit of the mac address will be substituted
+#    # by the fastd instance number
+#    mac: 00:1c:42:00:04:9
+#    ipv4:
+#      public: 89.163.209.240
+#      freifunk: 10.185.0.2
+#    ipv6:
+#      public: 2001:4ba0:babe:493::fffd
+#      freifunk: fd00:65a8:93a4::2
 
   gw03:
     id: 3
